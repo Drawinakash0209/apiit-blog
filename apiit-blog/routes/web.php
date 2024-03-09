@@ -30,6 +30,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/add-category', [CategoryController::class, 'Create']);
 
     Route::post('/add-category', [CategoryController::class, 'store']);
+
+    Route::get('/edit-category/{category_id}', [CategoryController::class, 'edit']);
+
+    Route::put('/update-category/{category_id}', [CategoryController::class, 'update']);
     
 });
 
