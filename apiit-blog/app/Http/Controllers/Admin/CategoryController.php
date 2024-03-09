@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CategoryFormRequest;
+use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
@@ -66,6 +67,14 @@ public function update(CategoryFormRequest $request, $category_id){
     $category->slug = $data['slug'];
     $category->description = $data['description'];
     if ($request->hasFile('image')){
+
+        $destination = 'uploads/category/'.$category->image;
+        if(File::exists($destination)){
+            File::delete($destination);
+
+        }
+
+
         $file = $request->file('image');
         $filename = time() . '.' . $file->getClientOriginalExtension();
         $file->move('uploads/category/', $filename);

@@ -64,12 +64,12 @@ class CategoryFormRequest extends FormRequest
             ],
             'meta_status' => [
                 'nullable',
-                'boolean'
+              
 
             ],
             'status' => [
                 'nullable',
-                'boolean'
+               
 
             ],
 
