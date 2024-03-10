@@ -19,6 +19,7 @@
                     <th>Image</th>
                     <th>Status</th>
                     <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
 
 
@@ -33,6 +34,10 @@
 
                     <td>
                         <a href="{{'edit-category/'.  $item->id}}" class="btn btn-success">Edit</a>
+                    </td>
+
+                    <td>
+                        <a href="{{'delete-category/'.  $item->id}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                     
