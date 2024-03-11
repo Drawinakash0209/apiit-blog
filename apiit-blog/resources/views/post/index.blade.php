@@ -1,80 +1,57 @@
-{{-- 
-    <body class="sb-nav-fixed"> --}}
+
+@extends('layout')
+
+@section('content')
+    <div class="container-fluid px-4 mt-5">
+       
+        <div class="card">
+            <div class="card-header ">
+                <h4>View posts
+
+                    <a href="{{url('/add-post')}}" class="btn btn-primary float-end">Add Post</a>
+                </h4>
+            </div>
+        </div>
+
+        @if (session('message'))
+
+        <div class="alert alert-success">{{ session('message')}}</div>
+            
+        @endif
+
+        {{-- <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Category Name</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
 
 
-        @extends('layout')
+            </thead>
+            <tbody>
+                @foreach ($category as $item)
+                <tr>
+                    <td>{{ $item->id }}</td>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->image}}</td>
+                    <td>{{$item->status == '1' ? 'Hidden' : 'Show'}}</td>
 
-        @section('content')
-        
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Area Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Bar Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                </main>
-             
-                @endsection
-           
-        
-    {{-- </body> --}}
+                    <td>
+                        <a href="{{'edit-category/'.  $item->id}}" class="btn btn-success">Edit</a>
+                    </td>
 
+                    <td>
+                        <a href="{{'delete-category/'.  $item->id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                    
+                @endforeach
+
+            </tbody> --}}
+    </div>
+    
+@endsection

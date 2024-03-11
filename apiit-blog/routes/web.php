@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 
@@ -41,3 +42,6 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/post',[PostController::class, 'index']);
 
+Route::get('/add-post',[PostController::class, 'create']);
+
+Route::post('/add-post',[PostController::class, 'store']);

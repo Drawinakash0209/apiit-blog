@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->mediumText('description');
-            $table->string('v_iframe');
+            $table->string('v_iframe')->nullable();
             $table->string('meta_title');
             $table->mediumText('meta_description');
             $table->mediumText('meta_keywords');
-            $table->string('image');
-            $table->string('status');
+            $table->string('image')->nullable();
+            $table->string('status')->default(0);
             $table->string('created_by');
             $table->timestamps();
         });
