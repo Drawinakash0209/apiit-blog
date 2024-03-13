@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 
@@ -34,6 +35,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/edit-category/{category_id}', [CategoryController::class, 'edit']);
 
     Route::put('/update-category/{category_id}', [CategoryController::class, 'update']);
+
+    Route::get('/delete-category/{category_id}', [CategoryController::class, 'destroy']);
     
 });
 
+Route::get('/post',[PostController::class, 'index']);
+
+Route::get('/add-post',[PostController::class, 'create']);
+
+Route::post('/add-post',[PostController::class, 'store']);

@@ -93,4 +93,22 @@ public function update(CategoryFormRequest $request, $category_id){
     return redirect('/admin/categories')->with('message', 'Category updated successfully');
 }
 
+public function destroy($category_id){
+    $category = Category::find($category_id);
+    if($category){
+        $destination = 'uploads/category/'.$category->image;
+        if(File::exists($destination)){
+            File::delete($destination);
+        }
+        $category->delete();
+        return redirect('/admin/categories')->with('message', 'Category deleted successfully');
+      
+    }
+    else
+    {
+        return redirect('/admin/categories')->with('message', 'Category not found');
+    }
+
+}
+
 }

@@ -2,8 +2,16 @@
 @extends('layout')
 
 @section('content')
-    <div class="container-fluid px-4">
-        <h1 class="mt-4">Category</h1>
+    <div class="container-fluid px-4 mt-5">
+       
+        <div class="card">
+            <div class="card-header ">
+                <h4>View posts
+
+                    <a href="{{url('/add-post')}}" class="btn btn-primary float-end">Add Post</a>
+                </h4>
+            </div>
+        </div>
 
         @if (session('message'))
 
@@ -11,7 +19,7 @@
             
         @endif
 
-        <table class="table table-bordered">
+        {{-- <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -43,7 +51,7 @@
                     
                 @endforeach
 
-            </tbody>
+            </tbody> --}}
     </div>
     
 @endsection
