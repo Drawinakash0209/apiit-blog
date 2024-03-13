@@ -19,11 +19,11 @@
             
         @endif
 
-        {{-- <table class="table table-bordered">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Category Name</th>
+                    <th>Post Name</th>
                     <th>Image</th>
                     <th>Status</th>
                     <th>Edit</th>
@@ -33,7 +33,7 @@
 
             </thead>
             <tbody>
-                @foreach ($category as $item)
+                @foreach ($posts as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{$item->name}}</td>
@@ -41,17 +41,17 @@
                     <td>{{$item->status == '1' ? 'Hidden' : 'Show'}}</td>
 
                     <td>
-                        <a href="{{'edit-category/'.  $item->id}}" class="btn btn-success">Edit</a>
+                        <a href="{{'post-category/'.$item->id}}" class="btn btn-success">Edit</a>
                     </td>
 
-                    <td>
+                    {{-- <td>
                         <a href="{{'delete-category/'.  $item->id}}" class="btn btn-danger">Delete</a>
-                    </td>
+                    </td> --}}
                 </tr>
                     
                 @endforeach
 
-            </tbody> --}}
+            </tbody>
     </div>
     
 @endsection

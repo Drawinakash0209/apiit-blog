@@ -45,3 +45,7 @@ Route::get('/post',[PostController::class, 'index']);
 Route::get('/add-post',[PostController::class, 'create']);
 
 Route::post('/add-post',[PostController::class, 'store']);
+
+Route::get('/post-category/{post_id}', [PostController::class, 'edit']);
+
+Route::put('update-post/{post_id}', [PostController::class, 'update']);
