@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< Updated upstream
+=======
+  <component name="LaravelPint">
+    <laravel_pint_settings>
+      <LaravelPintConfiguration tool_path="$PROJECT_DIR$/apiit-blog/vendor/bin/pint" />
+    </laravel_pint_settings>
+  </component>
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+>>>>>>> Stashed changes
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/apiit-blog/vendor/theseer/tokenizer" />
@@ -116,4 +134,19 @@
       <path value="$PROJECT_DIR$/apiit-blog/vendor/nikic/php-parser" />
     </include_path>
   </component>
+<<<<<<< Updated upstream
+=======
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/apiit-blog/phpunit.xml" custom_loader_path="$PROJECT_DIR$/apiit-blog/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+>>>>>>> Stashed changes
 </project>
