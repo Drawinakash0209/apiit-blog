@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.home');
 });
 
 
@@ -36,6 +36,23 @@ Route::prefix('admin')->group(function () {
     Route::put('/update-category/{category_id}', [CategoryController::class, 'update']);
 
     Route::get('/delete-category/{category_id}', [CategoryController::class, 'destroy']);
-    
+
 });
 
+<<<<<<< Updated upstream
+=======
+Route::get('/post',[PostController::class, 'index']);
+
+Route::get('/add-post',[PostController::class, 'create']);
+
+Route::post('/add-post',[PostController::class, 'store']);
+
+Route::get('/post-edit/{post_id}', [PostController::class, 'edit']);
+
+Route::put('update-post/{post_id}', [PostController::class, 'update']);
+
+Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
+
+
+
+>>>>>>> Stashed changes

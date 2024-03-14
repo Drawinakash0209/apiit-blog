@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="063f860a-0051-452a-9ccf-9b25fd007103" name="Changes" comment="" />
+=======
+    <list default="true" id="063f860a-0051-452a-9ccf-9b25fd007103" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/apiit-blog/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/apiit-blog/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiit-blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/apiit-blog/routes/web.php" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,16 +145,24 @@
       <path value="$PROJECT_DIR$/apiit-blog/vendor/nikic/php-parser" />
     </include_path>
   </component>
+<<<<<<< Updated upstream
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 6
 }]]></component>
+=======
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+>>>>>>> Stashed changes
   <component name="ProjectId" id="2dUviZRIdD0cjRcA3qvQoDcc2yn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -163,6 +178,24 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.update-module-directories&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/apiit-blog/apiit-blog&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+>>>>>>> Stashed changes
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\apiit-blog\apiit-blog" />
@@ -190,6 +223,14 @@
       <option name="presentableId" value="Default" />
       <updated>1710075601745</updated>
       <workItem from="1710075604931" duration="855000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1710399849713" duration="2444000" />
+      <workItem from="1710402331360" duration="151000" />
+      <workItem from="1710405642760" duration="2106000" />
+      <workItem from="1710424009706" duration="439000" />
+      <workItem from="1710434616101" duration="1080000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
