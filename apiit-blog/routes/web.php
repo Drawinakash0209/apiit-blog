@@ -39,8 +39,7 @@ Route::prefix('admin')->group(function () {
 
 });
 
-<<<<<<< Updated upstream
-=======
+
 Route::get('/post',[PostController::class, 'index']);
 
 Route::get('/add-post',[PostController::class, 'create']);
@@ -53,6 +52,3 @@ Route::put('update-post/{post_id}', [PostController::class, 'update']);
 
 Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
 
-
-
->>>>>>> Stashed changes
