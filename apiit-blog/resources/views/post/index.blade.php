@@ -41,12 +41,12 @@
                     <td>{{$item->status == '1' ? 'Hidden' : 'Show'}}</td>
 
                     <td>
-                        <a href="{{'post-category/'.$item->id}}" class="btn btn-success">Edit</a>
+                        <a href="{{'post-edit/'.$item->id}}" class="btn btn-success">Edit</a>
                     </td>
 
-                    {{-- <td>
-                        <a href="{{'delete-category/'.  $item->id}}" class="btn btn-danger">Delete</a>
-                    </td> --}}
+                    <td>
+                        <a href="{{'post-delete/'.  $item->id}}" class="btn btn-danger">Delete</a>
+                    </td>
                 </tr>
                     
                 @endforeach

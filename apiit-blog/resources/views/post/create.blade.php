@@ -50,12 +50,12 @@
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Category Description</label>
-                        <textarea name="description" rows="5" class="form-control"></textarea>
+                        <textarea name="description" id="my_summernote" rows="5" class="form-control"></textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="Description" class="form-label">Youtube Video Link (iframe)</label>
-                        <input type="text" name="v_iframe" class="form-control">
+                        <input type="text"  name="v_iframe" class="form-control">
                     </div>
 
                     <div class="mb-3">
