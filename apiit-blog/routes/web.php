@@ -17,7 +17,7 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.home');
 });
 
 
@@ -37,7 +37,7 @@ Route::prefix('admin')->group(function () {
     Route::put('/update-category/{category_id}', [CategoryController::class, 'update']);
 
     Route::get('/delete-category/{category_id}', [CategoryController::class, 'destroy']);
-    
+
 });
 
 Route::get('/post',[PostController::class, 'index']);
