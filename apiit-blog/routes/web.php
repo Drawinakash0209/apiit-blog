@@ -51,4 +51,3 @@ Route::get('/post-edit/{post_id}', [PostController::class, 'edit']);
 Route::put('update-post/{post_id}', [PostController::class, 'update']);
 
 Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
-

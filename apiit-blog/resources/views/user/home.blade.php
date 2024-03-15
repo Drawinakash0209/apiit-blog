@@ -185,6 +185,7 @@
     <section class="section wb">
         <div class="container">
             <div class="row">
+            <div class="row">
                 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-wrapper">
                         <div class="blog-list clearfix">
@@ -219,6 +220,7 @@
                                         </a>
                                     </div><!-- end media -->
                                 </div><!-- end col -->
+
 
                                 <div class="blog-meta big-meta col-md-8">
                                     <span class="bg-aqua"><a href="user/garden-category.html" title="">Indoor</a></span>
@@ -409,6 +411,7 @@
                         <div class="widget">
                             <h2 class="widget-title">Recent Posts</h2>
                             <div class="blog-list-widget">
+                                <!--
                                 <div class="list-group">
                                     <a href="user/garden-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
@@ -434,21 +437,26 @@
                                         </div>
                                     </a>
                                 </div>
+                                -->
                             </div><!-- end blog-list -->
                         </div><!-- end widget -->
 
                         <div class="widget">
                             <h2 class="widget-title">Advertising</h2>
+                            <!--
                             <div class="banner-spot clearfix">
                                 <div class="banner-img">
                                     <img src="user/upload/banner_04.jpg" alt="" class="img-fluid">
-                                </div><!-- end banner-img -->
-                            </div><!-- end banner -->
+                                </div>
+                            </div>
+                            -->
+                        <!-- end banner -->
                         </div><!-- end widget -->
 
                         <div class="widget">
                             <h2 class="widget-title">Instagram Feed</h2>
                             <div class="instagram-wrapper clearfix">
+                                <!--
                                 <a href="#"><img src="user/upload/garden_sq_01.jpg" alt="" class="img-fluid"></a>
                                 <a href="#"><img src="user/upload/garden_sq_02.jpg" alt="" class="img-fluid"></a>
                                 <a href="#"><img src="user/upload/garden_sq_03.jpg" alt="" class="img-fluid"></a>
@@ -458,11 +466,13 @@
                                 <a href="#"><img src="user/upload/garden_sq_07.jpg" alt="" class="img-fluid"></a>
                                 <a href="#"><img src="user/upload/garden_sq_08.jpg" alt="" class="img-fluid"></a>
                                 <a href="#"><img src="user/upload/garden_sq_09.jpg" alt="" class="img-fluid"></a>
+                                -->
                             </div><!-- end Instagram wrapper -->
                         </div><!-- end widget -->
 
                         <div class="widget">
                             <h2 class="widget-title">Popular Categories</h2>
+                            <!--
                             <div class="link-widget">
                                 <ul>
                                     <li><a href="#">Gardening <span>(21)</span></a></li>
@@ -471,7 +481,9 @@
                                     <li><a href="#">Shopping Guides <span>(22)</span></a></li>
                                     <li><a href="#">Pool Design <span>(66)</span></a></li>
                                 </ul>
-                            </div><!-- end link-widget -->
+                            </div>
+                            -->
+                            <!-- end link-widget -->
                         </div><!-- end widget -->
                     </div><!-- end sidebar -->
                 </div><!-- end col -->
