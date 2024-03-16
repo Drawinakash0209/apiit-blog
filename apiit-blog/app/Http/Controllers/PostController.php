@@ -66,7 +66,7 @@ class PostController extends Controller
         $post = Post::find($post_id);
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
-        $post->slug = $data['description'];
+        $post->slug = $data['slug'];
         $post->description = $data['description'];
         $post->v_iframe = $data['v_iframe'];
   
@@ -87,5 +87,12 @@ class PostController extends Controller
 
         return redirect('/post')->with('message', 'Post updated successfully');
 
+}
+
+public function destroy($post_id)
+{
+    $post = Post::find($post_id);
+    $post->delete();
+    return redirect('/post')->with('message', 'Post deleted successfully');
 }
 }
