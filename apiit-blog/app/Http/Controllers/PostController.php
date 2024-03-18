@@ -29,16 +29,16 @@ class PostController extends Controller
         $post = new Post;
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
-        $post->slug = $data['description'];
+        $post->slug = $data['slug'];
         $post->description = $data['description'];
         $post->v_iframe = $data['v_iframe'];
-  
+
         if ($request->hasFile('image')){
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move('uploads/post/', $filename);
             $post->image = $filename;
-    
+
         }
 
         $post->meta_title = $data['meta_title'];
@@ -69,13 +69,13 @@ class PostController extends Controller
         $post->slug = $data['slug'];
         $post->description = $data['description'];
         $post->v_iframe = $data['v_iframe'];
-  
+
         if ($request->hasFile('image')){
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move('uploads/post/', $filename);
             $post->image = $filename;
-    
+
         }
 
         $post->meta_title = $data['meta_title'];

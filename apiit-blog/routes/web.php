@@ -18,7 +18,7 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    return view('user.home-copy', [
+    return view('user.home', [
         'blog' => Post::latest()->get()
     ]);
 });

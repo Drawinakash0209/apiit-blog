@@ -8,7 +8,7 @@
         @if (session('message'))
 
         <div class="alert alert-success">{{ session('message')}}</div>
-            
+
         @endif
 
         <table class="table table-bordered">
@@ -40,10 +40,10 @@
                         <a href="{{'delete-category/'.  $item->id}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
-                    
+
                 @endforeach
 
             </tbody>
     </div>
-    
+
 @endsection
