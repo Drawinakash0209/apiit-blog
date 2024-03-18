@@ -8,7 +8,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search on the site">
                 </div>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                <button type="submit" class="btn btn-primary hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5"><i class="fa fa-search"></i></button>
             </form>
         </div><!-- end widget -->
 
@@ -74,17 +74,19 @@
             </div><!-- end Instagram wrapper -->
         </div><!-- end widget -->
 
-        <di class="widget">
-            <h2 class="widget-title">Popular Categories</h2>
-            <div class="link-widget">
-                <ul>
-                    <li><a href="#">Gardening <span>(21)</span></a></li>
-                    <li><a href="#">Outdoor Living <span>(15)</span></a></li>
-                    <li><a href="#">Indoor Living <span>(31)</span></a></li>
-                    <li><a href="#">Shopping Guides <span>(22)</span></a></li>
-                    <li><a href="#">Pool Design <span>(66)</span></a></li>
-                </ul>
-            </div> <!-- end link-widget -->
-        </div><!-- end widget -->
+{{--        <di class="widget">--}}
+{{--            <h2 class="widget-title">Popular Categories</h2>--}}
+{{--            <div class="link-widget">--}}
+{{--                <ul>--}}
+{{--                    <li><a href="#">Gardening <span>(21)</span></a></li>--}}
+{{--                    <li><a href="#">Outdoor Living <span>(15)</span></a></li>--}}
+{{--                    <li><a href="#">Indoor Living <span>(31)</span></a></li>--}}
+{{--                    <li><a href="#">Shopping Guides <span>(22)</span></a></li>--}}
+{{--                    <li><a href="#">Pool Design <span>(66)</span></a></li>--}}
+{{--                </ul>--}}
+{{--            </div> <!-- end link-widget -->--}}
+{{--        </div><!-- end widget -->--}}
+
+
     </div><!-- end sidebar -->
 </div><!-- end col -->
