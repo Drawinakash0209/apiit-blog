@@ -30,9 +30,22 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Student Name</label>
+                    <label for="name" class="form-label">Student Full Name</label>
                     <input type="text" name="name" value="{{ old('name', $student->name) }}" class="form-control">
                 </div>
+
+                {{-- Student id field--}}
+                <div class="mb-3">
+                    <label for="student_id" class="form-label">Student ID</label>
+                    <input type="text" name="student_id" value="{{ old('student_id', $student->student_id) }}" class="form-control">
+                </div>
+
+                {{-- Batch code field --}}
+                <div class="mb-3">
+                    <label for="batch" class="form-label">Batch</label>
+                    <input type="text" name="batch" value="{{ old('batch', $student->batch) }}" class="form-control">
+                </div>
+
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Student Email</label>

@@ -34,18 +34,18 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Student::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            // //Student Id which is a string and max is 8 and unique
-            // 'student_id' => ['required', 'string', 'max:8', 'unique:'.Student::class],
-            // //Batch which is a string and max is 12
-            // 'batch' => ['required', 'string', 'max:12'],
+            //Student Id which is a string and max is 8 and unique
+            'student_id' => ['required', 'string', 'max:8', 'unique:'.Student::class],
+            //Batch which is a string and max is 12
+            'batch' => ['required', 'string', 'max:12'],
         ]);
 
         $student = Student::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            // 'student_id' => $request->student_id,
-            // 'batch' => $request->batch,
+            'student_id' => $request->student_id,
+            'batch' => $request->batch,
 
         ]);
 

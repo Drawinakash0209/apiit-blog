@@ -36,6 +36,8 @@ class StudentController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:students,email',
+            'student_id' => 'required|unique:students,student_id',
+            'batch' => 'required',
             // 'role' => 'required'
         ]);
 
@@ -73,6 +75,8 @@ class StudentController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
+            'student_id' => 'required',
+            'batch' => 'required',
             // 'role' => 'required'
         ]);
 

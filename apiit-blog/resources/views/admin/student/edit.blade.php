@@ -40,6 +40,17 @@
                     <input type="text" name="email" value="{{ old('email', $student->email) }}" class="form-control">
                 </div>
 
+                <div class="mb-3">
+                    <label for="student_id" class="form-label">Student ID</label>
+                    <input type="text" name="student_id" value="{{ old('student_id', $student->student_id) }}" class="form-control">
+                </div>
+
+                {{-- Batch code field --}}
+                <div class="mb-3">
+                    <label for="batch" class="form-label">Batch</label>
+                    <input type="text" name="batch" value="{{ old('batch', $student->batch) }}" class="form-control">
+                </div>
+
                 {{-- <div class="mb-3">
                     <label for="">Slug</label>
                     <input type="text" name="slug"value="{{$category->slug}}" class="form-control">

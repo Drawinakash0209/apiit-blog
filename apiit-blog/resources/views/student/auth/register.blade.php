@@ -15,18 +15,18 @@
         </div>
 
         {{-- Student ID --}}
-        {{-- <div class="mt-4">
+        <div class="mt-4">
             <x-input-label for="student_id" :value="__('Student ID')" />
             <x-text-input id="student_id" class="block mt-1 w-full" type="text" name="student_id" :value="old('student_id')" required autocomplete="student_id" />
             <x-input-error :messages="$errors->get('student_id')" class="mt-2" />
-        </div> --}}
+        </div>
 
         {{-- Batch code --}}
-        {{-- <div class="mt-4">
+        <div class="mt-4">
             <x-input-label for="batch" :value="__('Batch')" />
             <x-text-input id="batch" class="block mt-1 w-full" type="text" name="batch" :value="old('batch')" required autocomplete="batch" />
             <x-input-error :messages="$errors->get('batch')" class="mt-2" />
-        </div> --}}
+        </div>
 
         <!-- Email Address -->
         <div class="mt-4">
