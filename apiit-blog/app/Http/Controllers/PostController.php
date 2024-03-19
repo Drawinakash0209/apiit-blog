@@ -29,7 +29,7 @@ class PostController extends Controller
         $post = new Post;
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
-        $post->slug = $data['description'];
+        $post->slug = $data['slug'];
         $post->description = $data['description'];
         $post->v_iframe = $data['v_iframe'];
   
