@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 /**************************************
 
@@ -298,4 +299,49 @@ a:focus,
     100% {
         background-positon-x: 0px;
     }
+}
+
+
+/* Search Bar */
+
+.box{
+    max-width: 400px;
+    width: 100%;
+}
+.box .search-box{
+    position: relative;
+    height: 45px;
+    margin: 30px auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background: #ffffff;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 12px;
+}
+
+.search-box .icon{
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 50px;
+    background: #0380A7;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 17px;
+    border-radius: 0 25px 25px 0;
+}
+
+#check{
+    display: none;
 }

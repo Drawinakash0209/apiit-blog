@@ -65,4 +65,13 @@ function openCategory(evt, catName) {
     // Show the current tab, and add an "active" class to the link that opened the tab
     document.getElementById(catName).style.display = "block";
     evt.currentTarget.className += " active";
-} 
+}
+
+// Search label into a button
+document.addEventListener('DOMContentLoaded', function() {
+    const searchButton = document.getElementById('searchButton');
+
+    searchButton.addEventListener('click', function() {
+        document.getElementById('searchForm').submit();
+    });
+});
