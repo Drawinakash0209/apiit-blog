@@ -23,6 +23,8 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/home/{post}', [PostController::class, 'show']);
+
 
 Route::prefix('admin')->group(function () {
 

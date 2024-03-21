@@ -15,6 +15,15 @@ class PostController extends Controller
         return view('post.index', compact('posts'));
     }
 
+    public function show(Post $post)
+    {
+        return view('user.show', [
+            'category' => Category::Where('id', $post->category_id)->first(),
+            'blog'=> $post
+        ]);
+    }
+
+
     public function create()
     {
 
