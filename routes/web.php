@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
