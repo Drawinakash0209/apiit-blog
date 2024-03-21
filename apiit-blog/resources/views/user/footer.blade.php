@@ -1,34 +1,44 @@
 
 
 <footer class="footer">
-    <div class="waves">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>heading</h4>
+                <ul>
+                    <li><a href="#">sub heading</a></li>
+                    <li><a href="#">sub heading</a></li>
+                    <li><a href="#">sub heading</a></li>
+                    <li><a href="#">sub heading</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Schools</h4>
+                <ul>
+                    <li><a href="#">IT School</a></li>
+                    <li><a href="#">Business School</a></li>
+                    <li><a href="#">Law School</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-    <ul class="social-icon">
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-                <ion-icon name="logo-facebook"></ion-icon>
-            </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-                <ion-icon name="logo-twitter"></ion-icon>
-            </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-                <ion-icon name="logo-linkedin"></ion-icon>
-            </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
-                <ion-icon name="logo-instagram"></ion-icon>
-            </a></li>
-    </ul>
-    <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Schools</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Projects</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Skills</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Contacts</a></li>
-
-    </ul>
-    <p>&copy;2024 CC Group 06 | All Rights Reserved</p>
 </footer>

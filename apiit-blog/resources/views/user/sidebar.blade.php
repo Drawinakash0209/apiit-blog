@@ -11,8 +11,8 @@
                         <input type="checkbox" id="check">
                             <div class="search-box">
                                 <input type="text" name="search" placeholder="Type here..." value="{{ isset($search) ? $search : '' }}">
-                                    <label for="check" class="icon" id="searchButton">
-                                        <i class="fa fa-search hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5"></i>
+                                    <label for="check" class="icon" id="searchButton" style="cursor: pointer">
+                                        <button class="fa fa-search hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5" style="outline: none;"></button>
                                     </label>
                             </div>
                     </form>
