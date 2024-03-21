@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Models\Post;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,23 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
+
+ require __DIR__.'/adminauth.php';
 
 Route::prefix('admin')->group(function () {
 
@@ -49,6 +68,12 @@ Route::get('/add-post',[PostController::class, 'create']);
 
 Route::post('/add-post',[PostController::class, 'store']);
 
+//Route for the user resource controller
+Route::resource('admin', AdminController::class);
+
+
+Route::post('/add-post',[PostController::class, 'store']);
+
 Route::get('/post-edit/{post_id}', [PostController::class, 'edit']);
 
 Route::put('update-post/{post_id}', [PostController::class, 'update']);
@@ -56,3 +81,12 @@ Route::put('update-post/{post_id}', [PostController::class, 'update']);
 Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
 
 Route::get('/search', [PostController::class, 'search']);
+Route::get('/student/dashboard', function () {
+    return view('student.dashboard');
+})->middleware(['auth:student', 'verified'])->name('student.dashboard');
+
+require __DIR__.'/studentauth.php';
+
+//Route for the student resource controller
+Route::resource('student', StudentController::class);
+
