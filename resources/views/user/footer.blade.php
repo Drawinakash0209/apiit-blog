@@ -14,12 +14,15 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>heading</h4>
+                <h4>Affiliated Universities</h4>
                 <ul>
-                    <li><a href="#">sub heading</a></li>
-                    <li><a href="#">sub heading</a></li>
-                    <li><a href="#">sub heading</a></li>
-                    <li><a href="#">sub heading</a></li>
+                    <li><a href="#">Staffordshire University</a></li>
+                    <li><a href="#">Deakin University</a></li>
+                    <li><a href="#">Asian Institute of Technology</a></li>
+                    <li><a href="#">NCUK</a></li>
+                    <li><a href="#">ICAEW</a></li>
+                    <li><a href="#">Southern Cross University</a></li>
+                    <li><a href="#">Western Sydney University</a></li>
                 </ul>
             </div>
             <div class="footer-col">
