@@ -86,6 +86,17 @@ class StudentController extends Controller
     }
 
     /**
+     * Show pending students
+     */
+    // public function pending(){
+    //     $pendingStudents = Student::where('is_approved', false)->get();
+    //     return view('admin.student.pending', [
+    //         'pendingstudents' => $pendingStudents
+    //     ]);
+    // }
+
+
+    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Student $student)

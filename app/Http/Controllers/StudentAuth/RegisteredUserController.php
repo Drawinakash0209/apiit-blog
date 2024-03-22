@@ -38,6 +38,8 @@ class RegisteredUserController extends Controller
             'student_id' => ['required', 'string', 'max:8', 'unique:'.Student::class],
             //Batch which is a string and max is 12
             'batch' => ['required', 'string', 'max:12'],
+
+
         ]);
 
         $student = Student::create([
@@ -46,6 +48,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'student_id' => $request->student_id,
             'batch' => $request->batch,
+             //is approved is a boolean with default value of false
+            'is_approved' => false,
 
         ]);
 
@@ -53,6 +57,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($student);
 
-        return redirect(RouteServiceProvider::STUDENT_HOME);
+        //Redirect the student to the approval student.status with message, Registration success full. Please wait for the admin approval
+        return redirect()->route('student.status')->with('success', 'Registration success full. Please wait for the admin approval');
+
+
+
+        // return redirect(RouteServiceProvider::STUDENT_HOME);
     }
 }

@@ -51,6 +51,23 @@
                     <input type="text" name="batch" value="{{ old('batch', $student->batch) }}" class="form-control">
                 </div>
 
+                {{-- A drop down option to change the is_approved to true and false --}}
+                <div class="mb-3">
+                    <label for="is_approved" class="form-label">Approval Status</label>
+                    <select name="is_approved" class="form-control">
+                        <option value="true" {{ $student->is_approved ? 'selected' : '' }}>Approved</option>
+                        <option value="false" {{ ! $student->is_approved ? 'selected' : '' }}>Not approved</option>
+                    </select>
+                </div>
+
+                {{-- <div class="mb-3">
+                    <label for="is_approved" class="form-label">Approval Status</label>
+                    <select name="is_approved" class="form-control">
+                        <option value="1" {{ $student->is_approved == 1 ? 'selected' : '' }}>Yes</option>
+                        <option value="0" {{ $student->is_approved == 0 ? 'selected' : '' }}>No</option>
+                    </select>
+                </div> --}}
+
                 {{-- <div class="mb-3">
                     <label for="">Slug</label>
                     <input type="text" name="slug"value="{{$category->slug}}" class="form-control">
