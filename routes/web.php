@@ -22,7 +22,8 @@ use App\Models\Post;
 
 Route::get('/', function () {
     return view('user.home', [
-        'blog' => Post::latest()->get()
+        'blog' => Post::latest()->get(),
+        
     ]);
 });
 
@@ -74,6 +75,8 @@ Route::post('/add-post',[PostController::class, 'store']);
 //Route for the user resource controller
 Route::resource('admin', AdminController::class);
 
+//create a route for student-blog so that student can view the blog they posted
+Route::get('/student-blog', [PostController::class, 'studentBlog']);
 
 Route::post('/add-post',[PostController::class, 'store']);
 
@@ -84,6 +87,8 @@ Route::put('update-post/{post_id}', [PostController::class, 'update']);
 Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
 
 Route::get('/search', [PostController::class, 'search']);
+
+
 Route::get('/student/dashboard', function () {
     return view('student.dashboard');
 })->middleware(['auth:student', 'verified'])->name('student.dashboard');
@@ -93,3 +98,4 @@ require __DIR__.'/studentauth.php';
 //Route for the student resource controller
 Route::resource('student', StudentController::class);
 
+Route::get('/manage', [PostController::class, 'manage']);

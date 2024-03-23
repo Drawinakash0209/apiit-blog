@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostFormRequest;
 
 class PostController extends Controller
@@ -22,6 +23,8 @@ class PostController extends Controller
             'blog'=> $post
         ]);
     }
+
+
 
 
     public function create()
@@ -54,10 +57,10 @@ class PostController extends Controller
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];
         $post->status = $request->status == true ? '1':'0';
-        $post->created_by = 0;//Auth::user()->id;
+        $post->created_by = Auth::guard('student')->user()->id;
         $post->save();
 
-        return redirect('/post')->with('message', 'Post added successfully');
+        return redirect('/student/dashboard')->with('message', 'Post added successfully');
 
     }
 
@@ -125,6 +128,12 @@ public function search(Request $request)
         ->get();
 
     return view('user.home', compact('blog', 'search'));
+}
+
+public function manage(){
+    return view('user.post-manage', [
+        'posts' =>  Auth::guard('student')->user()->posts
+    ]);
 }
 
 }

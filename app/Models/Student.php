@@ -45,4 +45,11 @@ class Student extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    //create a relationship between student and posts
+    public function posts(){
+        return $this->hasMany(Post::class, 'created_by');
+    }
+
 }
