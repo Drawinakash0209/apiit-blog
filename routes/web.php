@@ -93,3 +93,14 @@ require __DIR__.'/studentauth.php';
 //Route for the student resource controller
 Route::resource('student', StudentController::class);
 
+Route::get('/survey',[App\Http\Controllers\SurveyController::class, 'index']);
+Route::get('/add-survey',[App\Http\Controllers\SurveyController::class, 'create']);
+Route::post('/add-survey',[App\Http\Controllers\SurveyController::class, 'store']);
+
+Route::get('/survey-edit', [PostController::class, 'edit']);
+
+// Route::put('update-post/{post_id}', [PostController::class, 'update']);
+
+// Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
+
+Route::get('/view-survey', [App\Http\Controllers\SurveyController::class, 'show']);
