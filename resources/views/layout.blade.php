@@ -85,6 +85,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('student.create') }}">Create Student</a>
                                     <a class="nav-link" href="{{ route('student.index') }}">View Students</a>
+                                    <a class="nav-link" href="{{ route('student.pending') }}">Pending Students</a>
                                 </nav>
                             </div>
 
