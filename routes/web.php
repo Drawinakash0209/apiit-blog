@@ -161,11 +161,17 @@ Route::get('/status', function () {
 Route::get('/manage', [PostController::class, 'manage']);
 Route::get('/survey',[App\Http\Controllers\SurveyController::class, 'index']);
 Route::get('/add-survey',[App\Http\Controllers\SurveyController::class, 'create']);
-Route::post('/add-survey',[App\Http\Controllers\SurveyController::class, 'store']);
+// Route::post('/add-survey',[App\Http\Controllers\SurveyController::class, 'store']);
 
-Route::get('/survey-edit', [PostController::class, 'edit']);
+Route::post('/update-survey',[App\Http\Controllers\SurveyController::class, 'update']);
 
-// Route::put('update-post/{post_id}', [PostController::class, 'update']);
+Route::get('/survey-edit/{survey_id}', [App\Http\Controllers\SurveyController::class, 'edit']);
+Route::put('/ /{survey_id}', [App\Http\Controllers\SurveyController::class, 'editupdate']);
+
+
+Route::get('/survey-delete/{survey_id}', [App\Http\Controllers\SurveyController::class, 'destroy']);
+
+
 
 // Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
 

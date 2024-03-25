@@ -31,8 +31,13 @@
                 </h4>
             </div>
             
-            <div class="card-body">
-                <form action="{{url('/add-survey')}}" method="POST" enctype="multipart/form-data">
+            <div class="card-body" > 
+                @if(session()->has('message'))
+                                <div class="alert alert-success" role="alert">
+                                    <strong>Well done!</strong> product add successfully.
+                                </div>
+@endif
+                <form action="{{url('/update-survey')}}" method="POST" enctype="multipart/form-data">
 
                     @csrf
 
@@ -44,10 +49,10 @@
                         <input type="text" name="name" class="form-control">
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="slug" class="form-label">Slug</label>
                         <input type="text" name="slug" class="form-control">
-                    </div>
+                    </div> --}}
 
                     <div class="mb-3">
                         <label for="Description" class="form-label">Form Link (iframe)</label>
@@ -59,7 +64,18 @@
                         <textarea name="description" rows="4" class="form-control"></textarea>
                     </div>
 
-                    <h5>SEO Tags</h5>
+
+                    <div class="mb-3">
+                        <label for="">Created by</label>
+                        <input type="text" name="crated_by" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="">Date</label>
+                        <input type="text" name="cb_number" class="form-control">
+                    </div>
+
+                    {{-- <h5>SEO Tags</h5>
 
                 <div class="mb-3">
                     <label for="">Meta Title</label>
@@ -75,12 +91,12 @@
                 <div class="mb-3">
                     <label for="">Meta Keywords</label>
                     <textarea name="meta_keywords" rows="3" class="form-control"> </textarea>
-                </div>
+                </div> --}}
 
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="">CB Number</label>
                     <textarea name="cb_number" rows="1" class="form-control"> </textarea>
-                </div>
+                </div> --}}
 
                     <div class="col-md-6">
                         <button  type="submit" class="btn btn-primary float">Submit</button>
