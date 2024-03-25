@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Models\Post;
+use App\Models\Student;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,4 +106,73 @@ require __DIR__.'/studentauth.php';
 //Route for the student resource controller
 Route::resource('student', StudentController::class);
 
+// Route::get('/student/pending', [StudentController::class, 'pending'])->name('student.pending');
+
+// Route::get('/student/pending', function () {
+//     return view('admin.student.pending', [
+//         //get all the students that are not approved yet
+//         'pendingstudents' => Student::where('is_approved', false)->get()
+
+//     ]);
+// })-> name('student.pending');
+
+//Route for the showpending method in student controller
+Route::get('/pending', [StudentController::class, 'showpending'])->name('student.pending');
+
+Route::get('/status', function () {
+    return view('admin.student.status');
+})->name('student.status');
+
+//Creating the route for the student.status to show the page /admin/student/status.blade.php
+// Route::get('/student/status', function () {
+//     return view('admin.student.status');
+// })->name('student.status');
+
+// Route::get('/admin/student/status', function () { //This is the route to the page in the browser
+//     return view('admin/student/staus'); //This is the path to the file in the views folder
+// })->name('student.status');     //This is the name of the route
+
+// Route::get('/student/pending', [StudentController::class, 'pending'])->name('student.pending');
+
+// Route::get('/student/pending', function () {
+//     return view('admin.student.pending', [
+//         //get all the students that are not approved yet
+//         'pendingstudents' => Student::where('is_approved', false)->get()
+
+//     ]);
+// })-> name('student.pending');
+
+//Route for the showpending method in student controller
+Route::get('/pending', [StudentController::class, 'showpending'])->name('student.pending');
+
+Route::get('/status', function () {
+    return view('admin.student.status');
+})->name('student.status');
+
+//Creating the route for the student.status to show the page /admin/student/status.blade.php
+// Route::get('/student/status', function () {
+//     return view('admin.student.status');
+// })->name('student.status');
+
+// Route::get('/admin/student/status', function () { //This is the route to the page in the browser
+//     return view('admin/student/staus'); //This is the path to the file in the views folder
+// })->name('student.status');     //This is the name of the route
+
 Route::get('/manage', [PostController::class, 'manage']);
+Route::get('/survey',[App\Http\Controllers\SurveyController::class, 'index']);
+Route::get('/add-survey',[App\Http\Controllers\SurveyController::class, 'create']);
+// Route::post('/add-survey',[App\Http\Controllers\SurveyController::class, 'store']);
+
+Route::post('/update-survey',[App\Http\Controllers\SurveyController::class, 'update']);
+
+Route::get('/survey-edit/{survey_id}', [App\Http\Controllers\SurveyController::class, 'edit']);
+Route::put('/ /{survey_id}', [App\Http\Controllers\SurveyController::class, 'editupdate']);
+
+
+Route::get('/survey-delete/{survey_id}', [App\Http\Controllers\SurveyController::class, 'destroy']);
+
+
+
+// Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
+
+Route::get('/view-survey', [App\Http\Controllers\SurveyController::class, 'show']);

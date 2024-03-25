@@ -40,6 +40,12 @@
                     <input type="text" name="email" value="{{ old('email', $student->email) }}" class="form-control">
                 </div>
 
+                @error('email')
+                    <p class="mt-3 text-sm leading-6 text-red-600">
+                        {{ $message }}
+                    </p>
+                @enderror
+
                 <div class="mb-3">
                     <label for="student_id" class="form-label">Student ID</label>
                     <input type="text" name="student_id" value="{{ old('student_id', $student->student_id) }}" class="form-control">
@@ -49,6 +55,23 @@
                 <div class="mb-3">
                     <label for="batch" class="form-label">Batch</label>
                     <input type="text" name="batch" value="{{ old('batch', $student->batch) }}" class="form-control">
+                </div>
+
+                {{-- A drop down option to change the is_approved to true and false --}}
+                {{-- <div class="mb-3">
+                    <label for="is_approved" class="form-label">Account Status</label>
+                    <select name="is_approved" class="form-control">
+                        <option value="1" {{ $student->is_approved ? 'selected' : '' }}>Activated</option>
+                        <option value="0" {{ ! $student->is_approved ? 'selected' : '' }}>Diactivated</option>
+                    </select>
+                </div> --}}
+
+                <div class="mb-3">
+                    <label for="is_approved" class="form-label">Account Status</label>
+                    <select name="is_approved" class="form-control">
+                        <option value="1" {{ $student->is_approved == 1 ? 'selected' : '' }}>Activated</option>
+                        <option value="0" {{ $student->is_approved == 0 ? 'selected' : '' }}>Deactivated</option>
+                    </select>
                 </div>
 
                 {{-- <div class="mb-3">
