@@ -24,7 +24,7 @@ class Student extends Authenticatable
         'password',
         'student_id',
         'batch',
-        // 'is_approved',
+        'is_approved',
     ];
 
     /**

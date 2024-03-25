@@ -1,4 +1,4 @@
-{{-- 
+{{--
 
 <header class="bg-white shadow-lg h-24 hidden md:flex mt-4 pb-4">
     <a href="" class="border flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8">
@@ -87,22 +87,22 @@
                     </h3>
                 </a>
             </div>
-    
+
             <!-- Links Section -->
             <div class="items-center md:space-x-8 justify-center justify-items-start md:justify-items-center md:flex md:pt-2 w-full left-0 top-12 px-5 md:px-10 py-1 md:py-0 border-t md:border-t-0">
                 <a class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">Home</a>
-    
+
                 <a class="flex text-gray-600 cursor-pointer transition-colors duration-300 font-semibold text-blue-600">Themes</a>
-    
+
                 <a class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">Developers</a>
-    
+
                 <a class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">Pricing</a>
-    
+
                 <a class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">Blog</a>
-    
+
                 <a class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">About Us</a>
             </div>
-    
+
             <!-- Auth Links -->
             <div class="flex items-center space-x-5 hidden md:flex">
                 <!-- Register -->
@@ -112,7 +112,7 @@
                     </svg>
                     Register
                 </a>
-    
+
                 <!-- Login -->
                 <a class="flex text-gray-600 cursor-pointer transition-colors duration-300 font-semibold text-blue-600">
                     <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@
                     Login
                 </a>
             </div>
-    
+
             <!-- Hamberger Menu -->
             <button class="w-10 h-10 md:hidden justify-self-end rounded-full hover:bg-gray-100">
                 <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
@@ -130,6 +130,9 @@
             </button>
         </nav>
     </header>
-    
+
 
 </main>
+
+
+

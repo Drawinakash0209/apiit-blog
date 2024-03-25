@@ -72,12 +72,21 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
+        // $validated = $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email',
+        //     'student_id' => 'required',
+        //     'batch' => 'required',
+        //     'is_approved' => 'required',
+        //     // 'role' => 'required'
+        // ]);
         $validated = $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'student_id' => 'required',
-            'batch' => 'required',
-            // 'role' => 'required'
+        'name' => 'required',
+        'email' => 'required|email|unique:students,email,' . $student->id . ',id', // Updated validation rule
+        'student_id' => 'required|unique:students,student_id,' . $student->id . ',id', // Updated validation rule
+        'batch' => 'required',
+        'is_approved' => 'required',
+        // 'role' => 'required'
         ]);
 
         $student->update($validated);
@@ -88,12 +97,13 @@ class StudentController extends Controller
     /**
      * Show pending students
      */
-    // public function pending(){
-    //     $pendingStudents = Student::where('is_approved', false)->get();
-    //     return view('admin.student.pending', [
-    //         'pendingstudents' => $pendingStudents
-    //     ]);
-    // }
+    public function showpending(){
+        $pendingStudents = Student::where('is_approved', false)->get();
+
+        return view('admin.student.pending', [
+            'pendingstudents' => $pendingStudents
+        ]);
+    }
 
 
     /**

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('student_id')->unique();
             $table->string('batch');
-            $table->boolean('is_approved')->default(false);
+            $table->boolean('is_approved')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

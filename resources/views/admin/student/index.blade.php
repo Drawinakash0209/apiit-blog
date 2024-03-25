@@ -18,6 +18,7 @@
                     <th>Student ID</th>
                     <th>Batch</th>
                     <th>Email</th>
+                    <th>Account Status</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -32,6 +33,7 @@
                     <td>{{$student->student_id}}</td>
                     <td>{{$student->batch}}</td>
                     <td>{{$student->email}}</td>
+                    <td>{{$student->is_approved ? 'Activated' : 'Diactivated'}}</td>
                     {{-- <td>{{$item->status == '1' ? 'Hidden' : 'Show'}}</td> --}}
 
                     <td>

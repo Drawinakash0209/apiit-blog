@@ -4,6 +4,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Pending Students</h1>
 
+
         @if (session('message'))
 
         <div class="alert alert-success">{{ session('message')}}</div>
@@ -26,7 +27,7 @@
             </thead>
             <tbody>
                 @foreach ($pendingstudents as $student)
-                <!-- @foreach ($students as $student) -->
+                {{-- @foreach ($students as $student) --}}
                 <tr>
                     <td>{{ $student->id }}</td>
                     <td>{{$student->name}}</td>
@@ -58,6 +59,6 @@
 
         </table>
     </div>
-    {{ $students->links() }}
+    {{-- {{ $students->links() }} --}}
 
 @endsection
