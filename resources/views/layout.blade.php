@@ -43,7 +43,7 @@
                         <form method="POST" action="{{ route('admin.logout') }}">
                             @csrf
                             <button type="submit" class="dropdown-item">Logout</button>
-
+                        </form>
                         {{-- <li><a class="dropdown-item" href="#!">Logout</a></li> --}}
                     </ul>
                 </li>
