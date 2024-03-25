@@ -13,12 +13,12 @@ class Survey extends Model
 
     protected $fillable = [
         'name',
-        'slug',
+        // 'slug',
         'description',
         'form_link',
-        'meta_title',
-        'meta_description',
-        'meta_keywords',
+        // 'meta_title',
+        // 'meta_description',
+        // 'meta_keywords',
         'crated_by',
         'cb_number',
     ];

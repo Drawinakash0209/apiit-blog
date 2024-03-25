@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('surveys', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug');
+            // $table->string('slug');
             $table->text('description');
 
             $table->string('form_link');
 
-            $table->string('meta_title');
-            $table->mediumText('meta_description');
-            $table->mediumText('meta_keywords');
+            // $table->string('meta_title');
+            // $table->mediumText('meta_description');
+            // $table->mediumText('meta_keywords');
 
             $table->string('crated_by');
             $table->string('cb_number');

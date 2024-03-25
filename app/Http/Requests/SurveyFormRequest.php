@@ -29,11 +29,11 @@ class SurveyFormRequest extends FormRequest
                 'string',
                 'max:200'
             ],
-            'slug' => [
-                'required',
-                'string',
-                'max:200'
-            ],
+            // 'slug' => [
+            //     'required',
+            //     'string',
+            //     'max:200'
+            // ],
             'description' => [
                 'required'
             ],
@@ -41,21 +41,21 @@ class SurveyFormRequest extends FormRequest
                 'required',
                 'url'
             ],
-            'meta_title' => [
-                'required',
-                'string',
-                'max:200'
-            ],
-            'meta_description' => [
-                'required',
-                'string',
-                'max:200'
-            ],
-            'meta_keywords' => [
-                'required',
-                'string',
-                'max:200'
-            ],
+            // 'meta_title' => [
+            //     'required',
+            //     'string',
+            //     'max:200'
+            // ],
+            // 'meta_description' => [
+            //     'required',
+            //     'string',
+            //     'max:200'
+            // ],
+            // 'meta_keywords' => [
+            //     'required',
+            //     'string',
+            //     'max:200'
+            // ],
           
             'cb_number' => [
                 'required',
