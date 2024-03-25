@@ -20,10 +20,17 @@ use App\Models\Post;
 |
 */
 
+// Route::get('/', function () {
+//     return view('user.home', [
+//         'blog' => Post::latest()->get(),
+        
+//     ]);
+// });
+
+
 Route::get('/', function () {
     return view('user.home', [
-        'blog' => Post::latest()->get(),
-        
+        'blog' => Post::latest()->where('status', 0)->get(),
     ]);
 });
 

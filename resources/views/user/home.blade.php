@@ -193,10 +193,13 @@
 
 <!-- Core JavaScript
 ================================================== -->
+
+
 <script src="user/js/jquery.min.js"></script>
 <script src="user/js/tether.min.js"></script>
 <script src="user/js/bootstrap.min.js"></script>
 <script src="user/js/custom.js"></script>
+
 
 </body>
 </html>

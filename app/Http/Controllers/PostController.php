@@ -56,7 +56,7 @@ class PostController extends Controller
         $post->meta_title = $data['meta_title'];
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];
-        $post->status = $request->status == true ? '1':'0';
+        $post->status = $request = 1;
         $post->created_by = Auth::guard('student')->user()->id;
         $post->save();
 
@@ -93,7 +93,7 @@ class PostController extends Controller
         $post->meta_title = $data['meta_title'];
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];
-        $post->status = $request->status == true ? '1':'0';
+        $post->status = $request->status == true ? '0':'1';
         $post->created_by = 0;//Auth::user()->id;
         $post->update();
 
