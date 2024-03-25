@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Students</h1>
+        <h1 class="mt-4">Pending Students</h1>
+
 
         @if (session('message'))
 
@@ -18,7 +19,6 @@
                     <th>Student ID</th>
                     <th>Batch</th>
                     <th>Email</th>
-                    <th>Account Status</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -26,14 +26,14 @@
 
             </thead>
             <tbody>
-                @foreach ($students as $student)
+                @foreach ($pendingstudents as $student)
+                {{-- @foreach ($students as $student) --}}
                 <tr>
                     <td>{{ $student->id }}</td>
                     <td>{{$student->name}}</td>
                     <td>{{$student->student_id}}</td>
                     <td>{{$student->batch}}</td>
                     <td>{{$student->email}}</td>
-                    <td>{{$student->is_approved ? 'Activated' : 'Diactivated'}}</td>
                     {{-- <td>{{$item->status == '1' ? 'Hidden' : 'Show'}}</td> --}}
 
                     <td>
@@ -59,6 +59,6 @@
 
         </table>
     </div>
-    {{ $students->links() }}
+    {{-- {{ $students->links() }} --}}
 
 @endsection

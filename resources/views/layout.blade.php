@@ -43,7 +43,7 @@
                         <form method="POST" action="{{ route('admin.logout') }}">
                             @csrf
                             <button type="submit" class="dropdown-item">Logout</button>
-                        </form>
+
                         {{-- <li><a class="dropdown-item" href="#!">Logout</a></li> --}}
                     </ul>
                 </li>
@@ -85,8 +85,12 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                    {{-- View pending students --}}
+                                    <a class="nav-link" href="{{ route('student.pending') }}">Pending Students</a>
+
                                     <a class="nav-link" href="{{ route('student.create') }}">Create Student</a>
                                     <a class="nav-link" href="{{ route('student.index') }}">View Students</a>
+
                                 </nav>
                             </div>
 

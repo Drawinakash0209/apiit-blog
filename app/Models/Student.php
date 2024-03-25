@@ -24,6 +24,7 @@ class Student extends Authenticatable
         'password',
         'student_id',
         'batch',
+        'is_approved',
     ];
 
     /**
@@ -44,6 +45,7 @@ class Student extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'is_approved' => 'boolean',
     ];
 
 
