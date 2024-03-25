@@ -110,7 +110,7 @@
                     <td>{{ $post->id }}</td>
                     <td>{{$post->name}}</td>
                     <td>{{$post->image}}</td>
-                    <td>{{$post->status == '1' ? 'Hidden' : 'Show'}}</td>
+                    <td>{{$post->status == '1' ? 'Hidden' : 'Approved'}}</td>
 
                 </tr>
                     
