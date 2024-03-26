@@ -15,7 +15,8 @@
 <meta name="author" content="">
 
 <!-- Site Icons -->
-<link rel="shortcut icon" href="user/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="user/images/apiit-favicon.png" type="image/x-icon" />
+
 <!-- Design fonts -->
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 
