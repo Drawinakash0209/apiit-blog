@@ -18,7 +18,7 @@
     <body>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Student Dashboard</a>
+            <a class="navbar-brand ps-3" href="/">Back</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -82,6 +82,26 @@
                                     <a class="nav-link" href="{{url('/manage')}}">View the blogs you posted</a>
                                 </nav>
                             </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayoutsSurvey" aria-expanded="false"
+                            aria-controls="collapseLayoutsSurvey">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Survey
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayoutsSurvey" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ url('add-survey') }}">Add Survey</a>
+                                <a class="nav-link" href="{{ url('survey') }}">View Survey</a>
+                            </nav>
+                        </div>
+
+
+
+
+
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Pages
