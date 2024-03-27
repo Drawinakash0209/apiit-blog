@@ -81,19 +81,19 @@
           </p>
           <p class="inline text-xs font-medium">New</p>
         </div>
-        <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Write anything. Be creative.</a>
-        <div class="pt-2 pr-0 pb-0 pl-0">
+        <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Student-driven surveys: Shape your university experience together.</a>
+        {{-- <div class="pt-2 pr-0 pb-0 pl-0">
           <p class="text-sm font-medium inline">author:</p>
           <a class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1 underline">Jack Sparrow</a>
           <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">· 23rd, April 2021 ·</p>
           <p class="text-gray-200 text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p>
-        </div>
+        </div> --}}
       </div>
     </div>
     <div class="w-full md:w-1/2">
       <div class="block">
         <img
-            src="https://images.unsplash.com/photo-1626314928277-1d373ddb6428?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mzd8fHxlbnwwfHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" class="object-cover rounded-lg max-h-64 sm:max-h-96 btn- w-full h-full"/>
+            src="user/images/survey.jpg"/>
       </div>
     </div>
   </div>
@@ -109,7 +109,34 @@
           @foreach($data as $survey)
             
          
-          <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4">
+          {{-- <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4">
+            {{-- <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">
+            </div> --}}
+            {{-- <div class="border-r border-b border-l border-gray-400 lg:border-l lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+              <div class="mb-8">
+                <p class="text-sm text-gray-600 flex items-center">
+                  <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+                  </svg>
+                  Students Only
+                </p>
+                <div class="text-gray-900 font-bold text-xl mb-2">{{$survey->name}}</div>
+                <p class="text-gray-700 text-base">{{$survey->description}}</p> <br>
+                <a href="{{$survey->form_link}}" class="text-blue-500">Click here to fill the form</a> --}}
+                {{-- <p class="text-gray-700 text-base">{{$survey->form_link}}</p> --}}
+              {{-- </div>
+              <div class="flex items-center">
+                {{-- <img class="w-10 h-10 rounded-full mr-4" src="/img/jonathan.jpg" alt="Avatar of Jonathan Reinink"> --}}
+                {{-- <div class="text-sm">
+                  <p class="text-gray-900 leading-none">{{$survey->crated_by}}</p>
+                  <p class="text-gray-600">{{$survey->cb_number}}</p>
+                </div>
+              </div>
+            </div> 
+          </div>  --}}
+
+
+          <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4 mx-auto">
             {{-- <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">
             </div> --}}
             <div class="border-r border-b border-l border-gray-400 lg:border-l lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
@@ -134,6 +161,7 @@
               </div>
             </div>
           </div>
+          
 
           @endforeach
        
