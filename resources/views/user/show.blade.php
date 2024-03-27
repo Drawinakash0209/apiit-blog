@@ -31,7 +31,7 @@
 
 
         </div>
-
+{{-- 
         <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
           <div class="p-4 border-t border-b md:border md:rounded">
             <div class="flex py-2">
@@ -51,7 +51,7 @@
               <i class='bx bx-user-plus ml-2' ></i>
             </button>
           </div>
-        </div>
+        </div> --}}
 
       </div>
     </main>

@@ -165,14 +165,14 @@
                             <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                                 <img
                                     src="/uploads/post/{{$item->image}}"/>
-                                <p class="bg-green-500 flex items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
-                                    rounded-full uppercase inline-block">{{$item['category_id']}}</p>
+                                {{-- <p class="bg-green-500 flex items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
+                                    rounded-full uppercase inline-block">{{$item['category_id']}}</p> --}}
                                 <a href="/home/{{$item['id']}}"  class="text-lg font-bold sm:text-xl md:text-2xl">{{$item['name']}}</a>
                                 <p class="text-sm text-black">{!! Str::limit(strip_tags($item->description), 250) !!}</p>
                                 <div class="pt-2 pr-0 pb-0 pl-0">
-                                  <a class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">Jack Sparrow</a>
+                                  <a class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">Drawin</a>
                                   <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· {{ $item['created_at']->format('Y-m-d') }} ·</p>
-                                  <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p>
+                                  {{-- <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p> --}}
                                 </div>
                               </div>
 
