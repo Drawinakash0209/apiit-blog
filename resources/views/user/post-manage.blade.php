@@ -93,7 +93,6 @@
 
         <table class="table table-bordered">
             <thead>
-                @foreach ($posts as $post)
 
                 <tr>
                     <th>ID</th>
@@ -103,6 +102,16 @@
                   
                 </tr>
 
+                @foreach ($posts as $post)
+                {{-- <tr>
+                    <th>ID</th>
+                    <th>Post Name</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                  
+                </tr> --}}
+
+               
 
             </thead>
             <tbody>

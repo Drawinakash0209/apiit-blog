@@ -60,7 +60,7 @@ class PostController extends Controller
         $post->created_by = Auth::guard('student')->user()->id;
         $post->save();
 
-        return redirect('/student/dashboard')->with('message', 'Post added successfully');
+        return redirect('/manage')->with('message', 'Post added successfully');
 
     }
 
