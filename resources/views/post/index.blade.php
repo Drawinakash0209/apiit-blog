@@ -8,7 +8,7 @@
             <div class="card-header ">
                 <h4>View posts
 
-                    <a href="{{url('/add-post')}}" class="btn btn-primary float-end">Add Post</a>
+                    {{-- <a href="{{url('/add-post')}}" class="btn btn-primary float-end">Add Post</a> --}}
                 </h4>
             </div>
         </div>

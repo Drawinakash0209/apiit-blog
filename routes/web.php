@@ -31,6 +31,8 @@ use App\Models\Student;
 
 Route::get('/', function () {
     return view('user.home', [
+    //  'blog' => Post::with('category')->latest()->where('status', 0)->get(),
+
         'blog' => Post::latest()->where('status', 0)->get(),
     ]);
 });

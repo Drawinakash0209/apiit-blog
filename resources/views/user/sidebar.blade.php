@@ -26,7 +26,7 @@
             </div><!-- end widget -->
 
 
-        <div class="widget">
+        {{-- <div class="widget">
             <h2 class="widget-title">Recent Posts</h2>
             <div class="blog-list-widget">
 
@@ -57,9 +57,9 @@
                 </div>
 
             </div><!-- end blog-list -->
-        </div><!-- end widget -->
+        </div><!-- end widget --> --}}
 
-        <div class="widget">
+        {{-- <div class="widget">
             <h2 class="widget-title">Banner</h2>
 
             <div class="banner-spot clearfix">
@@ -69,9 +69,9 @@
             </div>
 
             <!-- end banner -->
-        </div><!-- end widget -->
+        </div><!-- end widget --> --}}
 
-        <div class="widget">
+        {{-- <div class="widget">
             <h2 class="widget-title">Instagram Feed</h2>
             <div class="instagram-wrapper clearfix">
 
@@ -86,7 +86,7 @@
                 <a href="#"><img src="user/upload/garden_sq_09.jpg" alt="" class="img-fluid"></a>
 
             </div><!-- end Instagram wrapper -->
-        </div><!-- end widget -->
+        </div><!-- end widget --> --}}
 
 {{--        <di class="widget">--}}
 {{--            <h2 class="widget-title">Popular Categories</h2>--}}
