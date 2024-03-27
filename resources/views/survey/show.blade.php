@@ -79,7 +79,7 @@
                 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1
                 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           </p>
-          <p class="inline text-xs font-medium">New</p>
+          
         </div>
         <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Student-driven surveys: Shape your university experience together.</a>
         {{-- <div class="pt-2 pr-0 pb-0 pl-0">

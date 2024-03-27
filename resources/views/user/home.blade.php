@@ -38,6 +38,9 @@
 <!-- Colors for this template -->
 <link href="user/css/colors.css" rel="stylesheet">
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <!-- Version Garden CSS for this template -->
 <link href="user/css/version/garden.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -65,14 +68,14 @@
 
 
 <div class="relative overflow-hidden bg-cover bg-no-repeat" style="
-background-position: 50%;
-background-image: url('user/images/graduation.jpg');
-height: 500px;
+  background-position: 50%;
+  background-image: url('user/images/graduation.jpg');
+  height: 500px;
+  z-index: -1; /* Move the background section behind the navbar */
 ">
   <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.60)] bg-fixed">
     <div class="flex h-full items-center justify-center">
-      <div class="px-6 text-center text-red-500 md:px-12"> <!-- Change text-red-500 to your desired shade of red -->
-        <h1 class="mt-2 mb-16 text-white text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+      <div class="px-6 text-center text-red-500 md:px-12"> <h1 class="mt-2 mb-16 text-white text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
           Unlocking Knowledge, Inspiring Excellence <br /><span>APIIT</span>
         </h1>
       </div>
