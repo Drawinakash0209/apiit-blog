@@ -1,5 +1,5 @@
 
-@extends('student.dashboard')
+@extends('layout')
 
 @section('content')
 
@@ -37,7 +37,7 @@
                                     <strong>Well done!</strong> product add successfully.
                                 </div>
 @endif
-                <form action="{{url('/edit-update-survey'.$survey->id)}}" method="POST" enctype="multipart/form-data">
+                <form action="{{url('/edit-update-survey/'.$survey->id)}}" method="POST" enctype="multipart/form-data">
 
                  
 
@@ -79,28 +79,10 @@
                         <input type="text" name="cb_number" class="form-control" value="{{$survey->cb_number}}">
                     </div>
 
-                    {{-- <h5>SEO Tags</h5>
-
-                <div class="mb-3">
-                    <label for="">Meta Title</label>
-                    <input type="text" name="meta_title" class="form-control">
-                </div>
-
-                <div class="mb-3">
-                    <label for="description" class="form-label">Meta Description</label>
-                    <textarea name="meta_description" rows="3" class="form-control"></textarea>
-                </div>
-
-
-                <div class="mb-3">
-                    <label for="">Meta Keywords</label>
-                    <textarea name="meta_keywords" rows="3" class="form-control"> </textarea>
-                </div> --}}
-
-                {{-- <div class="mb-3">
-                    <label for="">CB Number</label>
-                    <textarea name="cb_number" rows="1" class="form-control"> </textarea>
-                </div> --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="">Status</label>
+                        <input type="checkbox" name="status">
+                    </div>
 
                     <div class="col-md-6">
                         <button  type="submit" class="btn btn-primary float">Edit Survey</button>

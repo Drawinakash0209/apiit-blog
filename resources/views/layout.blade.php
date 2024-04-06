@@ -123,7 +123,7 @@
 
 
                         <!-- Survey Dropdown -->
-                        {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayoutsSurvey" aria-expanded="false"
                             aria-controls="collapseLayoutsSurvey">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -133,10 +133,9 @@
                         <div class="collapse" id="collapseLayoutsSurvey" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ url('add-survey') }}">Add Survey</a>
                                 <a class="nav-link" href="{{ url('survey') }}">View Survey</a>
                             </nav>
-                        </div> --}}
+                        </div>
 
 
 

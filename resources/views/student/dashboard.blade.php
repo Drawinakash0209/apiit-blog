@@ -94,7 +94,7 @@
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ url('add-survey') }}">Add Survey</a>
-                                <a class="nav-link" href="{{ url('survey') }}">View Survey</a>
+                                <a class="nav-link" href="{{ url('survey/manage') }}">View the survey you posted</a>
                             </nav>
                         </div>
 

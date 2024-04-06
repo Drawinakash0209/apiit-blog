@@ -13,13 +13,16 @@ class Survey extends Model
 
     protected $fillable = [
         'name',
-        // 'slug',
         'description',
         'form_link',
-        // 'meta_title',
-        // 'meta_description',
-        // 'meta_keywords',
         'crated_by',
         'cb_number',
+        'status',
     ];
+
+
+    
+    public function student(){
+        return $this->belongsTo(Student::class, 'crated_by');
+    }
 }

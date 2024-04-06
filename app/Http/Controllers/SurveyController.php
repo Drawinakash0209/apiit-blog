@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\SurveyFormRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Survey;
 
 class SurveyController extends Controller
@@ -25,8 +26,10 @@ class SurveyController extends Controller
         $data->name = $request->name;
         $data->form_link = $request->form_link;
         $data->description = $request->description;
-        $data->crated_by = $request->crated_by;
+        $data->crated_by =  Auth::guard('student')->user()->id;
         $data->cb_number = $request->cb_number;
+        $data->status = $request = 1;
+        
         
         $data->save();
         
@@ -63,25 +66,32 @@ class SurveyController extends Controller
 
     public function editupdate(SurveyFormRequest $request, $survey_id)
     {
+        // dd($request->name);
+
+        
         $data = $request->validated();
 
-        $data = Survey::find($survey_id);
-        $data->name = $request->name;
-        $data->form_link = $request->form_link;
-        $data->description = $request->description;
-        $data->crated_by = $request->crated_by;
-        $data->cb_number = $request->cb_number;
+        $post = Survey::find($survey_id);
+        $post->name = $data['name'];
+        $post->form_link = $data['form_link'];
+        $post->description = $data['description'];
+        $post->cb_number = $data['cb_number'];
+        $post->status = $request->status == true ? '0':'1';
         
-        $data->editupdate();
+        // dd($post);
         
-        return redirect('/survey')->with('message', 'Survey updated successfully');
+        $post->update();
+
+        return redirect('/survey')->with('message', 'survey updated successfully');
 
     }
 
     public function show()
     {
-        $data = Survey::all();
+        $data = Survey::latest()->where('status', 0)->get();
         return view('survey.show', compact('data'));
+
+       
     }
 
     public function destroy($survey_id)
@@ -98,5 +108,12 @@ class SurveyController extends Controller
         {
             return redirect('/survey')->with('message', 'No Survey found');
         }
+    }
+
+    public function manage(){
+        return view('survey.surveymanage', [
+            'surveys' => Auth::guard('student')->user()->survey    
+
+        ]);
     }
 }

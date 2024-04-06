@@ -161,6 +161,8 @@ Route::get('/status', function () {
 // })->name('student.status');     //This is the name of the route
 
 Route::get('/manage', [PostController::class, 'manage']);
+
+
 Route::get('/survey',[App\Http\Controllers\SurveyController::class, 'index']);
 Route::get('/add-survey',[App\Http\Controllers\SurveyController::class, 'create']);
 // Route::post('/add-survey',[App\Http\Controllers\SurveyController::class, 'store']);
@@ -168,7 +170,7 @@ Route::get('/add-survey',[App\Http\Controllers\SurveyController::class, 'create'
 Route::post('/update-survey',[App\Http\Controllers\SurveyController::class, 'update']);
 
 Route::get('/survey-edit/{survey_id}', [App\Http\Controllers\SurveyController::class, 'edit']);
-Route::put('/ /{survey_id}', [App\Http\Controllers\SurveyController::class, 'editupdate']);
+Route::put('/edit-update-survey/{survey_id}', [App\Http\Controllers\SurveyController::class, 'editupdate']);
 
 
 Route::get('/survey-delete/{survey_id}', [App\Http\Controllers\SurveyController::class, 'destroy']);
@@ -178,3 +180,5 @@ Route::get('/survey-delete/{survey_id}', [App\Http\Controllers\SurveyController:
 // Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
 
 Route::get('/view-survey', [App\Http\Controllers\SurveyController::class, 'show']);
+
+Route::get('/survey/manage', [App\Http\Controllers\SurveyController::class, 'manage']);

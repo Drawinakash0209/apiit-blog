@@ -7,7 +7,7 @@
             <div class="card-header ">
                 <h4>View posts
 
-                    <a href="{{url('/add-post')}}" class="btn btn-primary float-end">Add Post</a>
+                    <a href="{{url('/add-post')}}" class="btn btn-primary float-end">Add Survey</a>
                 </h4>
             </div>
         </div>
@@ -19,26 +19,25 @@
         @endif
 
 
-        @unless ($posts->isEmpty())
+        @unless ($surveys->isEmpty())
 
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Post Name</th>
-                    <th>Image</th>
                     <th>Status</th> 
                 </tr>
 
-                @foreach ($posts as $post)
+                @foreach ($surveys as $survey)
             </thead>
 
             <tbody>
                 <tr>
-                    <td>{{ $post->id }}</td>
-                    <td>{{$post->name}}</td>
-                    <td>{{$post->image}}</td>
-                    <td>{{$post->status == '1' ? 'Hidden' : 'Approved'}}</td>
+                    <td>{{ $survey->id }}</td>
+                    <td>{{$survey->name}}</td>
+                    {{-- <td>{{$survey->image}}</td> --}}
+                    {{-- <td>{{$post->status == '1' ? 'Hidden' : 'Approved'}}</td> --}}
                 </tr>
                     
                 @endforeach

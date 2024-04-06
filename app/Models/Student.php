@@ -54,4 +54,10 @@ class Student extends Authenticatable
         return $this->hasMany(Post::class, 'created_by');
     }
 
+
+    public function survey(){
+        return $this->hasMany(Survey::class, 'crated_by');
+    }
+
+
 }
