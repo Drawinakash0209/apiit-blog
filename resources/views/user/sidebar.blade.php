@@ -2,28 +2,22 @@
 
 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
     <div class="sidebar">
+
+
         <div class="widget">
-
-
             <h2 class="widget-title">Search</h2>
-                <div class="box">
-                    <form id="searchForm" method="get" action="/search">
-                        <input type="checkbox" id="check">
-                            <div class="search-box">
-                                <input type="text" name="search" placeholder="Type here..." value="{{ isset($search) ? $search : '' }}">
-                                    <label for="check" class="icon" id="searchButton" style="cursor: pointer">
-                                        <button class="fa fa-search hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5" style="outline: none;"></button>
-                                    </label>
-                            </div>
-                    </form>
-                </div>
-{{--            <form class="form-inline search-form">--}}
-{{--                <div class="form-group">--}}
-{{--                    <input type="text" class="form-control" placeholder="Search on the site">--}}
-{{--                </div>--}}
-{{--                <button type="submit" class="btn btn-primary hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5"><i class="fa fa-search"></i></button>--}}
-{{--            </form>--}}
-            </div><!-- end widget -->
+            <div class="box">
+                <form id="searchForm" method="get" action="/search">
+                    <input type="checkbox" id="check">
+                    <div class="search-box">
+                        <input type="text" name="search" placeholder="Type here..." value="{{ isset($search) ? $search : '' }}">
+                        <label for="check" class="icon" id="searchButton" style="cursor: pointer">
+                            <button class="fa fa-search hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5" style="outline: none;"></button>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div><!-- end widget -->
 
 
         {{-- <div class="widget">

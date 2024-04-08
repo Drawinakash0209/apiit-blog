@@ -251,44 +251,51 @@ a:focus,
 
 /* Search Bar */
 
-.box{
+.box {
     max-width: 400px;
     width: 100%;
 }
-.box .search-box{
+
+.box .search-box {
     position: relative;
     height: 45px;
     margin: 30px auto;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
 }
 
-.search-box input{
+.search-box input:focus {
+    border: 1px solid #aba7a7; /* Change border color on focus */
+    transition: 0.5s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.search-box input {
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: calc(100% - 50px); /* Adjust width to accommodate icon */
     border-radius: 25px;
     background: #ffffff;
     outline: none;
-    border: none;
+    border: 1px solid #bbb8b8; /* Set initial border color */
     padding-left: 20px;
     font-size: 12px;
 }
 
-.search-box .icon{
+.search-box .icon {
     position: absolute;
     right: -2px;
     top: 0;
     width: 50px;
-    background: #0380A7;
+    background: #0e9fcb;
     height: 100%;
     text-align: center;
-    line-height: 50px;
+    line-height: 45px; /* Adjust line-height to center the icon vertically */
     color: #ffffff;
     font-size: 17px;
-    border-radius: 0 25px 25px 0;
+    border-radius: 25px 25px;
 }
 
 #check{
     display: none;
 }
+

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60f934f704e465a01c12fdace6bc7cea",
+    "content-hash": "a349383c5500fe749471b3bfb83df832",
     "packages": [
         {
             "name": "brick/math",
@@ -433,6 +433,64 @@
                 }
             ],
             "time": "2023-08-10T19:36:49+00:00"
+        },
+        {
+            "name": "dymantic/laravel-instagram-feed",
+            "version": "v3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dymantic/laravel-instagram-feed.git",
+                "reference": "c7fa2e35dcd491e0084137820e36fc35f5a6990a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dymantic/laravel-instagram-feed/zipball/c7fa2e35dcd491e0084137820e36fc35f5a6990a",
+                "reference": "c7fa2e35dcd491e0084137820e36fc35f5a6990a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0.1",
+                "illuminate/config": "^7.0 | ^8.0 | ^9.0 | ^10.0",
+                "illuminate/console": "^7.0 | ^8.0 | ^9.0 | ^10.0",
+                "illuminate/database": "^7.0 | ^8.0 | ^9.0 | ^10.0",
+                "illuminate/http": "^7.0 | ^8.0 | ^9.0 | ^10.0",
+                "illuminate/mail": "^7.0 | ^8.0 | ^9.0 | ^10.0",
+                "illuminate/support": "^7.0 | ^8.0 | ^9.0 | ^10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dymantic\\InstagramFeed\\InstagramFeedServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dymantic\\InstagramFeed\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Joyner",
+                    "email": "joyner.michael@gmail.com"
+                }
+            ],
+            "description": "Fetches the instagram feed for given authenticated profiles",
+            "support": {
+                "issues": "https://github.com/Dymantic/laravel-instagram-feed/issues",
+                "source": "https://github.com/Dymantic/laravel-instagram-feed/tree/v3.3.0"
+            },
+            "time": "2023-03-15T10:03:47+00:00"
         },
         {
             "name": "egulias/email-validator",
