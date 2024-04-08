@@ -2,6 +2,9 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
+@livewireStyles
+
+
 <div class="max-w-screen-lg mx-auto">
 
 
@@ -12,6 +15,7 @@
           <h2 class="text-4xl font-semibold text-gray-800 leading-tight">
            {{$blog->name}}
           </h2>
+         
           <a 
             href="#"
             class="py-2 text-green-700 inline-flex items-center justify-center mb-2"
@@ -28,9 +32,15 @@
         <div class="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
             {!! $blog->description !!}
 
+            <livewire:like-button :key="$blog->id" :$blog />
+
+            <livewire:post-comments :key="'comments' .$blog->id" :$blog />
 
 
         </div>
+       
+       
+        
 {{-- 
         <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
           <div class="p-4 border-t border-b md:border md:rounded">
@@ -52,10 +62,13 @@
             </button>
           </div>
         </div> --}}
+       
 
       </div>
     </main>
     <!-- main ends here -->
 
+
   
   </div>
+  @livewireScripts
