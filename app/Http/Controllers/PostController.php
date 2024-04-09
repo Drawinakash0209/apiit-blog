@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
+use Jorenvh\Share\Share;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostFormRequest;
@@ -18,9 +19,26 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $category = Category::where('id', $post->category_id)->first();
+
+        // Generating share buttons for the post
+        $shareButtons = \Share::page(
+            url('/blogpost'),
+            'Here is the text',
+        )
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->whatsapp()
+        ->pinterest()
+        ->reddit()
+        ->telegram();
+
+
         return view('user.show', [
             'category' => Category::Where('id', $post->category_id)->first(),
-            'blog'=> $post
+            'blog'=> $post,
+            'shareButtons' => $shareButtons,
         ]);
     }
 

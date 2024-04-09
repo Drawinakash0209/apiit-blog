@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ShareButtonsController;
 use App\Http\Controllers\StudentController;
 use App\Models\Post;
 use App\Models\Student;
@@ -182,3 +183,10 @@ Route::get('/survey-delete/{survey_id}', [App\Http\Controllers\SurveyController:
 Route::get('/view-survey', [App\Http\Controllers\SurveyController::class, 'show']);
 
 Route::get('/survey/manage', [App\Http\Controllers\SurveyController::class, 'manage']);
+
+Route::get('/terms', function () {
+    return view('post.terms-and-cond', [
+    ]);
+});
+
+Route::get('/blogpost', [ShareButtonsController::class, 'share']);
