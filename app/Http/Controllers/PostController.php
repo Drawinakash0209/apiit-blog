@@ -22,8 +22,8 @@ class PostController extends Controller
 
         // Generating share buttons for the post
         $shareButtons = \Share::page(
-            url('/blogpost'),
-            'Here is the text',
+            url()->current(), 
+        $post->name
         )
         ->facebook()
         ->twitter()
