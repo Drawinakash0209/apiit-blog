@@ -189,4 +189,3 @@ Route::get('/terms', function () {
     ]);
 });
 
-Route::get('/blogpost', [ShareButtonsController::class, 'share']);
