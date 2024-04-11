@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rules\Unique;
 use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
@@ -30,17 +31,85 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
+        $userType = $request->user_type;
+
+        // $request->validate([
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        //     //User type
+        //     'user_type' => ['required', 'string'],
+        // ]);
+
+
+        if ($userType === 'student') {
+            $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+            'user_type' => ['required', 'string'],
+            'cb_number' => ['required', 'string', 'unique:users,cb_number'],
+            'level' => ['required', 'string'],
+            'batch' => ['required', 'string'],
+            'student_degree' => ['required', 'string'],
+            'student_school' => ['required', 'string'],
+            ]);
+
+
+        } else if ($userType === 'alumni') {
+            $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'user_type' => ['required', 'string'],
+            'nic' => ['required', 'string', 'unique:users,nic'],
+            'alumni_degree' => ['required', 'string'],
+            'alumni_school' => ['required', 'string'],
+            'graduated_year' => ['required', 'string'],
+            ]);
+
+
+
+        } else if ($userType === 'lecturer') {
+
+            $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'user_type' => ['required', 'string'],
+            'lecturer_school' => ['required', 'string'],
+            ]);
+
+        }
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'user_type' => $request->user_type,
         ]);
+
+        switch ($request->user_type) {
+            case 'student':
+                $user->cb_number = $request->cb_number;
+                $user->level = $request->level;
+                $user->batch = $request->batch;
+                $user->degree = $request->student_degree;
+                $user->school = $request->student_school;
+                break;
+            case 'alumni':
+                $user->nic = $request->nic;
+                $user->degree = $request->alumni_degree;
+                $user->school = $request->alumni_school;
+                $user->graduated_year = $request->graduated_year;
+                break;
+            case 'lecturer':
+                $user->school = $request->lecturer_school;
+                break;
+        }
+
+        $user->save();
+
 
         event(new Registered($user));
 

@@ -21,6 +21,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_type',
+        'is_approved',
+        // Student specific
+        'cb_number',
+        'batch',
+        'school',
+        'level',
+        'degree',
+
+        //Alumni specific
+        'graduated_year',
+        'nic',
     ];
 
     /**
@@ -41,5 +53,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'is_approved' => 'boolean',
     ];
 }
