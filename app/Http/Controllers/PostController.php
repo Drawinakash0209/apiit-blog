@@ -53,15 +53,19 @@ class PostController extends Controller
     }
 
     public function store(PostFormRequest $request)
-    {
+    {  
         $data = $request->validated();
 
         $post = new Post;
+        
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
         $post->slug = $data['slug'];
         $post->description = $data['description'];
         $post->v_iframe = $data['v_iframe'];
+        $post->tags = $request->tags;
+
+        
 
         if ($request->hasFile('image')){
             $file = $request->file('image');
@@ -70,12 +74,15 @@ class PostController extends Controller
             $post->image = $filename;
 
         }
+  
+     
 
         $post->meta_title = $data['meta_title'];
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];
         $post->status = $request = 1;
         $post->created_by = Auth::guard('student')->user()->id;
+      
         $post->save();
 
         return redirect('/manage')->with('message', 'Post added successfully');
@@ -91,8 +98,9 @@ class PostController extends Controller
 
     public function update(PostFormRequest $request, $post_id)
     {
+        
         $data = $request->validated();
-
+        
         $post = Post::find($post_id);
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
@@ -107,7 +115,7 @@ class PostController extends Controller
             $post->image = $filename;
 
         }
-
+        $post->tags = $request->tags;
         $post->meta_title = $data['meta_title'];
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];

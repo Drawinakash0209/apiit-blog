@@ -32,12 +32,11 @@ use App\Models\Student;
 
 Route::get('/', function () {
     return view('user.home', [
-    //  'blog' => Post::with('category')->latest()->where('status', 0)->get(),
-
-        'blog' => Post::latest()->where('status', 0)->get(),
+        'blog' => Post::latest()->filters(request(['tag']))->where('status', 0)->get(),
         'recentblogs' => Post::latest()->take(3)->get()
     ]);
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

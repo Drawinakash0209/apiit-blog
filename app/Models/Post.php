@@ -22,10 +22,17 @@ class Post extends Model
         'meta_keywords',
         'image',
         'status',
-        'created_by'
+        'created_by',
+        'tags'
         
 
     ];
+
+    public function scopeFilters($query, array $filter){
+        if($filter['tag'] ?? false){
+            $query->where('tags', 'like', '%' . request('tag') . '%');
+        };
+    }
 
     public function student(){
         return $this->belongsTo(Student::class, 'created_by');

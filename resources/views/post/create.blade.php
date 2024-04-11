@@ -63,6 +63,16 @@
                         <input type="file" name="image" class="form-control">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="tags">  Tags (Comma Separated)</label>
+                        <input
+                        type="text"
+                        name="tags"
+                        placeholder="Example: IT, Business, Law"/>
+                        
+
+                    </div>
+
                     <h5>SEO Tags</h5>
 
                 <div class="mb-3">

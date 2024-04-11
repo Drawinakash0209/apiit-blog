@@ -134,6 +134,8 @@
                                 <div class="pt-2 pr-0 pb-0 pl-0">
                                   <a class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">Drawin</a>
                                   <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· {{ $item['created_at']->format('Y-m-d') }} ·</p>
+                                  
+                                  <x-listing-tags :tagsCsv="$item->tags"/>
                                   {{-- <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p> --}}
                                 </div>
                               </div>
