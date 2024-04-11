@@ -3,6 +3,21 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
+<head>
+
+  
+  
+<style>
+  #social-links ul li {
+      display: inline;
+      margin-right: 10px;
+  }
+  
+</style>
+
+</head>
+
+
 @livewireStyles
 
 
@@ -28,10 +43,7 @@
         <img src="/uploads/post/{{$blog->image}}" class="w-full object-cover lg:rounded" style="height: 28em;"/>
       </div>
 
-      <div class="mt-4">
-          <p class="text-gray-600">Share this post:</p>
-          {!! $shareButtons !!}
-      </div>
+     
   
 
       <div class="flex flex-col lg:flex-row lg:space-x-12">
@@ -48,7 +60,7 @@
        
        
         
-{{-- 
+ 
         <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
           <div class="p-4 border-t border-b md:border md:rounded">
             <div class="flex py-2">
@@ -68,7 +80,12 @@
               <i class='bx bx-user-plus ml-2' ></i>
             </button>
           </div>
-        </div> --}}
+
+          <div class="mt-4">
+            <p class="text-gray-600">Share this post:</p>
+            {!! $shareButtons !!}
+        </div>
+        </div> 
        
 
       </div>

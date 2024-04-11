@@ -35,6 +35,7 @@ Route::get('/', function () {
     //  'blog' => Post::with('category')->latest()->where('status', 0)->get(),
 
         'blog' => Post::latest()->where('status', 0)->get(),
+        'recentblogs' => Post::latest()->take(3)->get()
     ]);
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Share;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class PostController extends Controller
         $category = Category::where('id', $post->category_id)->first();
 
         // Generating share buttons for the post
-        $shareButtons = \Share::page(
+        $shareButtons = Share::page(
             url()->current(), 
         $post->name
         )
