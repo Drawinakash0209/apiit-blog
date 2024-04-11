@@ -24,6 +24,47 @@
 <div class="max-w-screen-lg mx-auto">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <main class="mt-10">
 
       <div class="mb-4 md:mb-0 w-full mx-auto relative">
@@ -93,6 +134,46 @@
     <!-- main ends here -->
 
 
+      <div class="flex flex-wrap items-center justify-between mb-8">
+          <h2 class="mr-10 text-4xl font-bold leading-none md:text-5xl">
+             Releted blogs 
+          </h2>
+      </div>
   
+      <div class="flex flex-wrap -mx-4">
+
+        @foreach ($relatedPosts as $blog)
+          <div class="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
+              <img src="/uploads/post/{{$blog->image}}" alt="Card img" class="object-cover object-center w-full h-48" />
+              <div class="flex flex-grow">
+                  <div class="triangle"></div>
+                  <div class="flex flex-col justify-between px-4 py-6 bg-white border border-gray-400 text">
+                      <div>
+                          <a  href="/home/{{$blog['id']}}"
+                              class="inline-block mb-4 text-xs font-bold capitalize border-b-2 border-blue-600 hover:text-blue-600">Reliable
+                              Schemas</a>
+                          <a href="/home/{{$blog['id']}}"
+                              class="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600">
+                              {{$blog['name']}}
+                          </a>
+                          <p class="mb-4">
+                            {!! Str::limit(strip_tags($blog->description), 250) !!}
+                          </p>
+                      </div>
+                      <div>
+                          <a href="/home/{{$blog['id']}}"
+                              class="inline-block pb-1 mt-2 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600">Read
+                              More -></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          @endforeach
+  
+  
+      </div>
+
   </div>
+
+
   @livewireScripts

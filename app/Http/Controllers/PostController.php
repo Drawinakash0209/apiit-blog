@@ -34,11 +34,16 @@ class PostController extends Controller
         ->reddit()
         ->telegram();
 
+        $relatedPosts = Post::where('category_id', $post->category_id)
+            ->where('category_id',$post->category_id)->get();
+          
+
 
         return view('user.show', [
             'category' => Category::Where('id', $post->category_id)->first(),
             'blog'=> $post,
             'shareButtons' => $shareButtons,
+            'relatedPosts' => $relatedPosts,
         ]);
     }
 
