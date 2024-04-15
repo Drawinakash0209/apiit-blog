@@ -33,14 +33,6 @@ class RegisteredUserController extends Controller
     {
         $userType = $request->user_type;
 
-        // $request->validate([
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        //     //User type
-        //     'user_type' => ['required', 'string'],
-        // ]);
-
 
         if ($userType === 'student') {
             $request->validate([
