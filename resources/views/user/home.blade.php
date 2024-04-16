@@ -59,16 +59,6 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<style>
-    .hide-scroll-bar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .hide-scroll-bar::-webkit-scrollbar {
-      display: none;
-    }
-    </style>
-
 </head>
 <body>
 
@@ -82,7 +72,7 @@
 
 
 
- <div class="relative overflow-hidden bg-cover bg-no-repeat" style="
+<div class="relative overflow-hidden bg-cover bg-no-repeat" style="
   background-position: 50%;
   background-image: url('user/images/graduation.jpg');
   height: 500px;
@@ -96,241 +86,7 @@
       </div>
     </div>
   </div>
-</div> 
-
-<div class="flex flex-col bg-white m-auto p-auto">
-    <h1 class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800">
-        Example
-    </h1>
-    <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
-        <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
-            @php
-            // Array of sample background images
-            $backgroundImages = [
-            'https://i.pinimg.com/564x/27/fb/7f/27fb7fc492f0f01463084ed8f95513b9.jpg',
-            'https://i.pinimg.com/564x/25/48/f1/2548f145939dae426e2474de01a60a18.jpg',
-            'https://i.pinimg.com/564x/8e/4f/0f/8e4f0fe2b7581b7ceceb86f23428eb27.jpg',
-            'https://static.wixstatic.com/media/b843f6_3847421d061e4b0390388cbec80f93df~mv2.jpg/v1/fit/w_2500,h_1330,al_c/b843f6_3847421d061e4b0390388cbec80f93df~mv2.jpg',
-            'https://i.pinimg.com/564x/36/ce/c3/36cec3f8c926383c8f29cea7c711c0f9.jpg',
-            // Add more image URLs as needed
-            ];
-            // Array of sample text for each card
-            $cardTexts = [
-            'IT School',
-            'Business School',
-            'Law School',
-            'Clubs',
-            'Sports',
-            // Add more text as needed
-            ];
-            @endphp
-            @foreach($backgroundImages as $index => $image)
-            <div class="inline-block px-3">
-                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-                    style="background-image: url('{{ $image }}'); background-size: cover;">
-                    <div class="flex items-center justify-center h-full text-center text-white text-lg font-bold">
-                        {{ $cardTexts[$index] }}
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
 </div>
-
-
-
-{{-- 
- <div class="flex justify-center items-center">
-    <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
-    <div class="2xl:mx-auto 2xl:container lg:px-20 lg:py-0 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
-      <div role="main" class="flex flex-col items-center justify-center">
-        <h1 class="text-4xl font-semibold leading-9 text-center text-gray-800 dark:text-gray-50">This Week Blogs</h1>
-        <p class="text-base leading-normal text-center text-gray-600 dark:text-white mt-4 lg:w-1/2 md:w-10/12 w-11/12">If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough</p>
-      </div>
-      <div class="lg:flex items-stretch md:mt-12 mt-8">
-        <div class="lg:w-1/2">
-          <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
-            <div class="sm:w-1/2 relative">
-              <div>
-                <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$mainBlogs[1]['created_at']->format('Y-m-d') }}</p>
-                <div class="absolute bottom-0 left-0 p-6">
-                  <h2 class="text-xl font-semibold 5 text-white">{{$mainBlogs[1]['name'] }}</h2>
-                  <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[1]['category_id'] }}</p>
-                  <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[1]['created'] }}</p>
-                  <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                    <p class="pr-2 text-sm font-medium leading-none">Read More</p>
-                    <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <img src="/uploads/post/{{$mainBlogs[1]->image}}" class="w-full" alt="chair" />
-            </div>
-
-
-            <div class="sm:w-1/2 sm:mt-0 mt-4 relative">
-              <div>
-                <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$mainBlogs[2]['created_at']->format('Y-m-d') }}</p>
-                <div class="absolute bottom-0 left-0 p-6">
-                  <h2 class="text-xl font-semibold 5 text-white">{{$mainBlogs[2]['name'] }}</h2>
-                  <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[2]['category_id'] }}</p>
-                  <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[2]['created'] }}</p>
-                  <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                    <p class="pr-2 text-sm font-medium leading-none">Read More</p>
-                    <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <img src="/uploads/post/{{$mainBlogs[2]->image}}" class="w-full" alt="wall design" />
-            </div>
-          </div>
-
-
-          <div class="relative">
-            <div>
-              <p class="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$mainBlogs[3]['created_at']->format('Y-m-d') }}</p>
-              <div class="absolute bottom-0 left-0 md:p-10 p-6">
-                <h2 class="text-xl font-semibold 5 text-white">{{$mainBlogs[3]['name'] }}</h2>
-                <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[3]['category_id'] }}</p>
-                <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[3]['created'] }}</p>
-                <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                  <p class="pr-2 text-sm font-medium leading-none">Read More</p>
-                  <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <img src="/uploads/post/{{$mainBlogs[3]->image}}" alt="sitting place" class="w-full mt-8 md:mt-6 hidden sm:block" />
-            <img class="w-full mt-4 sm:hidden" src="https://i.ibb.co/6XYbN7f/Rectangle-29.png" alt="sitting place" />
-          </div>
-
-        </div>
-
-        <div class="lg:w-1/2 xl:ml-8 lg:ml-4 lg:mt-0 md:mt-6 mt-4 lg:flex flex-col justify-between">
-          <div class="relative">
-            <div>
-              <p class="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$mainBlogs[4]['created_at']->format('Y-m-d') }}</p>
-              <div class="absolute bottom-0 left-0 md:p-10 p-6">
-                <h2 class="text-xl font-semibold 5 text-white">{{$mainBlogs[4]['name'] }}</h2>
-                <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[4]['category_id'] }}</p>
-                <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[4]['created'] }}</p>
-                <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                  <p class="pr-2 text-sm font-medium leading-none">Read More</p>
-                  <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <img src="/uploads/post/{{$mainBlogs[4]->image}}" alt="sitting place" class="w-full sm:block hidden" />
-            <img class="w-full sm:hidden" src="https://i.ibb.co/dpXStJk/Rectangle-29.png" alt="sitting place" />
-          </div>
-
-          <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
-            <div class="relative w-full">
-              <div>
-                <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$mainBlogs[5]['created_at']->format('Y-m-d') }}</p>
-                <div class="absolute bottom-0 left-0 p-6">
-                  <h2 class="text-xl font-semibold 5 text-white">{{$mainBlogs[5]['name'] }}</h2>
-                  <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[5]['category_id'] }}</p>
-                  <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[5]['created'] }}</p>
-                  <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                    <p class="pr-2 text-sm font-medium leading-none">Read More</p>
-                    <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <img src="/uploads/post/{{$mainBlogs[5]->image}}" class="w-full" alt="chair" />
-            </div>
-
-            <div class="relative w-full sm:mt-0 mt-4">
-              <div>
-                <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$mainBlogs[6]['created_at']->format('Y-m-d') }}</p>
-                <div class="absolute bottom-0 left-0 p-6">
-                  <h2 class="text-xl font-semibold 5 text-white">{{$mainBlogs[6]['name'] }}</h2>
-                  <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[6]['category_id'] }}</p>
-                  <p class="text-base leading-4 text-white mt-2">{{$mainBlogs[6]['created'] }}</p>
-                  <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                    <p class="pr-2 text-sm font-medium leading-none">Read More</p>
-                    <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <img src="/uploads/post/{{$mainBlogs[6]->image}}" class="w-full" alt="wall design" />
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> --}}
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <section class="section wb">
@@ -366,7 +122,7 @@
                     <div class="blog-list clearfix">
 
                         <div class="grid grid-cols-12 sm:px-5 gap-x-8 gap-y-16">
-                            @foreach ($blogs as $item)
+                            @foreach ($blog as $item)
 
                             <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                                 <img
@@ -378,8 +134,6 @@
                                 <div class="pt-2 pr-0 pb-0 pl-0">
                                   <a class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">Drawin</a>
                                   <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· {{ $item['created_at']->format('Y-m-d') }} ·</p>
-                                  
-                                  <x-listing-tags :tagsCsv="$item->tags"/>
                                   {{-- <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p> --}}
                                 </div>
                               </div>

@@ -86,10 +86,6 @@ class PostFormRequest extends FormRequest
 
             ],
 
-            'terms' => [
-                'required',
-            ],
-
             
 
         ];

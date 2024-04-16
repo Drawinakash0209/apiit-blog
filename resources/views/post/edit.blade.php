@@ -68,15 +68,7 @@
                         <input type="file" name="image" class="form-control">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="Description" class="form-label">Tags</label>
-                        <input type="text" name="tags"  value="{{$post->tags}}" class="form-control">
-                    </div>
-
-
-                    
-
-                <h5>SEO Tags</h5>
+                    <h5>SEO Tags</h5>
 
                 <div class="mb-3">
                     <label for="">Meta Title</label>
@@ -104,11 +96,6 @@
                     <div class="col-md-3 mb-3">
                         <label for="">Status</label>
                         <input type="checkbox" name="status">
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <input type="checkbox" name="terms">
-                        <label for="">Agree with <a href="/terms"> terms and conditions</a></label>
                     </div>
 
                     <div class="col-md-6">
