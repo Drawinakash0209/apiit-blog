@@ -9,7 +9,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Models\Post;
-use App\Models\Student;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,8 +125,13 @@ Route::get('/status', function () {
 })->name('student.status');
 
 
-//Route for the index function of user controller
-Route::get('/user', [UserController::class, 'index'])-> name('user.index');
+// Routes for the user management
+Route::get('/user/index', [UserController::class, 'index'])-> name('user.index');
+Route::get('/user/create', [UserController::class, 'create'])-> name('user.create');
+Route::post('/user/store', [UserController::class, 'store'])-> name('user.store');
+Route::get('/user/edit/{id}', [UserController::class, 'edit'])-> name('user.edit');
+Route::put('/user/update/{id}', [UserController::class, 'update'])-> name('user.update');
+Route::delete('/user/delete/{id}', [UserController::class, 'destroy'])-> name('user.destroy');
 
 
 

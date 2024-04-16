@@ -56,8 +56,6 @@ class User extends Authenticatable
         'is_approved' => 'boolean',
     ];
 
-    public function getUserTypeAttribute()
-    {
-    return $this->user_type; // Assuming user_type field stores the type information
-    }
+
 }
+

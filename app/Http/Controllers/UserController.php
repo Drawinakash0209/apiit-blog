@@ -14,12 +14,36 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index( Request $request)
     {
-        // $users = User::all();
-        // return view('user.index', compact('users'));
-        //Return hellow users text
-        return 'Hello users';
+
+        // //Return hellow users text
+        // // return 'Hello users';
+        // $users = User::all(); // Fetch all users
+
+        //  // Filter users by type based on request parameter or logic
+        // $students = $users->where('user_type', 'student');
+        // $alumni = $users->where('user_type', 'alumni');
+        // $lecturers = $users->where('user_type', 'lecturer');
+
+        // return view('admin.user.index', compact('students', 'alumni', 'lecturers'));
+        $userType = $request->query('type'); // Get user type from query string
+
+        // if ($userType) {
+        //     $students = User::where('user_type', 'student')->get();
+        //     $alumni = $userType === 'alumni' ? User::where('user_type', 'alumni')->get() : [];
+        //     $lecturers = $userType === 'lecturer' ? User::where('user_type', 'lecturer')->get() : [];
+        // } else {
+        //     $students = [];
+        //     $alumni = [];
+        //     $lecturers = []; // Empty arrays for all types
+        // }
+        // Logic for specific user types based on $userType
+        $students = $userType === 'student' ? User::where('user_type', 'student')->get() : [];
+        $alumni = $userType === 'alumni' ? User::where('user_type', 'alumni')->get() : [];
+        $lecturers = $userType === 'lecturer' ? User::where('user_type', 'lecturer')->get() : [];
+
+        return view('admin.user.index', compact('students', 'alumni', 'lecturers'));
     }
 
 
