@@ -126,8 +126,12 @@ Route::get('/status', function () {
 })->name('student.status');
 
 
-//Route for the new user resource controller
-Route::resource('user', UserController::class);
+//Route for the index function of user controller
+Route::get('/user', [UserController::class, 'index'])-> name('user.index');
+
+
+
+
 
 
 

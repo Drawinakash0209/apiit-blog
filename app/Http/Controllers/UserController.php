@@ -16,10 +16,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('user.index', compact('users'));
+        // $users = User::all();
+        // return view('user.index', compact('users'));
+        //Return hellow users text
+        return 'Hello users';
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
