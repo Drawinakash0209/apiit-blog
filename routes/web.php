@@ -31,11 +31,35 @@ use App\Http\Controllers\Admin\DashboardController;
 // });
 
 
+// Route::get('/', function () {
+//     return view('user.home', [
+//         'blog' => Post::latest()->filters(request(['tag']))->where('status', 0)->get(),
+//         'recentblogs' => Post::latest()->take(3)->get(),
+//         $mainBlogs = [],
+//         for ($i = 0; $i < 6; $i++) {
+//             $mainBlogs[$i] = $blogs->skip($i)->first();
+//         }
+
+//     ]);
+// });
+
 Route::get('/', function () {
-    return view('user.home', [
-        'blog' => Post::latest()->filters(request(['tag']))->where('status', 0)->get(),
-        'recentblogs' => Post::latest()->take(3)->get()
-    ]);
+    $blogs = Post::latest()->filters(request(['tag']))->where('status', 0)->get();
+    $recentblogs = Post::latest()->take(3)->get();
+
+    $mainBlogs = [];
+    $i = 0;
+    foreach ($blogs as $blog) {
+        if ($blog->status == 0) {
+            $mainBlogs[] = $blog;
+            $i++;
+        }
+        if ($i == 7) {
+            break;
+        }
+    }
+
+    return view('user.home', compact('blogs', 'recentblogs', 'mainBlogs'));
 });
 
 
