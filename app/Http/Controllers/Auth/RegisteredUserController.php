@@ -105,8 +105,10 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        // return redirect(RouteServiceProvider::HOME);
+        //Redirect the student to the approval student.status with message, Registration success full. Please wait for the admin approval
+        return redirect()->route('user.status')->with('success', 'Registration success full. Please wait for the admin approval');
     }
 }

@@ -133,7 +133,10 @@ Route::get('/user/edit/{id}', [UserController::class, 'edit'])-> name('user.edit
 Route::put('/user/update/{id}/{user_type}', [UserController::class, 'update'])-> name('user.update');
 Route::delete('/user/delete/{id}', [UserController::class, 'destroy'])-> name('user.destroy');
 
-
+//Route for the user.status without controllers
+Route::get('/user/status', function () {
+    return view('admin.user.status');
+} )-> name('user.status');
 
 
 
