@@ -138,6 +138,24 @@
                         </div>
 
 
+                        <!-- Survey Dropdown -->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                        data-bs-target="#collapseLayoutsReports" aria-expanded="false"
+                        aria-controls="collapseLayoutsReports">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Reports
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayoutsReports" aria-labelledby="headingOne"
+                        data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            {{-- <a class="nav-link" href="{{ url('add-post') }}">Add Post</a> --}}
+                            <a class="nav-link" href="{{ url('reports') }}">View Reports</a>
+                        </nav>
+                    </div>
+
+
+
 
 
 {{-- 

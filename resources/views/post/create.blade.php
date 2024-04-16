@@ -63,6 +63,16 @@
                         <input type="file" name="image" class="form-control">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="tags">  Tags (Comma Separated)</label>
+                        <input
+                        type="text"
+                        name="tags"
+                        placeholder="Example: IT, Business, Law"/>
+                        
+
+                    </div>
+
                     <h5>SEO Tags</h5>
 
                 <div class="mb-3">
@@ -81,7 +91,7 @@
                     <textarea name="meta_keywords" rows="3" class="form-control"> </textarea>
                 </div>
 
-                <h6>Status Mode</h6>
+               
                 <div class="row">
                     {{-- <div class="col-md-3 mb-3">
                         <label for="">Navbar Status</label>
@@ -92,6 +102,12 @@
                         <label for="">Status</label>
                         <input type="checkbox" name="status">
                     </div> --}}
+
+                    <div class="col-md-3 mb-3">
+                        <input type="checkbox" name="terms">
+                        <label for="">Agree with <a href="/terms"> terms and conditions</a></label>
+                    </div>
+
 
                     <div class="col-md-6">
                         <button  type="submit" class="btn-btn-primary">Submit</button>
