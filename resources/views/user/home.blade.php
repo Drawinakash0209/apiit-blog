@@ -72,7 +72,7 @@
 
 
 
-{{-- <div class="relative overflow-hidden bg-cover bg-no-repeat" style="
+ <div class="relative overflow-hidden bg-cover bg-no-repeat" style="
   background-position: 50%;
   background-image: url('user/images/graduation.jpg');
   height: 500px;
@@ -86,11 +86,11 @@
       </div>
     </div>
   </div>
-</div> --}}
+</div> 
 
 
 
-<div class="flex justify-center items-center">
+{{-- <div class="flex justify-center items-center">
     <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
     <div class="2xl:mx-auto 2xl:container lg:px-20 lg:py-0 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
       <div role="main" class="flex flex-col items-center justify-center">
@@ -223,7 +223,7 @@
     </div>
   </div>
 
-
+ --}}
 
 
 
