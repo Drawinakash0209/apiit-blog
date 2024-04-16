@@ -40,6 +40,7 @@
 
                             <td>
                                 <form action="{{ route('user.destroy', $student->id) }}" method="POST">
+                                {{-- <form action="{{ route('user.destroy', [$student->id, $student->user_type]) }}" method="POST"> --}}
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>

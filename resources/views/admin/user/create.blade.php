@@ -7,7 +7,7 @@
 
     <div class="card mt-4">
         <div class="card-header">
-             <h4 class="">Create New Student</h4>
+             <h4 class="">Create New {{ $userType}}</h4>
 
         </div>
 
@@ -26,80 +26,60 @@
 
 
 
-            <form action="{{ route('student.store', $student->id) }}" method="POST" enctype="multipart/form-data">
-                @csrf
+        <form action="{{ route('user.store', $user->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
 
-                <div class="mb-3">
-                    <label for="name" class="form-label">Student Full Name</label>
-                    <input type="text" name="name" value="{{ old('name', $student->name) }}" class="form-control">
-                </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">User Name</label>
+                <input type="text" name="name" value="{{ old('name', $user->name) }}" class="form-control">
+            </div>
 
-                {{-- Student id field--}}
-                <div class="mb-3">
-                    <label for="student_id" class="form-label">Student ID</label>
-                    <input type="text" name="student_id" value="{{ old('student_id', $student->student_id) }}" class="form-control">
-                </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">User Email</label>
+                <input type="text" name="email" value="{{ old('email', $user->email) }}" class="form-control">
+            </div>
 
-                {{-- Batch code field --}}
-                <div class="mb-3">
-                    <label for="batch" class="form-label">Batch</label>
-                    <input type="text" name="batch" value="{{ old('batch', $student->batch) }}" class="form-control">
-                </div>
+            @error('email')
+                <p class="mt-3 text-sm leading-6 text-red-600">
+                    {{ $message }}
+                </p>
+            @enderror
 
-
-                <div class="mb-3">
-                    <label for="email" class="form-label">Student Email</label>
-                    <input type="text" name="email" value="{{ old('email', $student->email) }}" class="form-control">
-                </div>
-
-                {{-- <div class="mb-3">
-                    <label for="">Slug</label>
-                    <input type="text" name="slug" class="form-control">
-                </div>
-
-                <div class="mb-3">
-                    <label for="description" class="form-label">Category Description</label>
-                    <textarea name="description" rows="5" class="form-control"></textarea>
-                </div>
-
-                <div class="mb-3">
-                    <label for="image" class="form-label">Image</label>
-                    <input type="file" name="image" class="form-control">
-                </div>
-
-                <h5>SEO Tags</h5>
-
-                <div class="mb-3">
-                    <label for="">Meta Title</label>
-                    <input type="text" name="meta_title" class="form-control">
-                </div>
-
-                <div class="mb-3">
-                    <label for="description" class="form-label">Meta Description</label>
-                    <textarea name="meta_description" rows="3" class="form-control"></textarea>
-                </div> --}}
-
-
-                {{-- <div class="mb-3">
-                    <label for="">Meta Keywords</label>
-                    <textarea name="meta_keywords" rows="3" class="form-control"> </textarea>
-                </div>
-
-                <h6>Status Mode</h6>
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <label for="">Navbar Status</label>
-                        <input type="checkbox" name="navbar_status">
+            @foreach ($uniqueFields as $field => $label)
+                @if (in_array($field, ['cb_number','batch', 'school', 'level', 'degree']) && $userType === 'student')
+                    <div class="mb-3">
+                        <label for="{{ $field }}" class="form-label">{{ $label }}</label>
+                        <input type="text" name="{{ $field }}" value="{{ old($field, $user->{$field}) }}" class="form-control">
                     </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label for="">Status</label>
-                        <input type="checkbox" name="status">
-                    </div> --}}
-
-                    <div class="col-md-6">
-                        <button  type="submit" class="btn-btn-primary">Create Student</button>
+                @elseif (in_array($field, ['nic','school', 'school', 'degree', 'graduated_year']) && $userType === 'alumni')
+                    <div class="mb-3">
+                        <label for="{{ $field }}" class="form-label">{{ $label }}</label>
+                        <input type="text" name="{{ $field }}" value="{{ old($field, $user->{$field}) }}" class="form-control">
                     </div>
+                @elseif (in_array($field, ['school']) && $userType === 'lecturer')
+                    <div class="mb-3">
+                        <label for="{{ $field }}" class="form-label">{{ $label }}</label>
+                        <input type="text" name="{{ $field }}" value="{{ old($field, $user->{$field}) }}" class="form-control">
+                    </div>
+                @endif
+            @endforeach
+
+        <div class="mb-3">
+          <label for="is_approved" class="form-label">Account Status</label>
+          <select name="is_approved" class="form-control">
+            <option value="1" >Activated</option>
+            <option value="0" >Deactivated</option>
+          </select>
+        </div>
+
+        <input type="hidden" name="user_type" value="{{ $userType }}">
+
+
+
+
+            <div class="col-md-6">
+                <button  type="submit" class="btn-btn-primary">Create user</button>
+            </div>
 
 
 
