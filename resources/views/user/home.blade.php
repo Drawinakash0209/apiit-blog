@@ -59,6 +59,16 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<style>
+    .hide-scroll-bar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .hide-scroll-bar::-webkit-scrollbar {
+      display: none;
+    }
+    </style>
+
 </head>
 <body>
 
@@ -72,7 +82,7 @@
 
 
 
-<div class="relative overflow-hidden bg-cover bg-no-repeat" style="
+ <div class="relative overflow-hidden bg-cover bg-no-repeat" style="
   background-position: 50%;
   background-image: url('user/images/graduation.jpg');
   height: 500px;
@@ -86,13 +96,48 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-</div>
-=======
-=======
->>>>>>> parent of 04a2c01 (Home-categories)
 </div> 
+
+<div class="flex flex-col bg-white m-auto p-auto">
+    <h1 class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800">
+        Example
+    </h1>
+    <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+        <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
+            @php
+            // Array of sample background images
+            $backgroundImages = [
+            'https://i.pinimg.com/564x/27/fb/7f/27fb7fc492f0f01463084ed8f95513b9.jpg',
+            'https://i.pinimg.com/564x/25/48/f1/2548f145939dae426e2474de01a60a18.jpg',
+            'https://i.pinimg.com/564x/8e/4f/0f/8e4f0fe2b7581b7ceceb86f23428eb27.jpg',
+            'https://static.wixstatic.com/media/b843f6_3847421d061e4b0390388cbec80f93df~mv2.jpg/v1/fit/w_2500,h_1330,al_c/b843f6_3847421d061e4b0390388cbec80f93df~mv2.jpg',
+            'https://i.pinimg.com/564x/36/ce/c3/36cec3f8c926383c8f29cea7c711c0f9.jpg',
+            // Add more image URLs as needed
+            ];
+            // Array of sample text for each card
+            $cardTexts = [
+            'IT School',
+            'Business School',
+            'Law School',
+            'Clubs',
+            'Sports',
+            // Add more text as needed
+            ];
+            @endphp
+            @foreach($backgroundImages as $index => $image)
+            <div class="inline-block px-3">
+                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+                    style="background-image: url('{{ $image }}'); background-size: cover;">
+                    <div class="flex items-center justify-center h-full text-center text-white text-lg font-bold">
+                        {{ $cardTexts[$index] }}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
 
 
 {{-- 
@@ -286,7 +331,6 @@
 
 
 
->>>>>>> parent of 04a2c01 (Home-categories)
 
 
 <section class="section wb">
@@ -322,7 +366,7 @@
                     <div class="blog-list clearfix">
 
                         <div class="grid grid-cols-12 sm:px-5 gap-x-8 gap-y-16">
-                            @foreach ($blog as $item)
+                            @foreach ($blogs as $item)
 
                             <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                                 <img
@@ -334,6 +378,8 @@
                                 <div class="pt-2 pr-0 pb-0 pl-0">
                                   <a class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">Drawin</a>
                                   <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· {{ $item['created_at']->format('Y-m-d') }} ·</p>
+                                  
+                                  <x-listing-tags :tagsCsv="$item->tags"/>
                                   {{-- <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p> --}}
                                 </div>
                               </div>

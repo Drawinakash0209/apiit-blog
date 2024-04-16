@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\StudentController;
 use App\Models\Post;
 use App\Models\Student;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BlogReportController;
+use App\Http\Controllers\ShareButtonsController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +31,37 @@ use App\Models\Student;
 // });
 
 
-Route::get('/', function () {
-    return view('user.home', [
-    //  'blog' => Post::with('category')->latest()->where('status', 0)->get(),
+// Route::get('/', function () {
+//     return view('user.home', [
+//         'blog' => Post::latest()->filters(request(['tag']))->where('status', 0)->get(),
+//         'recentblogs' => Post::latest()->take(3)->get(),
+//         $mainBlogs = [],
+//         for ($i = 0; $i < 6; $i++) {
+//             $mainBlogs[$i] = $blogs->skip($i)->first();
+//         }
 
-        'blog' => Post::latest()->where('status', 0)->get(),
-    ]);
+//     ]);
+// });
+
+Route::get('/', function () {
+    $blogs = Post::latest()->filters(request(['tag']))->where('status', 0)->get();
+    $recentblogs = Post::latest()->take(3)->get();
+
+    $mainBlogs = [];
+    $i = 0;
+    foreach ($blogs as $blog) {
+        if ($blog->status == 0) {
+            $mainBlogs[] = $blog;
+            $i++;
+        }
+        if ($i == 7) {
+            break;
+        }
+    }
+
+    return view('user.home', compact('blogs', 'recentblogs', 'mainBlogs'));
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -182,3 +208,13 @@ Route::get('/survey-delete/{survey_id}', [App\Http\Controllers\SurveyController:
 Route::get('/view-survey', [App\Http\Controllers\SurveyController::class, 'show']);
 
 Route::get('/survey/manage', [App\Http\Controllers\SurveyController::class, 'manage']);
+
+Route::get('/terms', function () {
+    return view('post.terms-and-cond', [
+    ]);
+});
+
+
+Route::post('/report/blog/issue', [BlogReportController::class, 'store'])->name('report.blog.issue');
+
+Route::get('/reports', [BlogReportController::class, 'index'])->name('reports');

@@ -59,5 +59,18 @@ class Student extends Authenticatable
         return $this->hasMany(Survey::class, 'crated_by');
     }
 
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes(){
+        return $this->belongsToMany(Post::class, 'post_like')->withTimestamps();
+    }
+
+    public function hasLiked(Post $blog )
+    {
+        return $this-> likes()->where('post_id', $blog->id)->exists();
+    }
+
 
 }
