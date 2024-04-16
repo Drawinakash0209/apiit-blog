@@ -87,11 +87,8 @@
     </div>
   </div>
 <<<<<<< HEAD
-<<<<<<< HEAD
 </div>
 =======
-=======
->>>>>>> parent of 04a2c01 (Home-categories)
 </div> 
 
 
