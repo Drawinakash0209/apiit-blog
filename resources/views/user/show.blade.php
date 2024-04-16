@@ -134,6 +134,101 @@
     <!-- main ends here -->
 
 
+
+    {{-- Report Blog Issue --}}
+    <div class="mx-4 card bg-white max-w-md p-10 md:rounded-lg my-8 mx-auto">
+      <button id="showFormBtn" class="w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none">Report Blog Issue</button>
+  
+      <form id="reportForm" action="{{ route('report.blog.issue') }}" method="POST" style="display: none;">
+          @csrf
+          <div class="title">
+              <h1 class="font-bold text-center">Report Blog Issue</h1>
+          </div>
+          <input type="hidden" name="post_id" value="{{ $blog->id }}">
+  
+          <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
+              <p class="w-1/2 mb-2 md:mb-0">Type of Issue:</p>
+              <select name="issue_type" class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500">
+                  <option value="select" selected>Select an option</option>
+                  <option value="inappropriate">Inappropriate Content</option>
+                  <option value="false_info">False Information</option>
+                  <option value="other">Other</option>
+              </select>
+          </div>
+  
+          <div class="form mt-4">
+              <div class="flex flex-col text-sm">
+                  <label for="title" class="font-bold mb-2">Title</label>
+                  <input name="title" class="appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a title"> 
+              </div>
+  
+              <div class="text-sm flex flex-col">
+                  <label for="description" class="font-bold mt-4 mb-2">Description</label>
+                  <textarea name="description" class="appearance-none w-full border border-gray-200 p-2 h-40 focus:outline-none focus:border-gray-500" placeholder="Enter your description"></textarea>
+              </div>
+          </div>
+  
+          <div class="submit">
+              <button type="submit" class="w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none">Submit</button>
+          </div>
+  
+          <!-- Close button -->
+          <button id="closeFormBtn" type="button" class="w-full bg-red-600 text-white px-4 py-2 hover:bg-red-700 mt-4 text-center font-semibold focus:outline-none">Close</button>
+      </form>
+  </div>
+  
+  <script>
+      // Function to show the form
+      function showForm() {
+          document.getElementById('showFormBtn').style.display = 'none';
+          document.getElementById('reportForm').style.display = 'block';
+      }
+  
+      // Function to close the form
+      function closeForm() {
+          document.getElementById('showFormBtn').style.display = 'block';
+          document.getElementById('reportForm').style.display = 'none';
+      }
+  
+      // Add event listeners to the buttons
+      document.getElementById('showFormBtn').addEventListener('click', showForm);
+      document.getElementById('closeFormBtn').addEventListener('click', closeForm);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="flex flex-wrap items-center justify-between mb-8">
           <h2 class="mr-10 text-4xl font-bold leading-none md:text-5xl">
              Releted blogs 

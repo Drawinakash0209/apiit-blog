@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ShareButtonsController;
-use App\Http\Controllers\StudentController;
 use App\Models\Post;
 use App\Models\Student;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BlogReportController;
+use App\Http\Controllers\ShareButtonsController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -189,3 +190,7 @@ Route::get('/terms', function () {
     ]);
 });
 
+
+Route::post('/report/blog/issue', [BlogReportController::class, 'store'])->name('report.blog.issue');
+
+Route::get('/reports', [BlogReportController::class, 'index'])->name('reports');
