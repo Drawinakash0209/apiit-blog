@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<head>
+
 <!-- Basic -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,6 +73,7 @@
     </style>
 
 </head>
+
 <body>
 
 
@@ -100,7 +104,7 @@
 
 <div class="flex flex-col bg-white m-auto p-auto">
     <h1 class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800">
-        Example
+        Categories
     </h1>
     <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
         <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
@@ -116,11 +120,11 @@
             ];
             // Array of sample text for each card
             $cardTexts = [
-            'IT School',
-            'Business School',
-            'Law School',
-            'Clubs',
-            'Sports',
+            '<a href="/?tag=IT">IT</a>',
+            '<a href="/?tag=Business">Business</a>',
+            '<a href="/?tag=Law">Law</a>',
+            '<a href="/?tag=Club">Club</a>',
+            '<a href="/?tag=Sports">Sports</a>',
             // Add more text as needed
             ];
             @endphp
@@ -129,7 +133,7 @@
                 <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
                     style="background-image: url('{{ $image }}'); background-size: cover;">
                     <div class="flex items-center justify-center h-full text-center text-white text-lg font-bold">
-                        {{ $cardTexts[$index] }}
+                      {!! $cardTexts[$index] !!}
                     </div>
                 </div>
             </div>
