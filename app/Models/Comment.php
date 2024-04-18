@@ -20,7 +20,12 @@ class Comment extends Model
         return $this->belongsTo(Post::class);
     }
 
+    // public function user(){
+    //     return $this->belongsTo(Student::class);
+    // }
+
+
     public function user(){
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(User::class);
     }
 }

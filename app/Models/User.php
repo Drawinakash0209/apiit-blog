@@ -21,6 +21,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_type',
+        'is_approved',
+        // Student specific
+        'cb_number',
+        'batch',
+        'school',
+        'level',
+        'degree',
+
+        //Alumni specific
+        'graduated_year',
+        'nic',
     ];
 
     /**
@@ -41,5 +53,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'is_approved' => 'boolean',
     ];
+
+    public function posts(){
+        return $this->hasMany(Post::class, 'created_by');
+    }
+
+    public function likes(){
+        return $this->belongsToMany(Post::class, 'post_like')->withTimestamps();
+    }
+
+    public function hasLiked(Post $blog)
+    {
+       
+        return $this-> likes()->where('post_id', $blog->id)->exists();
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function survey(){
+        return $this->hasMany(Survey::class, 'crated_by');
+    }
+
+
+
 }
+

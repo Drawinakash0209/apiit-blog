@@ -16,7 +16,11 @@ class BlogReport extends Model
     }
 
     public function user(){
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(User::class);
     }
+
+    // public function user(){
+    //     return $this->belongsTo(Student::class);
+    // }
 
 }

@@ -72,14 +72,6 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        // $validated = $request->validate([
-        //     'name' => 'required',
-        //     'email' => 'required|email',
-        //     'student_id' => 'required',
-        //     'batch' => 'required',
-        //     'is_approved' => 'required',
-        //     // 'role' => 'required'
-        // ]);
         $validated = $request->validate([
         'name' => 'required',
         'email' => 'required|email|unique:students,email,' . $student->id . ',id', // Updated validation rule
