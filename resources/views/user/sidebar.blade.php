@@ -44,19 +44,11 @@
 
 
 
-        <div class="widget">
+
+        <div class="widget"><!-- Instagram Feed Display -->
             <h2 class="widget-title">Instagram Feed</h2>
-            <div class="instagram-wrapper clearfix">
-                <a href="#">image<img src="upload/garden_sq_01.jpg" alt="" class="img-fluid"></a>
-                <a href="#">image<img src="upload/garden_sq_02.jpg" alt="" class="img-fluid"></a>
-                <a href="#">image<img src="upload/garden_sq_03.jpg" alt="" class="img-fluid"></a>
-                <a href="#">image<img src="upload/garden_sq_04.jpg" alt="" class="img-fluid"></a>
-                <a href="#">image<img src="upload/garden_sq_05.jpg" alt="" class="img-fluid"></a>
-                <a href="#">image<img src="upload/garden_sq_06.jpg" alt="" class="img-fluid"></a>
-                <a href="#">image<img src="upload/garden_sq_07.jpg" alt="" class="img-fluid"></a>
-                <a href="#">image<img src="upload/garden_sq_08.jpg" alt="" class="img-fluid"></a>
-                <a href="#">image<img src="upload/garden_sq_09.jpg" alt="" class="img-fluid"></a>
-            </div><!-- end Instagram wrapper -->
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                <div class="elfsight-app-4d20d20b-155f-4894-a461-550f612baf80" data-elfsight-app-lazy></div>
         </div><!-- end widget -->
 
 
