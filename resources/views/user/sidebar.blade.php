@@ -24,7 +24,7 @@
             <h2 class="widget-title">Recent Posts</h2>
             <div class="blog-list-widget">
 
-                
+
 
                 <div class="list-group">
                     @foreach ($recentblogs as $posts)
@@ -43,7 +43,14 @@
         </div><!-- end widget -->
 
 
- 
+
+
+        <div class="widget"><!-- Instagram Feed Display -->
+            <h2 class="widget-title">Instagram Feed</h2>
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                <div class="elfsight-app-4d20d20b-155f-4894-a461-550f612baf80" data-elfsight-app-lazy></div>
+        </div><!-- end widget -->
+
 
 
     </div><!-- end sidebar -->
