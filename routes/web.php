@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\UserController;
 use App\Models\Post;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BlogReportController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,9 +124,14 @@ Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
 Route::get('/search', [PostController::class, 'search']);
 
 
+// Route::get('/student/dashboard', function () {
+//     return view('student.dashboard');
+// })->middleware(['auth:student', 'verified'])->name('student.dashboard');
+
+
 Route::get('/student/dashboard', function () {
     return view('student.dashboard');
-})->middleware(['auth:student', 'verified'])->name('student.dashboard');
+})->name('student.dashboard');
 
 require __DIR__.'/studentauth.php';
 

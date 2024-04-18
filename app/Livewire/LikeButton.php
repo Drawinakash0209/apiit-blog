@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\Student;
 use App\Models\Post;
+use App\Models\User;
 use LDAP\Result;
 use Livewire\Component;
 
@@ -24,9 +25,9 @@ class LikeButton extends Component
         // }
          
 
-        $user = Auth::guard('student')->user();
+        $user = Auth::user();
        
-        if ($user instanceof Student) {
+        if ($user instanceof User) {
 
             // $hasLiked = $user->likes()->where('post_id', $this->blog->id)->exists();
 
@@ -40,7 +41,7 @@ class LikeButton extends Component
             // Your logic for toggling like
         } 
         
-        if ($user instanceof Student) {
+        if ($user instanceof User) {
            if ($user->hasLiked($this->blog)) {
             $user->likes()->detach($this->blog->id);
            } 

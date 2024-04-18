@@ -86,7 +86,7 @@ class PostController extends Controller
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];
         $post->status = $request = 1;
-        $post->created_by = Auth::guard('student')->user()->id;
+        $post->created_by = Auth::user()->id;
       
         $post->save();
 
@@ -164,9 +164,18 @@ public function search(Request $request)
     return view('user.home', compact('blog', 'search', 'recentblogs'));
 }
 
+
+//this was the previous route for manage
+// public function manage(){
+//     return view('user.post-manage', [
+//         'posts' =>  Auth::guard('student')->user()->posts
+//     ]);
+// }
+
+//this is the new route for manage
 public function manage(){
     return view('user.post-manage', [
-        'posts' =>  Auth::guard('student')->user()->posts
+        'posts' =>  Auth::user()->posts
     ]);
 }
 

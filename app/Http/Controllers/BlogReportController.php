@@ -23,11 +23,12 @@ class BlogReportController extends Controller
         $report->description = $request->description;
      
       
-        $report->student_id = Auth::guard('student')->user()->id;
+        $report->student_id = Auth::user()->id;
     
        
         $report->save();
 
         return redirect()->back()->with('message', 'Report submitted successfully!');
     }
+    
 }

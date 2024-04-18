@@ -20,9 +20,13 @@ class Survey extends Model
         'status',
     ];
 
+    public function user(){
+        return $this->belongsTo(User::class, 'crated_by');
+    }
+
 
     
-    public function student(){
-        return $this->belongsTo(Student::class, 'crated_by');
-    }
+    // public function student(){
+    //     return $this->belongsTo(Student::class, 'crated_by');
+    // }
 }

@@ -23,7 +23,7 @@ class PostComments extends Component
        
         $this->blog->comments()->create([
             'comment' => $this->comment,
-            'student_id' => Auth::guard('student')->user()->id,
+            'student_id' => Auth::user()->id,
         ]);
 
         $this->reset('comment');

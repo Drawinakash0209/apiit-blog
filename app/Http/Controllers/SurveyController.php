@@ -26,14 +26,14 @@ class SurveyController extends Controller
         $data->name = $request->name;
         $data->form_link = $request->form_link;
         $data->description = $request->description;
-        $data->crated_by =  Auth::guard('student')->user()->id;
-        $data->cb_number = $request->cb_number;
+        $data->crated_by =  Auth::user()->id;
+        $data->cb_number = Auth::user()->cb_number;
         $data->status = $request = 1;
         
         
         $data->save();
         
-        return redirect('/survey')->with('message', 'Survey added successfully');
+        return redirect('/survey/manage')->with('message', 'Survey added successfully');
     }
 
     // public function store(SurveyFormRequest $request)
@@ -112,7 +112,7 @@ class SurveyController extends Controller
 
     public function manage(){
         return view('survey.surveymanage', [
-            'surveys' => Auth::guard('student')->user()->survey    
+            'surveys' => Auth::user()->survey    
 
         ]);
     }
