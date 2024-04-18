@@ -24,7 +24,7 @@
             <h2 class="widget-title">Recent Posts</h2>
             <div class="blog-list-widget">
 
-                
+
 
                 <div class="list-group">
                     @foreach ($recentblogs as $posts)
@@ -43,7 +43,22 @@
         </div><!-- end widget -->
 
 
- 
+
+        <div class="widget">
+            <h2 class="widget-title">Instagram Feed</h2>
+            <div class="instagram-wrapper clearfix">
+                <a href="#">image<img src="upload/garden_sq_01.jpg" alt="" class="img-fluid"></a>
+                <a href="#">image<img src="upload/garden_sq_02.jpg" alt="" class="img-fluid"></a>
+                <a href="#">image<img src="upload/garden_sq_03.jpg" alt="" class="img-fluid"></a>
+                <a href="#">image<img src="upload/garden_sq_04.jpg" alt="" class="img-fluid"></a>
+                <a href="#">image<img src="upload/garden_sq_05.jpg" alt="" class="img-fluid"></a>
+                <a href="#">image<img src="upload/garden_sq_06.jpg" alt="" class="img-fluid"></a>
+                <a href="#">image<img src="upload/garden_sq_07.jpg" alt="" class="img-fluid"></a>
+                <a href="#">image<img src="upload/garden_sq_08.jpg" alt="" class="img-fluid"></a>
+                <a href="#">image<img src="upload/garden_sq_09.jpg" alt="" class="img-fluid"></a>
+            </div><!-- end Instagram wrapper -->
+        </div><!-- end widget -->
+
 
 
     </div><!-- end sidebar -->
