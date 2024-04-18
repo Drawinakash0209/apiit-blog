@@ -19,6 +19,25 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            // Custom fields
+            $table->string('cb_number')->nullable()->unique();
+
+            $table->string('batch');
+            $table->boolean('is_approved')->default(0);
+            //user type without defaults
+            $table->string('user_type');
+            //level
+            $table->string('level');
+            //school
+            $table->string('school');
+            //degree
+            $table->string('degree');
+            //nic
+            $table->string('nic');
+            //graduated year
+            $table->string('graduated_year');
+
         });
     }
 
