@@ -22,7 +22,7 @@ class SurveyFormRequest extends FormRequest
      */
     public function rules(): array
     {
-        
+
         $rules = [
             'name' => [
                 'required',
@@ -56,13 +56,13 @@ class SurveyFormRequest extends FormRequest
             //     'string',
             //     'max:200'
             // ],
-          
-            'cb_number' => [
-                'required',
-                'string'
-            ]
+
+//            'cb_number' => [
+//                'required',
+//                'string'
+//            ]
         ];
-    
+
         return $rules;
 
     }
