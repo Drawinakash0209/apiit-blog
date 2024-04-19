@@ -73,15 +73,12 @@
     </style>
 
 </head>
-
 <body>
 
 
 
 
-
 @include('user.navbar')
-
 
 
 
@@ -143,87 +140,9 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="section wb">
     <div class="container">
         <div class="row">
-
-
-            {{-- <div class="blog-box row">
-                <div class="col-md-4">
-                    <div class="post-media">
-                        <a href="" title="">
-                            <img src="/uploads/post/{{$item->image}}" alt="" class="img-fluid">
-                            <div class="hovereffect"></div>
-                        </a>
-                    </div><!-- end media -->
-                </div><!-- end col -->
-
-
-                <div class="blog-meta big-meta col-md-8">
-                    <span class="bg-aqua"><a href="" title="">{{$item['category_id']}}</a></span>
-                    <h4><a href="/home/{{$item['id']}}" title="">{{$item['name']}}</a></h4>
-                    <p>{!! Str::limit(strip_tags($item->description), 250) !!}</p>
-                    <small><a href="" title=""><i class="fa fa-eye"></i> 4441</a></small>
-                    <small><a href="" title="">{{ $item['created_at']->format('Y-m-d') }}</a></small>
-
-                    <small><a href="#" title="">by Matilda</a></small>
-                </div><!-- end meta -->
-            </div><!-- end blog-box -->  --}}
-
-
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
                     <div class="blog-list clearfix">
@@ -270,7 +189,11 @@
                 </div>
             </div><!-- end col -->
 
+
+
             @include('user.sidebar')
+
+
 
         </div><!-- end row -->
     </div><!-- end container -->
@@ -279,7 +202,6 @@
 
 
 @include('user.footer')
-
 
 
 
