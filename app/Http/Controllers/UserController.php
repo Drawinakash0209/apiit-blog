@@ -23,22 +23,19 @@ class UserController extends Controller
         $students = $userType === 'student' ? User::where('user_type', 'student')->get() : [];
         $alumni = $userType === 'alumni' ? User::where('user_type', 'alumni')->get() : [];
         $lecturers = $userType === 'lecturer' ? User::where('user_type', 'lecturer')->get() : [];
+        $clubs = $userType === 'club' ? User::where('user_type', 'club')->get() : [];
+        $sports = $userType === 'sport' ? User::where('user_type', 'sport')->get() : [];
+        $staffs = $userType === 'staff' ? User::where('user_type', 'staff')->get() : [];
 
-        return view('admin.user.index', compact('students', 'alumni', 'lecturers'));
+
+
+        return view('admin.user.index', compact('students', 'alumni', 'lecturers', 'clubs', 'sports', 'staffs'));
     }
 
 
     /**
      * Show the form for creating a new resource.
      */
-    // public function create()
-    // {
-    //     // return view('admin.user.create', [
-    //     //     'user' => (new User()),
-
-    //     // ]);
-
-    // }
     public function create(Request $request)
     {
         $userType = $request->get('type'); // Get the user type from the query string
@@ -183,8 +180,16 @@ class UserController extends Controller
                 $uniqueFields = [
                     'cb_number' => 'CB Number', // Label for display
                     'batch' => 'Batch',
-                    'school' => 'School',
-                    'level' => 'Level',
+                    // 'school' => 'School',
+                    'school' => [ // Use an array for dropdown options
+                    'label' => 'School',
+                    'options' => ['Business', 'Law', 'Computing'], // Your school options
+                    ],
+                    // 'level' => 'Level',
+                    'level' => [ // Use an array for dropdown options
+                    'label' => 'Level',
+                    'options' => ['Foundation','L4', 'L5', 'L6'], // Your level options
+                    ],
                     'degree' => 'Degree',
                 ];
                 break;
@@ -192,7 +197,11 @@ class UserController extends Controller
                 // $uniqueFields = ['graduation_year']; // Example unique field for alumni
                 $uniqueFields = [
                     'nic' => 'NIC', // Label for display
-                    'school' => 'School',
+                    // 'school' => 'School',
+                    'school' => [ // Use an array for dropdown options
+                    'label' => 'School',
+                    'options' => ['business', 'law', 'computing'], // Your school options
+                    ],
                     'degree' => 'Degree',
                     'graduated_year' => 'Graduated Year',
 
@@ -203,6 +212,34 @@ class UserController extends Controller
                 $uniqueFields = [
                     'school' => 'School',
 
+                ];
+                // $uniqueFields = [];
+                break;
+            case 'staff':
+                // Define fields for staff user type
+                // $staffRoles = [
+                //     'Manager',
+                //     'Administrator',
+                //     'Assistant',
+                //     // Add more roles here if needed
+                // ];
+                $staffRoles = [
+                    'Head of Academic Administration',
+                    'Head of Student Support and Wellbeing Services',
+                    'Manager ICT',
+                    'Head of Library',
+                    'Head of Industry Liaisons and Alumni Relations',
+                    'Head of Study Global',
+                    'Financial Support Services',
+                    'Academic Administrative Services',
+                    'Facilities and Maintenance',
+                ];
+
+                $uniqueFields = [
+                    'role' => [
+                        'label' => 'Role',
+                        'options' => $staffRoles,
+                    ],
                 ];
                 break;
             default:
@@ -221,12 +258,9 @@ class UserController extends Controller
 
         // $userType = $user->user_type; // Assuming user type is stored in the user model
          $user = User::findOrFail($id);
-        //  dd($userType);
-
-        // dd($userType);
 
         $rules = [
-            'name' => 'required|string|max:255',
+            // 'name' => 'required|string|max:255',
             'email' => "required|email|unique:users,email,{$user->id},id", // Unique rule excludes current user
             // 'batch' => 'required',
             'is_approved' => 'required|boolean',
@@ -234,6 +268,7 @@ class UserController extends Controller
 
         if ($userType === 'student') {
             $rules = array_merge($rules, [
+            'name' => 'required|string|max:255',
             'cb_number' => "required|unique:users,cb_number,{$user->id},id",
             'level' => 'required|string',
             'batch' => 'required|string',
@@ -242,6 +277,7 @@ class UserController extends Controller
             ]);
         } else if ($userType === 'alumni') {
             $rules = array_merge($rules, [
+            'name' => 'required|string|max:255',
             'nic' => 'required|string|unique:users,nic',
             'graduated_year' => 'required|string',
             'degree' => 'required|string',
@@ -249,9 +285,17 @@ class UserController extends Controller
             ]);
         } else if ($userType === 'lecturer') {
             $rules = array_merge($rules, [
+            'name' => 'required|string|max:255',
             'school' => 'required|string',
             ]);
-        } else {
+
+        }else if ($userType === 'staff') {
+            $rules = array_merge($rules, [
+            'role' => 'required|string|max:255',
+            ]);
+
+        }
+        else {
             // Handle invalid user type
             return redirect()->back()->withErrors(['user_type' => 'Invalid user type']);
 
@@ -263,6 +307,7 @@ class UserController extends Controller
         // Conditional field assignment based on user type
         switch ($userType) {
             case 'student':
+            $user->name = $validated['name'];
             $user->cb_number = $validated['cb_number']; // Assuming student_id exists in the user model
             $user->level = $validated['level'];
             $user->batch = $request->batch;
@@ -272,6 +317,7 @@ class UserController extends Controller
             $user->school = $request->school;
             break;
             case 'alumni':
+            $user->name = $validated['name'];
             $user->nic = $request->nic;
             // $user->degree = $request->alumni_degree;
             // $user->school = $request->alumni_school;
@@ -280,8 +326,12 @@ class UserController extends Controller
             $user->graduated_year = $request->graduated_year;
             break;
             case 'lecturer':
+            $user->name = $validated['name'];
             // $user->school = $request->lecturer_school;
             $user->school = $request->school;
+            break;
+            case 'staff':
+            $user->name = $request->role;
             break;
         }
 

@@ -100,10 +100,13 @@
                                         <a class="nav-link" href="{{ route('user.index', ['type' => 'student']) }}">Students</a>
                                         <a class="nav-link" href="{{ route('user.index', ['type' => 'alumni']) }}">Alumni</a>
                                         <a class="nav-link" href="{{ route('user.index', ['type' => 'lecturer']) }}">Lecturers</a>
+                                        <a class="nav-link" href="{{ route('user.index', ['type' => 'club']) }}">Clubs</a>
+                                        <a class="nav-link" href="{{ route('user.index', ['type' => 'sport']) }}">Sports</a>
+                                        <a class="nav-link" href="{{ route('user.index', ['type' => 'staff']) }}">Staff</a>
                                     </nav>
                                 </div>
                                 {{-- Create users --}}
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                                     data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                     Create Users
@@ -116,7 +119,7 @@
                                         <a class="nav-link" href="{{ route('user.create', ['type' => 'alumni']) }}">Alumni</a>
                                         <a class="nav-link" href="{{ route('user.create', ['type' => 'lecturer']) }}">Lecturer</a>
                                     </nav>
-                                </div>
+                                </div> --}}
 
                                 <a class="nav-link" href="{{ route('user.index') }}">Pending Users</a>
 
@@ -124,7 +127,7 @@
                         </div>
 
                             <!-- Students Dropdown -->
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Students
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -135,7 +138,7 @@
                                     <a class="nav-link" href="{{ route('student.index') }}">View Students</a>
                                     <a class="nav-link" href="{{ route('student.pending') }}">Pending Students</a>
                                 </nav>
-                            </div>
+                            </div> --}}
 
 
                         <!-- Categories Dropdown -->
