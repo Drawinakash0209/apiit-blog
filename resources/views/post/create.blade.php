@@ -104,7 +104,7 @@
                     </div> --}}
 
                     <div class="col-md-3 mb-3">
-                        <input type="checkbox" name="terms">
+                        <input type="checkbox" name="termsAndCond">
                         <label for="">Agree with <a href="/terms"> terms and conditions</a></label>
                     </div>
 
