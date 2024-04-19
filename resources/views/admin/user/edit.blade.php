@@ -6,8 +6,6 @@
   <div class="card mt-4">
     <div class="card-header">
       <h4 class="">Edit {{ $userType }}</h4>
-      {{-- Die and dump to view the user type --}}
-
     </div>
 
     <div class="card-body">
@@ -26,10 +24,16 @@
         @csrf
         @method('PUT')
 
-        <div class="mb-3">
+        {{-- <div class="mb-3">
           <label for="name" class="form-label">User Name</label>
           <input type="text" name="name" value="{{ old('name', $user->name) }}" class="form-control">
-        </div>
+        </div> --}}
+        @if ($userType !== 'staff')
+          <div class="mb-3">
+            <label for="name" class="form-label">User Name</label>
+            <input type="text" name="name" value="{{ old('name', $user->name) }}" class="form-control">
+          </div>
+        @endif
 
         <div class="mb-3">
           <label for="email" class="form-label">User Email</label>
@@ -42,28 +46,47 @@
           </p>
         @enderror
 
-        {{-- <div class="mb-3">
-          <label for="user_id" class="form-label">User ID</label>
-          <input type="text" name="user_id" value="{{ old('user_id', $user->user_id) }}" class="form-control">
-        </div> --}}
+        @foreach ($uniqueFields as $field => $details)
 
-        @foreach ($uniqueFields as $field => $label)
-          @if (in_array($field, ['cb_number','batch', 'school', 'level', 'degree']) && $userType === 'student')
-            <div class="mb-3">
-              <label for="{{ $field }}" class="form-label">{{ $label }}</label>
-              <input type="text" name="{{ $field }}" value="{{ old($field, $user->{$field}) }}" class="form-control">
-            </div>
-          @elseif (in_array($field, ['nic','school', 'school', 'degree', 'graduated_year']) && $userType === 'alumni')
-            <div class="mb-3">
-              <label for="{{ $field }}" class="form-label">{{ $label }}</label>
-              <input type="text" name="{{ $field }}" value="{{ old($field, $user->{$field}) }}" class="form-control">
-            </div>
-          @elseif (in_array($field, ['school']) && $userType === 'lecturer')
-            <div class="mb-3">
-              <label for="{{ $field }}" class="form-label">{{ $label }}</label>
-              <input type="text" name="{{ $field }}" value="{{ old($field, $user->{$field}) }}" class="form-control">
-            </div>
-          @endif
+            @if ($field === 'cb_number' || $field === 'batch' || $field === 'degree')
+                <div class="mb-3">
+                    <label for="{{ $field }}" class="form-label">{{ $details }}</label>
+                    <input type="text" name="{{ $field }}" value="{{ old($field, $user->$field) }}" class="form-control">
+                </div>
+
+            @elseif ($field === 'role')
+                <div class="mb-3">
+                    <label for="{{ $field }}" class="form-label">{{ $details['label'] }}</label>
+                    <select name="{{ $field }}" class="form-control">
+                        @foreach ($details['options'] as $option)
+                            <option value="{{ $option }}" {{ $user->name === $option ? 'selected' : '' }}>
+                                {{ $option }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+            @elseif ($field === 'nic' || $field === 'graduated_year')
+                <div class="mb-3">
+                    <label for="{{ $field }}" class="form-label">{{ $details }}</label>
+                    <input type="text" name="{{ $field }}" value="{{ old($field, $user->$field) }}" class="form-control">
+                </div>
+
+            {{-- @elseif ($field === 'school' || $field === 'level' || $field === 'degree') --}}
+            @elseif ($field === 'school' || $field === 'level')
+                <div class="mb-3">
+                    <label for="{{ $field }}" class="form-label">{{ $details['label'] }}</label>
+                    <select name="{{ $field }}" class="form-control">
+                        @foreach ($details['options'] as $option)
+                            <option value="{{ $option }}"
+                                    @if (old($field, $user->$field) == $option) selected @endif>
+                                {{ $option }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            @endif
+
         @endforeach
 
         <div class="mb-3">
