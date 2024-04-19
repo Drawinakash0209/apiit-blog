@@ -1,5 +1,4 @@
 
-
 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
     <div class="sidebar">
 
@@ -23,9 +22,6 @@
         <div class="widget">
             <h2 class="widget-title">Recent Posts</h2>
             <div class="blog-list-widget">
-
-
-
                 <div class="list-group">
                     @foreach ($recentblogs as $posts)
                     <a href="" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -36,13 +32,9 @@
                         </div>
                     </a>
                     @endforeach
-
                 </div>
-
             </div><!-- end blog-list -->
         </div><!-- end widget -->
-
-
 
 
         <div class="widget"><!-- Instagram Feed Display -->
@@ -50,7 +42,6 @@
                 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
                 <div class="elfsight-app-4d20d20b-155f-4894-a461-550f612baf80" data-elfsight-app-lazy></div>
         </div><!-- end widget -->
-
 
 
     </div><!-- end sidebar -->
