@@ -265,8 +265,8 @@ a:focus,
 
 .search-box input:focus {
     border: 1px solid #aba7a7; /* Change border color on focus */
-    transition: 0.5s;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    transition: border-color 0.5s, box-shadow 0.5s; /* Apply transition to border color and box shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Reduce the shadow */
 }
 
 .search-box input {
@@ -279,6 +279,10 @@ a:focus,
     border: 1px solid #bbb8b8; /* Set initial border color */
     padding-left: 20px;
     font-size: 12px;
+}
+
+.search-box input:focus {
+    border-color: #3b82f6; /* Change border color to blue-500 when focused */
 }
 
 .search-box .icon {
@@ -295,7 +299,7 @@ a:focus,
     border-radius: 25px 25px;
 }
 
-#check{
+#check {
     display: none;
 }
 

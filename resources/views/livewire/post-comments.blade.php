@@ -43,7 +43,7 @@
                         </p>
                         <div class="text-sm leading-5 text-gray-500">
                             {{$comment->created_at->diffForHumans()}}
-                            <a href="" class="text-blue-500 hover:text-blue-600 font-medium">US Insurance firm</a>
+                            <a href="" class="text-blue-500 hover:text-blue-600 font-medium">user name?</a>
                         </div>
                     </div>
                 </div>

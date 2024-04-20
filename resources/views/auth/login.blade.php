@@ -1,4 +1,12 @@
+
 <x-guest-layout>
+
+    <!-- Logo -->
+    <div class="flex justify-center mb-8">
+        <a href="/"><img src="https://lmd.lk/wp-content/uploads/2020/11/IMAGE-APIIT-Staffordshire.jpg" class="w-40 h-auto" alt="Logo"></a>
+    </div>
+
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -20,7 +28,7 @@
                             type="password"
                             name="password"
                             required autocomplete="current-password" />
-            
+
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>

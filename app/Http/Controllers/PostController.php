@@ -142,28 +142,28 @@ public function destroy($post_id)
 
 
 //Search Functionality
-public function search(Request $request)
-{
-    $search = $request->search;
+    public function search(Request $request)
+    {
+        $search = $request->search;
 
-    $blog = Post::where(function ($query) use ($search){
+        $blogs = Post::where(function ($query) use ($search){
 
-        $query->where('name', 'like', "%$search%")
-            ->orWhere('description', 'like', "%$search%")
-            ->orWhere('category_id', 'like', "%$search%")
-            ->orWhere('slug', 'like', "%$search%")
-            ->orWhere('meta_title', 'like', "%$search%")
-            ->orWhere('meta_description', 'like', "%$search%")
-            ->orWhere('meta_keywords', 'like', "%$search%");
-    })
-        ->orderBy('created_at', 'desc') // Sort by creation date in descending order
-        ->get();
+            $query->where('name', 'like', "%$search%")
+                ->orWhere('description', 'like', "%$search%")
+                ->orWhere('category_id', 'like', "%$search%")
+                ->orWhere('slug', 'like', "%$search%")
+                ->orWhere('meta_title', 'like', "%$search%")
+                ->orWhere('meta_description', 'like', "%$search%")
+                ->orWhere('meta_keywords', 'like', "%$search%");
+        })
+            ->orderBy('created_at', 'desc') // Sort by creation date in descending order
+            ->get();
 
-    // Fetch recent blogs
-    $recentblogs = Post::latest()->take(3)->get();
+        // Fetch recent blogs
+        $recentblogs = Post::latest()->take(3)->get();
 
-    return view('user.home', compact('blog', 'search', 'recentblogs'));
-}
+        return view('user.home', compact('blogs', 'search', 'recentblogs'));
+    }
 
 
 //this was the previous route for manage
