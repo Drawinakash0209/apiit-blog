@@ -4,9 +4,6 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <head>
-
-
-
 <style>
   #social-links ul li {
       display: inline;
@@ -14,56 +11,11 @@
   }
 
 </style>
-
 </head>
-
 
 @livewireStyles
 
-
 <div class="max-w-screen-lg mx-auto">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <main class="mt-10">
 
@@ -85,8 +37,6 @@
       </div>
 
 
-
-
       <div class="flex flex-col lg:flex-row lg:space-x-12">
 
         <div class="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
@@ -98,15 +48,9 @@
                 <p>Please <a href="{{route('login') }} ">log in</a> to like and comment on this post.</p>
             @endguest
 
-
-
-
             <livewire:post-comments :key="'comments' .$blog->id" :$blog />
 
-
-
         </div>
-
 
 
 
@@ -135,12 +79,9 @@
             {!! $shareButtons !!}
         </div>
         </div>
-
-
       </div>
     </main>
     <!-- main ends here -->
-
 
 
     {{-- Report Blog Issue --}}
