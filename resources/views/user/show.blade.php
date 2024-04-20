@@ -5,14 +5,14 @@
 
 <head>
 
-  
-  
+
+
 <style>
   #social-links ul li {
       display: inline;
       margin-right: 10px;
   }
-  
+
 </style>
 
 </head>
@@ -72,8 +72,8 @@
           <h2 class="text-4xl font-semibold text-gray-800 leading-tight">
            {{$blog->name}}
           </h2>
-         
-          <a 
+
+          <a
             href="#"
             class="py-2 text-green-700 inline-flex items-center justify-center mb-2"
           >
@@ -84,8 +84,8 @@
         <img src="/uploads/post/{{$blog->image}}" class="w-full object-cover lg:rounded" style="height: 28em;"/>
       </div>
 
-     
-  
+
+
 
       <div class="flex flex-col lg:flex-row lg:space-x-12">
 
@@ -94,14 +94,22 @@
 
             <livewire:like-button :key="$blog->id" :$blog />
 
+            @guest
+                <p>Please <a href="{{route('login') }} ">log in</a> to like and comment on this post.</p>
+            @endguest
+
+
+
+
             <livewire:post-comments :key="'comments' .$blog->id" :$blog />
 
 
+
         </div>
-       
-       
-        
- 
+
+
+
+
         <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
           <div class="p-4 border-t border-b md:border md:rounded">
             <div class="flex py-2">
@@ -117,7 +125,7 @@
               Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it.
             </p>
             <button class="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
-              Follow 
+              Follow
               <i class='bx bx-user-plus ml-2' ></i>
             </button>
           </div>
@@ -126,8 +134,8 @@
             <p class="text-gray-600">Share this post:</p>
             {!! $shareButtons !!}
         </div>
-        </div> 
-       
+        </div>
+
 
       </div>
     </main>
@@ -138,14 +146,14 @@
     {{-- Report Blog Issue --}}
     <div class="mx-4 card bg-white max-w-md p-10 md:rounded-lg my-8 mx-auto">
       <button id="showFormBtn" class="w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none">Report Blog Issue</button>
-  
+
       <form id="reportForm" action="{{ route('report.blog.issue') }}" method="POST" style="display: none;">
           @csrf
           <div class="title">
               <h1 class="font-bold text-center">Report Blog Issue</h1>
           </div>
           <input type="hidden" name="post_id" value="{{ $blog->id }}">
-  
+
           <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
               <p class="w-1/2 mb-2 md:mb-0">Type of Issue:</p>
               <select name="issue_type" class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500">
@@ -155,41 +163,41 @@
                   <option value="other">Other</option>
               </select>
           </div>
-  
+
           <div class="form mt-4">
               <div class="flex flex-col text-sm">
                   <label for="title" class="font-bold mb-2">Title</label>
-                  <input name="title" class="appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a title"> 
+                  <input name="title" class="appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a title">
               </div>
-  
+
               <div class="text-sm flex flex-col">
                   <label for="description" class="font-bold mt-4 mb-2">Description</label>
                   <textarea name="description" class="appearance-none w-full border border-gray-200 p-2 h-40 focus:outline-none focus:border-gray-500" placeholder="Enter your description"></textarea>
               </div>
           </div>
-  
+
           <div class="submit">
               <button type="submit" class="w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none">Submit</button>
           </div>
-  
+
           <!-- Close button -->
           <button id="closeFormBtn" type="button" class="w-full bg-red-600 text-white px-4 py-2 hover:bg-red-700 mt-4 text-center font-semibold focus:outline-none">Close</button>
       </form>
   </div>
-  
+
   <script>
       // Function to show the form
       function showForm() {
           document.getElementById('showFormBtn').style.display = 'none';
           document.getElementById('reportForm').style.display = 'block';
       }
-  
+
       // Function to close the form
       function closeForm() {
           document.getElementById('showFormBtn').style.display = 'block';
           document.getElementById('reportForm').style.display = 'none';
       }
-  
+
       // Add event listeners to the buttons
       document.getElementById('showFormBtn').addEventListener('click', showForm);
       document.getElementById('closeFormBtn').addEventListener('click', closeForm);
@@ -231,10 +239,10 @@
 
       <div class="flex flex-wrap items-center justify-between mb-8">
           <h2 class="mr-10 text-4xl font-bold leading-none md:text-5xl">
-             Releted blogs 
+             Releted blogs
           </h2>
       </div>
-  
+
       <div class="flex flex-wrap -mx-4">
 
         @foreach ($relatedPosts as $blog)
@@ -264,8 +272,8 @@
               </div>
           </div>
           @endforeach
-  
-  
+
+
       </div>
 
   </div>

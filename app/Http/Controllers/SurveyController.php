@@ -20,19 +20,20 @@ class SurveyController extends Controller
         return view('survey.create');
     }
 
-    public function update(Request $request)
+    public function update(SurveyFormRequest $request)
     {
+        $survey = $request->validated();
         $data = new survey;
-        $data->name = $request->name;
-        $data->form_link = $request->form_link;
-        $data->description = $request->description;
+        $data->name =   $survey['name'];
+        $data->form_link = $survey['form_link'];
+        $data->description = $survey['description'];
         $data->crated_by =  Auth::user()->id;
         $data->cb_number = Auth::user()->cb_number;
         $data->status = $request = 1;
-        
-        
+
+
         $data->save();
-        
+
         return redirect('/survey/manage')->with('message', 'Survey added successfully');
     }
 
@@ -51,7 +52,7 @@ class SurveyController extends Controller
     //     $survey->meta_keywords = $data['meta_keywords'];
     //     $survey->crated_by = 0;//Auth::user()->id;
     //     $survey->cb_number = $data['cb_number'];
-        
+
     //     $survey->save();
 
     //     return redirect('/survey')->with('message', 'Survey added successfully');
@@ -68,7 +69,7 @@ class SurveyController extends Controller
     {
         // dd($request->name);
 
-        
+
         $data = $request->validated();
 
         $post = Survey::find($survey_id);
@@ -77,9 +78,9 @@ class SurveyController extends Controller
         $post->description = $data['description'];
         $post->cb_number = $data['cb_number'];
         $post->status = $request->status == true ? '0':'1';
-        
+
         // dd($post);
-        
+
         $post->update();
 
         return redirect('/survey')->with('message', 'survey updated successfully');
@@ -91,7 +92,7 @@ class SurveyController extends Controller
         $data = Survey::latest()->where('status', 0)->get();
         return view('survey.show', compact('data'));
 
-       
+
     }
 
     public function destroy($survey_id)
@@ -112,7 +113,7 @@ class SurveyController extends Controller
 
     public function manage(){
         return view('survey.surveymanage', [
-            'surveys' => Auth::user()->survey    
+            'surveys' => Auth::user()->survey
 
         ]);
     }

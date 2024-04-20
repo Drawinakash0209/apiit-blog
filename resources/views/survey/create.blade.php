@@ -15,8 +15,8 @@
                     @endforeach
                 </ul>
             </div>
-        @endif 
-{{-- 
+        @endif
+{{--
         @if (session('message'))
 
         <div class="alert alert-success">{{ session('message')}}</div>
@@ -30,8 +30,8 @@
                     <a href="{{url('/add-survey')}}" class="btn btn-primary float-end">Add Survey</a>
                 </h4>
             </div>
-            
-            <div class="card-body" > 
+
+            <div class="card-body" >
                 @if(session()->has('message'))
                                 <div class="alert alert-success" role="alert">
                                     <strong>Well done!</strong> product add successfully.
@@ -42,7 +42,7 @@
                     @csrf
 
 
-             
+
 
                     <div class="mb-3">
                         <label for="Post name" class="form-label">Survey name</label>
@@ -65,15 +65,15 @@
                     </div>
 
 
-                    <div class="mb-3">
-                        <label for="">Created by</label>
-                        <input type="text" name="crated_by" class="form-control">
-                    </div>
+{{--                    <div class="mb-3">--}}
+{{--                        <label for="">Created by</label>--}}
+{{--                        <input type="text" name="crated_by" class="form-control">--}}
+{{--                    </div>--}}
 
-                    <div class="mb-3">
-                        <label for="">Date</label>
-                        <input type="text" name="cb_number" class="form-control">
-                    </div>
+{{--                    <div class="mb-3">--}}
+{{--                        <label for="">Date</label>--}}
+{{--                        <input type="text" name="cb_number" class="form-control">--}}
+{{--                    </div>--}}
 
                     {{-- <h5>SEO Tags</h5>
 
@@ -100,7 +100,7 @@
 
                     <div class="col-md-6">
                         <button  type="submit" class="btn btn-primary float">Submit</button>
-                    </div>  
+                    </div>
                 </form>
 
             </div>
@@ -108,4 +108,4 @@
         </div>
 
     </div>
- @endsection   
+ @endsection
