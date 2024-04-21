@@ -36,12 +36,12 @@
                 <br>
                 <br>
 
-                @guest
-                    <p class="mt-3 mb-3 text-gray-300">Please <a href="{{ route('login') }}" class="text-blue-400 hover:text-blue-700">log in</a> to like, comment or report on this post.</p>
-                @endguest
-
                 <!-- Likes Section -->
                 <livewire:like-button :key="$blog->id" :$blog />
+
+                @guest
+                    <p class="mt-3 mb-3 text-gray-300">Please <a href="{{ route('login') }}" class="text-blue-400 hover:text-blue-700">log in</a> to like or comment on this post.</p>
+                @endguest
 
                 <!-- Comments Section -->
                 <livewire:post-comments :key="'comments' .$blog->id" :$blog />
@@ -114,7 +114,7 @@
                         document.getElementById('closeFormBtn').addEventListener('click', closeForm);
                     </script>
                 @else
-                    <p>Please <a href="{{route('login') }} ">log in</a> to report an issue with this post.</p>
+                    <p class="mt-3 mb-3 text-gray-300">Please <a href="{{ route('login') }}" class="text-blue-400 hover:text-blue-700">log in</a> to report and issue about this post.</p>
                 @endauth
             </div>
 
