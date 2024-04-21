@@ -147,6 +147,16 @@
     <div class="mx-4 card bg-white max-w-md p-10 md:rounded-lg my-8 mx-auto">
       <button id="showFormBtn" class="w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none">Report Blog Issue</button>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
       <form id="reportForm" action="{{ route('report.blog.issue') }}" method="POST" style="display: none;">
           @csrf
           <div class="title">
