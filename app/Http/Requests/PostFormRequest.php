@@ -77,24 +77,24 @@ class PostFormRequest extends FormRequest
             ],
             'meta_status' => [
                 'nullable',
-              
+
 
             ],
             'status' => [
                 'nullable',
-               
+
 
             ],
 
-            'termsAndCond' => [
+            'terms' => [
                 'required',
             ],
 
-            
+
 
         ];
 
         return $rules;
     }
-    
+
 }

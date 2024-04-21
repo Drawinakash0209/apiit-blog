@@ -84,9 +84,22 @@
     <!-- main ends here -->
 
 
+
+    @auth()
+
     {{-- Report Blog Issue --}}
     <div class="mx-4 card bg-white max-w-md p-10 md:rounded-lg my-8 mx-auto">
       <button id="showFormBtn" class="w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none">Report Blog Issue</button>
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
       <form id="reportForm" action="{{ route('report.blog.issue') }}" method="POST" style="display: none;">
           @csrf
@@ -143,6 +156,10 @@
       document.getElementById('showFormBtn').addEventListener('click', showForm);
       document.getElementById('closeFormBtn').addEventListener('click', closeForm);
   </script>
+    @else
+        <p>Please <a href="{{route('login') }} ">log in</a> to report an issue with this post.</p>
+
+    @endauth
 
 
 
