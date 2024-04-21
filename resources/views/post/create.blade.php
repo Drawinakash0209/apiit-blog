@@ -3,12 +3,12 @@
 
 @section('content')
     <div class="container-fluid px-4 mt-5">
-       
+
         <div class="card">
             <div class="card-header ">
                 <h4>View posts
 
-                   
+
                 </h4>
             </div>
 
@@ -69,7 +69,7 @@
                         type="text"
                         name="tags"
                         placeholder="Example: IT, Business, Law"/>
-                        
+
 
                     </div>
 
@@ -91,7 +91,7 @@
                     <textarea name="meta_keywords" rows="3" class="form-control"> </textarea>
                 </div>
 
-               
+
                 <div class="row">
                     {{-- <div class="col-md-3 mb-3">
                         <label for="">Navbar Status</label>
@@ -104,7 +104,7 @@
                     </div> --}}
 
                     <div class="col-md-3 mb-3">
-                        <input type="checkbox" name="termsAndCond">
+                        <input type="checkbox" name="terms">
                         <label for="">Agree with <a href="/terms"> terms and conditions</a></label>
                     </div>
 
@@ -112,18 +112,18 @@
                     <div class="col-md-6">
                         <button  type="submit" name="post-button" class="btn-btn-primary">Submit</button>
                     </div>
-                        
 
 
-                    
+
+
 
                 </form>
             </div>
         </div>
 
-       
 
-    
+
+
     </div>
-    
+
 @endsection
