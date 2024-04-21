@@ -11,6 +11,7 @@ use App\Http\Requests\PostFormRequest;
 
 class PostController extends Controller
 {
+
     public function index()
     {
         $posts = Post::all();
@@ -23,7 +24,7 @@ class PostController extends Controller
 
         // Generating share buttons for the post
         $shareButtons = Share::page(
-            url()->current(), 
+            url()->current(),
         $post->name
         )
         ->facebook()
@@ -36,7 +37,7 @@ class PostController extends Controller
 
         $relatedPosts = Post::where('category_id', $post->category_id)
             ->where('category_id',$post->category_id)->get();
-          
+
 
 
         return view('user.show', [
@@ -58,11 +59,11 @@ class PostController extends Controller
     }
 
     public function store(PostFormRequest $request)
-    {  
+    {
         $data = $request->validated();
 
         $post = new Post;
-        
+
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
         $post->slug = $data['slug'];
@@ -70,7 +71,7 @@ class PostController extends Controller
         $post->v_iframe = $data['v_iframe'];
         $post->tags = $request->tags;
 
-        
+
 
         if ($request->hasFile('image')){
             $file = $request->file('image');
@@ -79,15 +80,15 @@ class PostController extends Controller
             $post->image = $filename;
 
         }
-  
-     
+
+
 
         $post->meta_title = $data['meta_title'];
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];
         $post->status = $request = 1;
         $post->created_by = Auth::user()->id;
-      
+
         $post->save();
 
         return redirect('/manage')->with('message', 'Post added successfully');
@@ -103,9 +104,9 @@ class PostController extends Controller
 
     public function update(PostFormRequest $request, $post_id)
     {
-        
+
         $data = $request->validated();
-        
+
         $post = Post::find($post_id);
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
@@ -141,28 +142,28 @@ public function destroy($post_id)
 
 
 //Search Functionality
-public function search(Request $request)
-{
-    $search = $request->search;
+    public function search(Request $request)
+    {
+        $search = $request->search;
 
-    $blog = Post::where(function ($query) use ($search){
+        $blogs = Post::where(function ($query) use ($search){
 
-        $query->where('name', 'like', "%$search%")
-            ->orWhere('description', 'like', "%$search%")
-            ->orWhere('category_id', 'like', "%$search%")
-            ->orWhere('slug', 'like', "%$search%")
-            ->orWhere('meta_title', 'like', "%$search%")
-            ->orWhere('meta_description', 'like', "%$search%")
-            ->orWhere('meta_keywords', 'like', "%$search%");
-    })
-        ->orderBy('created_at', 'desc') // Sort by creation date in descending order
-        ->get();
+            $query->where('name', 'like', "%$search%")
+                ->orWhere('description', 'like', "%$search%")
+                ->orWhere('category_id', 'like', "%$search%")
+                ->orWhere('slug', 'like', "%$search%")
+                ->orWhere('meta_title', 'like', "%$search%")
+                ->orWhere('meta_description', 'like', "%$search%")
+                ->orWhere('meta_keywords', 'like', "%$search%");
+        })
+            ->orderBy('created_at', 'desc') // Sort by creation date in descending order
+            ->get();
 
-    // Fetch recent blogs
-    $recentblogs = Post::latest()->take(3)->get();
+        // Fetch recent blogs
+        $recentblogs = Post::latest()->take(3)->get();
 
-    return view('user.home', compact('blog', 'search', 'recentblogs'));
-}
+        return view('user.home', compact('blogs', 'search', 'recentblogs'));
+    }
 
 
 //this was the previous route for manage

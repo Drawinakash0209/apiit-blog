@@ -24,7 +24,7 @@ class Post extends Model
         'status',
         'created_by',
         'tags'
-        
+
 
     ];
 

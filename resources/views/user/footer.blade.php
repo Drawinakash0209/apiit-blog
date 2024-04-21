@@ -5,10 +5,10 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Skills</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/view-survey">Surveys</a></li>
+                    <li><a href="#">Life@APIIT</a></li>
+                    <li><a href="#">About</a></li>
                     <li><a href="#">Contacts</a></li>
                 </ul>
             </div>

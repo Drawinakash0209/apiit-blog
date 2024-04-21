@@ -3,12 +3,12 @@
 
 @section('content')
     <div class="container-fluid px-4 mt-5">
-       
+
         <div class="card">
             <div class="card-header ">
                 <h4>Edit Posts
 
-                   
+
                 </h4>
             </div>
 
@@ -74,7 +74,7 @@
                     </div>
 
 
-                    
+
 
                 <h5>SEO Tags</h5>
 
@@ -114,18 +114,18 @@
                     <div class="col-md-6">
                         <button  type="submit" class="btn-btn-primary">Submit</button>
                     </div>
-                        
 
 
-                    
+
+
 
                 </form>
             </div>
         </div>
 
-       
 
-    
+
+
     </div>
-    
+
 @endsection
