@@ -214,6 +214,9 @@
       document.getElementById('showFormBtn').addEventListener('click', showForm);
       document.getElementById('closeFormBtn').addEventListener('click', closeForm);
   </script>
+    @else
+    <div class="mx-4 card bg-white max-w-md p-10 md:rounded-lg my-8 mx-auto">
+        <p>Please <a href="{{route('login') }} ">log in</a> to report an issue with this post.</p>
 
     @endauth
 
