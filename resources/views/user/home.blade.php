@@ -73,15 +73,12 @@
     </style>
 
 </head>
-
 <body>
 
 
 
 
-
 @include('user.navbar')
-
 
 
 
@@ -102,6 +99,7 @@
   </div>
 </div>
 
+
 <div class="flex flex-col bg-white m-auto p-auto">
     <h1 class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800">
         Categories
@@ -109,121 +107,45 @@
     <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
         <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
             @php
-            // Array of sample background images
-            $backgroundImages = [
-            'https://i.pinimg.com/564x/27/fb/7f/27fb7fc492f0f01463084ed8f95513b9.jpg',
-            'https://i.pinimg.com/564x/25/48/f1/2548f145939dae426e2474de01a60a18.jpg',
-            'https://i.pinimg.com/564x/8e/4f/0f/8e4f0fe2b7581b7ceceb86f23428eb27.jpg',
-            'https://static.wixstatic.com/media/b843f6_3847421d061e4b0390388cbec80f93df~mv2.jpg/v1/fit/w_2500,h_1330,al_c/b843f6_3847421d061e4b0390388cbec80f93df~mv2.jpg',
-            'https://i.pinimg.com/564x/36/ce/c3/36cec3f8c926383c8f29cea7c711c0f9.jpg',
-            // Add more image URLs as needed
-            ];
-            // Array of sample text for each card
-            $cardTexts = [
-            '<a href="/?tag=IT">IT</a>',
-            '<a href="/?tag=Business">Business</a>',
-            '<a href="/?tag=Law">Law</a>',
-            '<a href="/?tag=Club">Club</a>',
-            '<a href="/?tag=Sports">Sports</a>',
-            // Add more text as needed
-            ];
+                // Array of sample background images
+                $backgroundImages = [
+                'https://i.pinimg.com/564x/27/fb/7f/27fb7fc492f0f01463084ed8f95513b9.jpg',
+                'https://i.pinimg.com/564x/25/48/f1/2548f145939dae426e2474de01a60a18.jpg',
+                'https://i.pinimg.com/564x/8e/4f/0f/8e4f0fe2b7581b7ceceb86f23428eb27.jpg',
+                'https://media.istockphoto.com/id/1158237474/photo/papers-on-meeting-table-above-view.jpg?s=612x612&w=0&k=20&c=GrrzmMNgvNG5Yk6dPdG1sXMlaCHY4uzPaKBFQg3f_So=',
+                'https://i.pinimg.com/564x/36/ce/c3/36cec3f8c926383c8f29cea7c711c0f9.jpg',
+                // Add more image URLs as needed
+                ];
+                // Array of sample text for each card
+                $cardTexts = [
+                '<a href="/?tag=IT">IT</a>',
+                '<a href="/?tag=Business">Business</a>',
+                '<a href="/?tag=Law">Law</a>',
+                '<a href="/?tag=Clubs">Club</a>',
+                '<a href="/?tag=Sports">Sports</a>',
+                // Add more text as needed
+                ];
             @endphp
             @foreach($backgroundImages as $index => $image)
-            <div class="inline-block px-3">
-                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-                    style="background-image: url('{{ $image }}'); background-size: cover;">
-                    <div class="flex items-center justify-center h-full text-center text-white text-lg font-bold">
-                      {!! $cardTexts[$index] !!}
+                <div class="inline-block px-3">
+                    <div class="relative w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+                         style="background-image: url('{{ $image }}'); background-size: cover;">
+                        <!-- Overlay for text visibility -->
+                        <div class="absolute inset-0 bg-black opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-center text-white text-lg font-bold">
+                            {!! $cardTexts[$index] !!}
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="section wb">
     <div class="container">
         <div class="row">
-
-
-            {{-- <div class="blog-box row">
-                <div class="col-md-4">
-                    <div class="post-media">
-                        <a href="" title="">
-                            <img src="/uploads/post/{{$item->image}}" alt="" class="img-fluid">
-                            <div class="hovereffect"></div>
-                        </a>
-                    </div><!-- end media -->
-                </div><!-- end col -->
-
-
-                <div class="blog-meta big-meta col-md-8">
-                    <span class="bg-aqua"><a href="" title="">{{$item['category_id']}}</a></span>
-                    <h4><a href="/home/{{$item['id']}}" title="">{{$item['name']}}</a></h4>
-                    <p>{!! Str::limit(strip_tags($item->description), 250) !!}</p>
-                    <small><a href="" title=""><i class="fa fa-eye"></i> 4441</a></small>
-                    <small><a href="" title="">{{ $item['created_at']->format('Y-m-d') }}</a></small>
-
-                    <small><a href="#" title="">by Matilda</a></small>
-                </div><!-- end meta -->
-            </div><!-- end blog-box -->  --}}
-
-
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
                     <div class="blog-list clearfix">
@@ -270,7 +192,11 @@
                 </div>
             </div><!-- end col -->
 
+
+
             @include('user.sidebar')
+
+
 
         </div><!-- end row -->
     </div><!-- end container -->
@@ -279,7 +205,6 @@
 
 
 @include('user.footer')
-
 
 
 

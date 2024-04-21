@@ -1,5 +1,11 @@
 
 <x-guest-layout>
+
+    <!-- Logo -->
+    <div class="flex justify-center mb-8">
+        <a href="/"><img src="https://lmd.lk/wp-content/uploads/2020/11/IMAGE-APIIT-Staffordshire.jpg" class="w-40 h-auto" alt="Logo"></a>
+    </div>
+
     <form method="POST" action="{{ route('register') }}">
     {{-- <form method="POST"> --}}
         @csrf
@@ -230,9 +236,9 @@
         </div>
     </form>
 
-
-
 </x-guest-layout>
+
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
