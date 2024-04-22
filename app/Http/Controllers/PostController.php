@@ -69,7 +69,8 @@ class PostController extends Controller
         $post->slug = $data['slug'];
         $post->description = $data['description'];
         $post->v_iframe = $data['v_iframe'];
-        $post->tags = $request->tags;
+//        $post->tags = $request->tags;
+        $post->tags = $request->tags . ', ' . Auth::user()->user_type;
 
 
 
