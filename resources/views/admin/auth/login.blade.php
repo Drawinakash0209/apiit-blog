@@ -1,7 +1,13 @@
 <x-guest-layout>
+
     {{-- Heading called Login for admins alligned to center --}}
 
     <x-slot name="header">
+        <!-- Logo -->
+        <div class="flex justify-center mb-8">
+            <a href="/"><img src="https://lmd.lk/wp-content/uploads/2020/11/IMAGE-APIIT-Staffordshire.jpg" class="w-40 h-auto" alt="Logo"></a>
+        </div>
+
         <h2 class="mt-4 font-semibold text-xl text-gray-800 leading-tight text-center">
             {{ __('Admin Login') }}
         </h2>
