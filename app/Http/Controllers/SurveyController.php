@@ -76,7 +76,7 @@ class SurveyController extends Controller
         $post->name = $data['name'];
         $post->form_link = $data['form_link'];
         $post->description = $data['description'];
-        $post->cb_number = $data['cb_number'];
+//        $post->cb_number = $data['cb_number'];
         $post->status = $request->status == true ? '0':'1';
 
         // dd($post);
