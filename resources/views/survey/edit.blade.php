@@ -15,8 +15,8 @@
                     @endforeach
                 </ul>
             </div>
-        @endif 
-{{-- 
+        @endif
+{{--
         @if (session('message'))
 
         <div class="alert alert-success">{{ session('message')}}</div>
@@ -26,12 +26,12 @@
 
             <div class="card-header ">
                 <h4>Edit Survey
-{{-- 
+{{--
                     <a href="{{url('/add-survey')}}" class="btn btn-primary float-end">Add Survey</a> --}}
                 </h4>
             </div>
-            
-            <div class="card-body" > 
+
+            <div class="card-body" >
                 @if(session()->has('message'))
                                 <div class="alert alert-success" role="alert">
                                     <strong>Well done!</strong> product add successfully.
@@ -39,13 +39,13 @@
 @endif
                 <form action="{{url('/edit-update-survey/'.$survey->id)}}" method="POST" enctype="multipart/form-data">
 
-                 
+
 
                     @method('PUT')
 
                     @csrf
 
-             
+
 
                     <div class="mb-3">
                         <label for="Post name" class="form-label">Survey name</label>
@@ -59,13 +59,13 @@
 
                     <div class="mb-3">
                         <label for="Description" class="form-label">Form Link (iframe)</label>
-                        <input type="text"  name="form_link" class="form-control" 
+                        <input type="text"  name="form_link" class="form-control"
                         value="{!!$survey->form_link!!}">
                     </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea name="description" rows="4" class="form-control"  value="{!!$survey->description!!}"></textarea>
+                        <textarea name="description" rows="4" class="form-control" >{{$survey->description}}</textarea>
                     </div>
 
 
@@ -86,7 +86,7 @@
 
                     <div class="col-md-6">
                         <button  type="submit" class="btn btn-primary float">Edit Survey</button>
-                    </div>  
+                    </div>
                 </form>
 
             </div>
@@ -94,4 +94,4 @@
         </div>
 
     </div>
- @endsection   
+ @endsection
