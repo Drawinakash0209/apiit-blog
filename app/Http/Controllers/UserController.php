@@ -102,7 +102,7 @@ class UserController extends Controller
         } else if ($userType === 'alumni') {
             $rules = array_merge($rules, [
             'nic' => 'required|string|unique:users,nic', // Add validation for NIC if needed
-            'graduated_year' => 'required|string', // Add validation for year format if needed
+                'graduated_year' => 'required|digits:4|numeric',// Add validation for year format if needed
             'degree' => 'required|string', // Add validation for degree if needed
             'school' => 'required|string', // Add validation for school if needed
             ]);
