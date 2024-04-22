@@ -39,8 +39,8 @@
 
         <div class="widget"><!-- Instagram Feed Display -->
             <h2 class="widget-title">Instagram Feed</h2>
-                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-                <div class="elfsight-app-4d20d20b-155f-4894-a461-550f612baf80" data-elfsight-app-lazy></div>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div class="elfsight-app-5a34022a-3f93-4fe2-95e8-4ae1efc49393" data-elfsight-app-lazy></div>
         </div><!-- end widget -->
 
 
