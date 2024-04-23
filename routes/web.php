@@ -42,47 +42,14 @@ use App\Http\Controllers\Admin\DashboardController;
 //     ]);
 // });
 
-//Route::get('/', function () {
-//    $blogs = Post::latest()->filters(request(['tag']))->where('status', 0)->get();
-//    $recentblogs = Post::latest()->take(3)->get();
-//
-//    return view('user.home', compact('blogs', 'recentblogs'));
-//});
-
 Route::get('/', function () {
-    // Get the logged in user
-    $user = Auth::user();
-
-    // Determine the tag based on the user's school
-    $tag = '';
-    if ($user && $user->school) {
-        switch ($user->school) {
-            case 'Computing':
-                $tag = 'Computing';
-                break;
-            case 'Business':
-                $tag = 'Business';
-                break;
-            case 'Law':
-                $tag = 'Law';
-                break;
-            default:
-                $tag = ''; // Default tag if user's school is not recognized
-        }
-    }
-
-    // Fetch blogs based on the tag
-    $blogs = Post::latest()->where('status', 0);
-    if ($tag) {
-        $blogs->filters(request([$tag]));
-    }
-    $blogs = $blogs->get();
-
-    // Fetch recent blogs
+    $blogs = Post::latest()->filters(request(['tag']))->where('status', 0)->get();
     $recentblogs = Post::latest()->take(3)->get();
 
     return view('user.home', compact('blogs', 'recentblogs'));
 });
+
+
 
 
 Route::get('/dashboard', function () {
