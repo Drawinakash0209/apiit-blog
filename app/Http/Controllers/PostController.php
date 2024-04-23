@@ -127,7 +127,7 @@ class PostController extends Controller
         $post->meta_description = $data['meta_description'];
         $post->meta_keywords = $data['meta_keywords'];
         $post->status = $request->status == true ? '0':'1';
-        $post->created_by = 0;//Auth::user()->id;
+        // $post->created_by = 0;//Auth::user()->id;
         $post->update();
 
         return redirect('/post')->with('message', 'Post updated successfully');
