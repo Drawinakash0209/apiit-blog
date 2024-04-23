@@ -118,7 +118,7 @@
                 ];
                 // Array of sample text for each card
                 $cardTexts = [
-                '<a href="/?tag=IT">IT</a>',
+                '<a href="/?tag=Computing">Computing</a>',
                 '<a href="/?tag=Business">Business</a>',
                 '<a href="/?tag=Law">Law</a>',
                 '<a href="/?tag=Clubs">Club</a>',
