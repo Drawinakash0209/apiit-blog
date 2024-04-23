@@ -22,70 +22,53 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
+//route for homepage
 // Route::get('/', function () {
-//     return view('user.home', [
-//         'blog' => Post::latest()->get(),
 
-//     ]);
+//     $blogs = Post::latest()->filters(request(['tag']))->where('status', 0)->get();
+//     $recentblogs = Post::latest()->take(3)->get();
+
+//     return view('user.home', compact('blogs', 'recentblogs'));
 // });
 
-
-// Route::get('/', function () {
-//     return view('user.home', [
-//         'blog' => Post::latest()->filters(request(['tag']))->where('status', 0)->get(),
-//         'recentblogs' => Post::latest()->take(3)->get(),
-//         $mainBlogs = [],
-//         for ($i = 0; $i < 6; $i++) {
-//             $mainBlogs[$i] = $blogs->skip($i)->first();
-//         }
-
-//     ]);
-// });
 
 Route::get('/', function () {
+    $user = auth()->user(); // Retrieve the logged-in user
 
-    $blogs = Post::latest()->filters(request(['tag']))->where('status', 0)->get();
-    $recentblogs = Post::latest()->take(3)->get();
+    $blogsQuery = Post::latest()->filters(request(['tag']))->where('status', 0); // Base query for all posts
+    $blogs = collect(); // Empty collection to store all blogs
 
-    return view('user.home', compact('blogs', 'recentblogs'));
+    if ($user) {
+        $school = $user->school; // Get the user's school
+
+        $featuredCategoryId = [
+            'computing' => 8,
+            'business' => 10,
+            'law' => 9,
+        ][$school] ?? null; // Map school to featured category ID
+
+        if ($featuredCategoryId) {
+            $featuredBlogs = $blogsQuery->where('category_id', $featuredCategoryId)->get();
+            $blogs = $featuredBlogs->merge($blogsQuery->where('category_id', '!=', $featuredCategoryId)->get());
+        } else {
+            $blogs = $blogsQuery->get(); // No featured category, fetch all posts
+        }
+    } else {
+        $blogs = $blogsQuery->get(); // Non-logged-in user, fetch all posts
+    }
+
+    $recentBlogs = Post::latest()->take(3)->get();
+
+    return view('user.home', compact('blogs', 'recentBlogs'));
 });
 
 
-//Route::get('/', function () {
-//    $user = auth()->user(); // Retrieve the logged-in user
-//
-//    $blogsQuery = Post::latest()->filters(request(['tag']))->where('status', 0); // Base query for all posts
-//    $blogs = collect(); // Empty collection to store all blogs
-//
-//    if ($user) {
-//        $school = $user->school; // Get the user's school
-//
-//        $featuredCategoryId = [
-//            'computing' => 8,
-//            'business' => 10,
-//            'law' => 9,
-//        ][$school] ?? null; // Map school to featured category ID
-//
-//        if ($featuredCategoryId) {
-//            $featuredBlogs = $blogsQuery->where('category_id', $featuredCategoryId)->get();
-//            $blogs = $featuredBlogs->merge($blogsQuery->where('category_id', '!=', $featuredCategoryId)->get());
-//        } else {
-//            $blogs = $blogsQuery->get(); // No featured category, fetch all posts
-//        }
-//    } else {
-//        $blogs = $blogsQuery->get(); // Non-logged-in user, fetch all posts
-//    }
-//
-//    $recentblogs = Post::latest()->take(3)->get();
-//
-//    return view('user.home', compact('blogs', 'recentblogs'));
-//});
-
-
+//route for  Dashboard page
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//route for profile CRUD page
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -94,6 +77,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+
+//Route for admin Dashboard
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
@@ -102,6 +87,7 @@ Route::get('/admin/dashboard', function () {
 Route::get('/home/{post}', [PostController::class, 'show']);
 
 
+//Route for the admin category controller
 Route::prefix('admin')->group(function () {
 
     //Admin Dashboard
@@ -121,6 +107,7 @@ Route::prefix('admin')->group(function () {
 
 });
 
+//Route for blog CRUD
 Route::get('/post',[PostController::class, 'index']);
 
 Route::get('/add-post',[PostController::class, 'create']);
@@ -144,11 +131,7 @@ Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
 Route::get('/search', [PostController::class, 'search']);
 
 
-// Route::get('/student/dashboard', function () {
-//     return view('student.dashboard');
-// })->middleware(['auth:student', 'verified'])->name('student.dashboard');
-
-
+//Route for the student dashboard
 Route::get('/student/dashboard', function () {
     return view('student.dashboard');
 })->name('student.dashboard');
@@ -159,7 +142,7 @@ require __DIR__.'/studentauth.php';
 Route::resource('student', StudentController::class);
 
 
-//Route for the showpending method in student controller
+//Route for the show pending method in student controller
 Route::get('/pending', [StudentController::class, 'showpending'])->name('student.pending');
 
 Route::get('/status', function () {
@@ -189,38 +172,26 @@ Route::get('/user/status', function () {
 } )-> name('user.status');
 
 
-
-
-
+//Route for the user status with controllers
 Route::get('/manage', [PostController::class, 'manage']);
 
-
+//Route for Survey CRUD
 Route::get('/survey',[App\Http\Controllers\SurveyController::class, 'index']);
 Route::get('/add-survey',[App\Http\Controllers\SurveyController::class, 'create']);
-// Route::post('/add-survey',[App\Http\Controllers\SurveyController::class, 'store']);
-
 Route::post('/update-survey',[App\Http\Controllers\SurveyController::class, 'update']);
-
 Route::get('/survey-edit/{survey_id}', [App\Http\Controllers\SurveyController::class, 'edit']);
 Route::put('/edit-update-survey/{survey_id}', [App\Http\Controllers\SurveyController::class, 'editupdate']);
-
-
 Route::get('/survey-delete/{survey_id}', [App\Http\Controllers\SurveyController::class, 'destroy']);
-
-
-
-// Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
-
 Route::get('/view-survey', [App\Http\Controllers\SurveyController::class, 'show']);
-
 Route::get('/survey/manage', [App\Http\Controllers\SurveyController::class, 'manage']);
 
+
+//Route for the Terms and conditions
 Route::get('/terms', function () {
     return view('post.terms-and-cond', [
     ]);
 });
 
-
+//Route for the report blog issue
 Route::post('/report/blog/issue', [BlogReportController::class, 'store'])->name('report.blog.issue');
-
 Route::get('/reports', [BlogReportController::class, 'index'])->name('reports');

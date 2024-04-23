@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container-fluid px-4">
-        
- 
+
+
 
     <div class="card mt-4">
         <div class="card-header">
@@ -13,7 +13,7 @@
 
         <div class="card-body">
 
-           
+{{--           error message--}}
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -23,11 +23,11 @@
                 </ul>
             </div>
         @endif
-           
-            
+
+
 
             <form action="{{url('/admin/add-category')}}" method="POST" enctype="multipart/form-data">
-                
+
                 @csrf
 
                 <div class="mb-3">
@@ -83,10 +83,10 @@
                     <div class="col-md-6">
                         <button  type="submit" class="btn-btn-primary">Submit</button>
                     </div>
-                        
 
-               
-            
+
+
+
     </div>
 </div>
 @endsection

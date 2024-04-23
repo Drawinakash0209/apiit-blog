@@ -28,15 +28,15 @@
                     <td>{{ $admin->id }}</td>
                     <td>{{$admin->name}}</td>
                     <td>{{$admin->email}}</td>
-                    {{-- <td>{{$item->status == '1' ? 'Hidden' : 'Show'}}</td> --}}
+
 
                     <td>
-                        {{-- <a href="{{'edit-category/'.  $admin->id}}" class="btn btn-success">Edit</a> --}}
+
                         <a href="{{ route('admin.edit', $admin->id) }}" class="btn btn-primary">Edit</a>
                     </td>
                     <td>
 
-                        {{-- <a href="{{route('admin.destroy', $admin->id)}}" class="btn btn-danger">Delete</a> --}}
+                       
                         <form action="{{ route('admin.destroy', $admin->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
