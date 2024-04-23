@@ -33,7 +33,8 @@ use App\Http\Controllers\Admin\DashboardController;
 
 
 Route::get('/', function () {
-    $user = auth()->user(); // Retrieve the logged-in user
+    $user = auth()->user();
+    dd($user); // Retrieve the logged-in user
 
     $blogsQuery = Post::latest()->filters(request(['tag']))->where('status', 0); // Base query for all posts
     $blogs = collect(); // Empty collection to store all blogs
