@@ -23,45 +23,45 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 //route for homepage
-// Route::get('/', function () {
-
-//     $blogs = Post::latest()->filters(request(['tag']))->where('status', 0)->get();
-//     $recentblogs = Post::latest()->take(3)->get();
-
-//     return view('user.home', compact('blogs', 'recentblogs'));
-// });
-
-
 Route::get('/', function () {
-    $user = auth()->user();
-    dd($user); // Retrieve the logged-in user
 
-    $blogsQuery = Post::latest()->filters(request(['tag']))->where('status', 0); // Base query for all posts
-    $blogs = collect(); // Empty collection to store all blogs
-
-    if ($user) {
-        $school = $user->school; // Get the user's school
-
-        $featuredCategoryId = [
-            'computing' => 8,
-            'business' => 10,
-            'law' => 9,
-        ][$school] ?? null; // Map school to featured category ID
-
-        if ($featuredCategoryId) {
-            $featuredBlogs = $blogsQuery->where('category_id', $featuredCategoryId)->get();
-            $blogs = $featuredBlogs->merge($blogsQuery->where('category_id', '!=', $featuredCategoryId)->get());
-        } else {
-            $blogs = $blogsQuery->get(); // No featured category, fetch all posts
-        }
-    } else {
-        $blogs = $blogsQuery->get(); // Non-logged-in user, fetch all posts
-    }
-
+    $blogs = Post::latest()->filters(request(['tag']))->where('status', 0)->get();
     $recentblogs = Post::latest()->take(3)->get();
 
     return view('user.home', compact('blogs', 'recentblogs'));
 });
+
+
+// Route::get('/', function () {
+//     $user = auth()->user();
+//     dd($user); // Retrieve the logged-in user
+
+//     $blogsQuery = Post::latest()->filters(request(['tag']))->where('status', 0); // Base query for all posts
+//     $blogs = collect(); // Empty collection to store all blogs
+
+//     if ($user) {
+//         $school = $user->school; // Get the user's school
+
+//         $featuredCategoryId = [
+//             'computing' => 8,
+//             'business' => 10,
+//             'law' => 9,
+//         ][$school] ?? null; // Map school to featured category ID
+
+//         if ($featuredCategoryId) {
+//             $featuredBlogs = $blogsQuery->where('category_id', $featuredCategoryId)->get();
+//             $blogs = $featuredBlogs->merge($blogsQuery->where('category_id', '!=', $featuredCategoryId)->get());
+//         } else {
+//             $blogs = $blogsQuery->get(); // No featured category, fetch all posts
+//         }
+//     } else {
+//         $blogs = $blogsQuery->get(); // Non-logged-in user, fetch all posts
+//     }
+
+//     $recentblogs = Post::latest()->take(3)->get();
+
+//     return view('user.home', compact('blogs', 'recentblogs'));
+// });
 
 
 //route for  Dashboard page
