@@ -57,9 +57,9 @@ Route::get('/', function () {
         $blogs = $blogsQuery->get(); // Non-logged-in user, fetch all posts
     }
 
-    $recentBlogs = Post::latest()->take(3)->get();
+    $recentblogs = Post::latest()->take(3)->get();
 
-    return view('user.home', compact('blogs', 'recentBlogs'));
+    return view('user.home', compact('blogs', 'recentblogs'));
 });
 
 
