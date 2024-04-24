@@ -40,7 +40,7 @@
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         {{-- Log out for the admin with POST method--}}
-                        <form method="POST" action="{{ route('student.logout') }}">
+                        <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="dropdown-item">Logout</button>
                         </form>
@@ -49,7 +49,7 @@
             </ul>
         </nav>
 
-        
+
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -60,7 +60,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>               
+                            <div class="sb-sidenav-menu-heading">Interface</div>
 
                                         <!-- Posts Dropdown -->
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsPosts" aria-expanded="false" aria-controls="collapseLayoutsPosts">
