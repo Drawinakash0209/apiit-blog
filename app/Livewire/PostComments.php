@@ -13,11 +13,10 @@ class PostComments extends Component
 
     public Post $blog;
 
-
     #[Rule('required|min:2|max:200')]
     public string $comment;
 
-
+    // function to post comment
     public function postComment(){
         $this->validateOnly('comment');
        

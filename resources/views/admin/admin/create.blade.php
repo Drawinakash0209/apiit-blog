@@ -4,16 +4,14 @@
     <div class="container-fluid px-4">
 
 
-
     <div class="card mt-4">
         <div class="card-header">
              <h4 class="">Create New Admin</h4>
-
         </div>
 
+        
+    {{-- Display error messages if any --}}
         <div class="card-body">
-
-
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -25,7 +23,7 @@
         @endif
 
 
-
+{{-- Form to create admins --}}
             <form action="{{ route('admin.store', $admin->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
@@ -43,10 +41,6 @@
                     <div class="col-md-6">
                         <button  type="submit" class="btn-btn-primary">Create Admin</button>
                     </div>
-
-
-
-
     </div>
 </div>
 @endsection

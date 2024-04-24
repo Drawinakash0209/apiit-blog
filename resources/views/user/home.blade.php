@@ -128,8 +128,7 @@
             @endphp
             @foreach($backgroundImages as $index => $image)
                 <div class="inline-block px-3">
-                    <div class="relative w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-                         style="background-image: url('{{ $image }}'); background-size: cover;">
+                    <div class="relative w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" style="background-image: url('{{ $image }}'); background-size: cover;">
                         <!-- Overlay for text visibility -->
                         <div class="absolute inset-0 bg-black opacity-30"></div>
                         <div class="absolute inset-0 flex items-center justify-center text-center text-white text-lg font-bold">

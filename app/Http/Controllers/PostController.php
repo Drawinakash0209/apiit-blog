@@ -50,7 +50,7 @@ class PostController extends Controller
 
 
 
-
+    //Create function to display form to create post
     public function create()
     {
 
@@ -58,6 +58,7 @@ class PostController extends Controller
         return view('post.create' ,compact('categories'));
     }
 
+    //Store function
     public function store(PostFormRequest $request)
     {
         $data = $request->validated();
@@ -96,6 +97,7 @@ class PostController extends Controller
 
     }
 
+    //Edit function (show form to edit post)
     public function edit($post_id)
     {
         $categories = Category::where('status','0')->get();
@@ -103,6 +105,7 @@ class PostController extends Controller
         return view('post.edit',compact('post', 'categories'));
     }
 
+    //Update function
     public function update(PostFormRequest $request, $post_id)
     {
 
@@ -134,6 +137,7 @@ class PostController extends Controller
 
 }
 
+//Delete function
 public function destroy($post_id)
 {
     $post = Post::find($post_id);
@@ -167,12 +171,6 @@ public function destroy($post_id)
     }
 
 
-//this was the previous route for manage
-// public function manage(){
-//     return view('user.post-manage', [
-//         'posts' =>  Auth::guard('student')->user()->posts
-//     ]);
-// }
 
 //this is the new route for manage
 public function manage(){

@@ -38,7 +38,7 @@ class StudentController extends Controller
             'email' => 'required|email|unique:students,email',
             'student_id' => 'required|unique:students,student_id',
             'batch' => 'required',
-            // 'role' => 'required'
+        
         ]);
 
         $validated['password'] = bcrypt('password');
@@ -63,7 +63,6 @@ class StudentController extends Controller
     {
         return view('admin.student.edit', [
             'student' => $student,
-            // 'roles' => Role::cases()
         ]);
     }
 
@@ -78,7 +77,6 @@ class StudentController extends Controller
         'student_id' => 'required|unique:students,student_id,' . $student->id . ',id', // Updated validation rule
         'batch' => 'required',
         'is_approved' => 'required',
-        // 'role' => 'required'
         ]);
 
         $student->update($validated);

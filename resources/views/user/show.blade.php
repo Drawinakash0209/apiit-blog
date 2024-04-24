@@ -15,19 +15,19 @@
 
 @livewireStyles
 
+{{--Article page for the blog--}}
 <div class="max-w-screen-lg mx-auto">
 
     <main class="mt-10">
-
         <div class="mb-4 md:mb-0 w-full mx-auto relative">
             <div class="px-4 lg:px-0">
+                {{--blog heading--}}
                 <h2 class="text-4xl font-semibold text-gray-800 leading-tight">{{$blog->name}}</h2>
-
+                {{--category id--}}
                 <a href="#" class="py-2 text-green-700 inline-flex items-center justify-center mb-2">{{ $category->name}}</a>
             </div>
             <img src="/uploads/post/{{$blog->image}}" class="w-full object-cover lg:rounded" style="height: 28em;"/>
         </div>
-
 
         <div class="flex flex-col lg:flex-row lg:space-x-12">
             <!-- Description Section -->
@@ -35,10 +35,8 @@
                 {!! $blog->description !!}
                 <br>
                 <br>
-
                 <!-- Likes Section -->
                 <livewire:like-button :key="$blog->id" :$blog />
-
                 @guest
                     <p class="mt-3 mb-3 text-gray-300">Please <a href="{{ route('login') }}" class="text-blue-400 hover:text-blue-700">log in</a> to like or comment on this post.</p>
                 @endguest

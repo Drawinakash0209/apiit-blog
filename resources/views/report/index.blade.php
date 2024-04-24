@@ -7,8 +7,6 @@
         <div class="card">
             <div class="card-header ">
                 <h4>View reports
-
-                    {{-- <a href="{{url('/add-post')}}" class="btn btn-primary float-end">Add Post</a> --}}
                 </h4>
             </div>
         </div>
@@ -43,15 +41,13 @@
                     <td>{{$item->title}}</td>
                     <td>{{$item->issue_type}}</td>
                     <td>{{$item->description}}</td>
-                    
-              
 
                     <td>
                         <a href="{{'post-edit/'.$item->id}}" class="btn btn-success">Edit</a>
                     </td>
 
                     <td>
-                        <a href="{{'post-delete/'.  $item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="{{'report-delete/'.  $item->id}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                     

@@ -5,12 +5,12 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Category</h1>
 
+        {{-- Display error messages if any --}}
         @if (session('message'))
-
         <div class="alert alert-success">{{ session('message')}}</div>
-
         @endif
 
+        {{-- Table format for CRUD operations --}}
         <table class="table table-bordered">
             <thead>
                 <tr>

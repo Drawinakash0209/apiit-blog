@@ -4,12 +4,14 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Students</h1>
 
+        {{-- Display error messages if any --}}
         @if (session('message'))
 
         <div class="alert alert-success">{{ session('message')}}</div>
 
         @endif
 
+        {{-- display student details in a table --}}
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -34,15 +36,10 @@
                     <td>{{$student->batch}}</td>
                     <td>{{$student->email}}</td>
                     <td>{{$student->is_approved ? 'Activated' : 'Diactivated'}}</td>
-                    {{-- <td>{{$item->status == '1' ? 'Hidden' : 'Show'}}</td> --}}
-
                     <td>
-                        {{-- <a href="{{'edit-category/'.  $student->id}}" class="btn btn-success">Edit</a> --}}
                         <a href="{{ route('student.edit', $student->id) }}" class="btn btn-primary">Edit</a>
                     </td>
                     <td>
-
-                        {{-- <a href="{{route('student.destroy', $student->id)}}" class="btn btn-danger">Delete</a> --}}
                         <form action="{{ route('student.destroy', $student->id) }}" method="POST">
                             @csrf
                             @method('DELETE')

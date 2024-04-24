@@ -25,11 +25,9 @@
         @endif
 
 
-
+            {{-- Form to create categories --}}
             <form action="{{url('/admin/add-category')}}" method="POST" enctype="multipart/form-data">
-
-                @csrf
-
+            @csrf
                 <div class="mb-3">
                     <label for="category_name" class="form-label">Category Name</label>
                     <input type="text" name="name" class="form-control">
@@ -83,9 +81,6 @@
                     <div class="col-md-6">
                         <button  type="submit" class="btn-btn-primary">Submit</button>
                     </div>
-
-
-
 
     </div>
 </div>

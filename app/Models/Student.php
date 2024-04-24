@@ -22,7 +22,6 @@ class Student extends Authenticatable
         'name',
         'email',
         'password',
-        // 'student_id',
         'batch',
         'is_approved',
     ];
@@ -49,7 +48,7 @@ class Student extends Authenticatable
     ];
 
 
-    //create a relationship between student and posts
+    //Relationshps
     public function posts(){
         return $this->hasMany(Post::class, 'created_by');
     }

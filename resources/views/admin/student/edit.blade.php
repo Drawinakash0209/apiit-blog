@@ -11,9 +11,8 @@
 
         </div>
 
+        {{-- Display error messages if any --}}
         <div class="card-body">
-
-
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -26,6 +25,7 @@
 
 
 
+            {{-- Display form to update student details --}}
             <form action="{{ route('student.update', $student->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -57,15 +57,6 @@
                     <input type="text" name="batch" value="{{ old('batch', $student->batch) }}" class="form-control">
                 </div>
 
-                {{-- A drop down option to change the is_approved to true and false --}}
-                {{-- <div class="mb-3">
-                    <label for="is_approved" class="form-label">Account Status</label>
-                    <select name="is_approved" class="form-control">
-                        <option value="1" {{ $student->is_approved ? 'selected' : '' }}>Activated</option>
-                        <option value="0" {{ ! $student->is_approved ? 'selected' : '' }}>Diactivated</option>
-                    </select>
-                </div> --}}
-
                 <div class="mb-3">
                     <label for="is_approved" class="form-label">Account Status</label>
                     <select name="is_approved" class="form-control">
@@ -73,52 +64,6 @@
                         <option value="0" {{ $student->is_approved == 0 ? 'selected' : '' }}>Deactivated</option>
                     </select>
                 </div>
-
-                {{-- <div class="mb-3">
-                    <label for="">Slug</label>
-                    <input type="text" name="slug"value="{{$category->slug}}" class="form-control">
-                </div> --}}
-
-                {{-- <div class="mb-3">
-                    <label for="description" class="form-label">Category Description</label>
-                    <textarea name="description" rows="5" class="form-control">{{$category->description}}</textarea>
-                </div> --}}
-
-                {{-- <div class="mb-3">
-                    <label for="image" class="form-label">Image</label>
-                    <input type="file" name="image" class="form-control">
-                </div> --}}
-
-                {{-- <h5>SEO Tags</h5> --}}
-
-                {{-- <div class="mb-3">
-                    <label for="">Meta Title</label>
-                    <input type="text" name="meta_title" value="{{$category->meta_title}} class="form-control">
-                </div> --}}
-
-                {{-- <div class="mb-3">
-                    <label for="description" class="form-label">Meta Description</label>
-                    <textarea name="meta_description" rows="3"  class="form-control">{{$category->meta_description}}</textarea>
-                </div> --}}
-
-
-                {{-- <div class="mb-3">
-                    <label for="">Meta Keywords</label>
-                    <textarea name="meta_keywords" rows="3" class="form-control"> {{$category->meta_keywords}}</textarea>
-                </div> --}}
-
-                {{-- <h6>Status Mode</h6> --}}
-                {{-- <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <label for="">Navbar Status</label>
-                        <input type="checkbox" name="navbar_status" {{$category->navbar_status == '1' ? 'checked' : ''}}>
-                    </div> --}}
-
-                    {{-- <div class="col-md-3 mb-3">
-                        <label for="">Status</label>
-                        <input type="checkbox" name="status" {{$category->status == '1' ? 'checked' : ''}}>
-                    </div> --}}
-
                     <div class="col-md-6">
                         <button  type="submit" class="btn-btn-primary">Update student</button>
                     </div>

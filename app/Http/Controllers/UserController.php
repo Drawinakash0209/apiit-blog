@@ -87,7 +87,6 @@ class UserController extends Controller
         $rules = [
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            // 'password' => 'required|confirmed|Rules\Password::defaults()', // Assuming minimum password length of 8
 
         ];
 
@@ -147,10 +146,6 @@ class UserController extends Controller
         }
 
         $user->save($validated);
-
-
-
-        // return redirect()->route('user.index')->with('message', 'User successfully created!');
         return redirect()->route('user.index', ['type' => $userType])->with('message', 'User successfully created!');
 
     }
@@ -216,13 +211,6 @@ class UserController extends Controller
                 // $uniqueFields = [];
                 break;
             case 'staff':
-                // Define fields for staff user type
-                // $staffRoles = [
-                //     'Manager',
-                //     'Administrator',
-                //     'Assistant',
-                //     // Add more roles here if needed
-                // ];
                 $staffRoles = [
                     'Head of Academic Administration',
                     'Head of Student Support and Wellbeing Services',
@@ -255,12 +243,8 @@ class UserController extends Controller
     // public function update(Request $request, User $user, $userType)
     public function update(Request $request, $id, $userType)
     {
-
-        // $userType = $user->user_type; // Assuming user type is stored in the user model
          $user = User::findOrFail($id);
-
         $rules = [
-            // 'name' => 'required|string|max:255',
             'email' => "required|email|unique:users,email,{$user->id},id", // Unique rule excludes current user
             // 'batch' => 'required',
             'is_approved' => 'required|boolean',
@@ -311,23 +295,18 @@ class UserController extends Controller
             $user->cb_number = $validated['cb_number']; // Assuming student_id exists in the user model
             $user->level = $validated['level'];
             $user->batch = $request->batch;
-            // $user->degree = $request->student_degree;
             $user->degree = $request->degree;
-            // $user->school = $request->student_school;
             $user->school = $request->school;
             break;
             case 'alumni':
             $user->name = $validated['name'];
             $user->nic = $request->nic;
-            // $user->degree = $request->alumni_degree;
-            // $user->school = $request->alumni_school;
             $user->degree = $request->degree;
             $user->school = $request->school;
             $user->graduated_year = $request->graduated_year;
             break;
             case 'lecturer':
             $user->name = $validated['name'];
-            // $user->school = $request->lecturer_school;
             $user->school = $request->school;
             break;
             case 'staff':
@@ -336,9 +315,6 @@ class UserController extends Controller
         }
 
         $user->update($validated); // Update common fields and potentially updated unique fields
-
-
-        // return redirect()->route('user.index')->with('message', 'user successfully updated!');
         return redirect()->route('user.index', ['type' => $userType])->with('message', 'user successfully updated!');
 
 
@@ -361,13 +337,10 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        // dd($user);
 
-        //get th user type
+        //get the user type
         $userType = $user->user_type;
         // dd($userType);
-
-        // return redirect()->route('user.index')->with('message', 'User successfully deleted!');
         return redirect()->route('user.index', ['type' => $userType])->with('message', 'user successfully deleted!');
     }
 }

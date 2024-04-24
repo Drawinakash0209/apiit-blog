@@ -111,7 +111,6 @@ require __DIR__.'/studentauth.php';
 //Route for the student resource controller
 Route::resource('student', StudentController::class);
 
-
 //Route for the show pending method in student controller
 Route::get('/pending', [StudentController::class, 'showpending'])->name('student.pending');
 
@@ -123,6 +122,7 @@ Route::get('/status', function () {
 //Route for the showpending method in student controller
 Route::get('/pending', [StudentController::class, 'showpending'])->name('student.pending');
 
+//Route to display pending students
 Route::get('/status', function () {
     return view('admin.student.status');
 })->name('student.status');
@@ -165,3 +165,4 @@ Route::get('/terms', function () {
 //Route for the report blog issue
 Route::post('/report/blog/issue', [BlogReportController::class, 'store'])->name('report.blog.issue');
 Route::get('/reports', [BlogReportController::class, 'index'])->name('reports');
+Route::get('/report-delete/{report_id}', [BlogReportController::class, 'destroy']);

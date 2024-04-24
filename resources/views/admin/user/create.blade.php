@@ -10,10 +10,9 @@
              <h4 class="">Create New {{ $userType}}</h4>
 
         </div>
-
         <div class="card-body">
 
-
+{{--           error message--}}
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -23,9 +22,7 @@
                 </ul>
             </div>
         @endif
-
-
-
+            {{--Form to create users--}}
         <form action="{{ route('user.store', $user->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
@@ -73,16 +70,9 @@
         </div>
 
         <input type="hidden" name="user_type" value="{{ $userType }}">
-
-
-
-
             <div class="col-md-6">
                 <button  type="submit" class="btn-btn-primary">Create user</button>
             </div>
-
-
-
 
     </div>
 </div>

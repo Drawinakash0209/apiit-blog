@@ -7,12 +7,11 @@
         <div class="card">
             <div class="card-header ">
                 <h4>View posts
-
-                    {{-- <a href="{{url('/add-post')}}" class="btn btn-primary float-end">Add Post</a> --}}
                 </h4>
             </div>
         </div>
 
+        {{-- Display error messages if any --}}
         @if (session('message'))
 
         <div class="alert alert-success">{{ session('message')}}</div>

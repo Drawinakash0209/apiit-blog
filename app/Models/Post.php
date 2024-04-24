@@ -33,6 +33,9 @@ class Post extends Model
             $query->where('tags', 'like', '%' . request('tag') . '%');
         };
     }
+
+    //Relationships
+    
     public function user(){
         return $this->belongsTo(User::class, 'created_by');
     }
@@ -53,9 +56,5 @@ class Post extends Model
     public function reports(){
         return $this->hasMany(BlogReport::class);
     }
-
-    // public function likes(){
-    //     return $this->belongsToMany(Student::class, 'post_like')->withTimestamps();
-    // }
 
 }

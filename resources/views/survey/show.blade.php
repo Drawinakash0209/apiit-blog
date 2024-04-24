@@ -53,16 +53,7 @@
 </head>
 <body>
 
-
-
-
-
 @include('user.navbar')
-
-
-
-
-
 <div class="text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
     <div class="w-full pt-4 pr-5 pb-6 pl-5 mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16
         max-w-7xl">
@@ -82,12 +73,6 @@
 
         </div>
         <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Student-driven surveys: Shape your university experience together.</a>
-        {{-- <div class="pt-2 pr-0 pb-0 pl-0">
-          <p class="text-sm font-medium inline">author:</p>
-          <a class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1 underline">Jack Sparrow</a>
-          <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">· 23rd, April 2021 ·</p>
-          <p class="text-gray-200 text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p>
-        </div> --}}
       </div>
     </div>
     <div class="w-full md:w-1/2">
@@ -107,8 +92,6 @@
 
           @foreach($data as $survey)
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4 mx-auto">
-            {{-- <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">
-            </div> --}}
             <div class="border-r border-b border-l border-gray-400 lg:border-l lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <div class="mb-8">
                 <p class="text-sm text-gray-600 flex items-center">
@@ -120,10 +103,8 @@
                 <div class="text-gray-900 font-bold text-xl mb-2">{{$survey->name}}</div>
                 <p class="text-gray-700 text-base">{{$survey->description}}</p> <br>
                 <a href="{{$survey->form_link}}" class="text-blue-500">Click here to fill the form</a>
-                {{-- <p class="text-gray-700 text-base">{{$survey->form_link}}</p> --}}
               </div>
               <div class="flex items-center">
-                {{-- <img class="w-10 h-10 rounded-full mr-4" src="/img/jonathan.jpg" alt="Avatar of Jonathan Reinink"> --}}
                 <div class="text-sm">
                   <p class="text-gray-900 leading-none">{{$survey->crated_by}}</p>
                   <p class="text-gray-600">{{$survey->cb_number}}</p>
@@ -136,9 +117,6 @@
         </div><!-- end row -->
     </div><!-- end container -->
 </section>
-
-
-
 @include('user.footer')
 
 

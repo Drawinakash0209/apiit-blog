@@ -61,14 +61,13 @@
                     <p>We reserve the right to terminate or suspend your account and access to our platform at any time, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
                 </div>
             </div>
-            <!-- Add more sections for different terms -->
         </div>
         <p class="text-center text-gray-600 textbase mt-9">
             By submitting a blog post, you acknowledge that you have read, understood, and agreed to our Terms and Conditions.
         </p>
     </div>
     <script>
-        // JavaScript to toggle the answers and rotate the arrows
+
         document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
             button.addEventListener('click', function() {
                 var answer = document.getElementById('answer' + (index + 1));

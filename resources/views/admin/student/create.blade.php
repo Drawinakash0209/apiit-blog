@@ -3,17 +3,13 @@
 @section('content')
     <div class="container-fluid px-4">
 
-
-
     <div class="card mt-4">
         <div class="card-header">
              <h4 class="">Create New Student</h4>
-
         </div>
 
+        {{-- Display error messages if any --}}
         <div class="card-body">
-
-
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -25,7 +21,7 @@
         @endif
 
 
-
+            {{--Form for CRUD student operations--}}
             <form action="{{ route('student.store', $student->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
 

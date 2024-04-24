@@ -23,11 +23,6 @@
       <form action="{{ route('user.update', [$user->id, $userType]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-
-        {{-- <div class="mb-3">
-          <label for="name" class="form-label">User Name</label>
-          <input type="text" name="name" value="{{ old('name', $user->name) }}" class="form-control">
-        </div> --}}
         @if ($userType !== 'staff')
           <div class="mb-3">
             <label for="name" class="form-label">User Name</label>
@@ -71,8 +66,6 @@
                     <label for="{{ $field }}" class="form-label">{{ $details }}</label>
                     <input type="text" name="{{ $field }}" value="{{ old($field, $user->$field) }}" class="form-control">
                 </div>
-
-            {{-- @elseif ($field === 'school' || $field === 'level' || $field === 'degree') --}}
             @elseif ($field === 'school' || $field === 'level')
                 <div class="mb-3">
                     <label for="{{ $field }}" class="form-label">{{ $details['label'] }}</label>

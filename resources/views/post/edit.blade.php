@@ -73,9 +73,6 @@
                         <input type="text" name="tags"  value="{{$post->tags}}" class="form-control">
                     </div>
 
-
-
-
                 <h5>SEO Tags</h5>
 
                 <div class="mb-3">
@@ -114,18 +111,9 @@
                     <div class="col-md-6">
                         <button  type="submit" class="btn-btn-primary">Submit</button>
                     </div>
-
-
-
-
-
-                </form>
+               </form>
             </div>
         </div>
-
-
-
-
     </div>
 
 @endsection

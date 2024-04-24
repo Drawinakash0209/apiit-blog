@@ -12,8 +12,8 @@
                 </h4>
             </div>
 
+            {{-- Display error messages if any --}}
             <div class="card-body">
-
                 @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -23,6 +23,8 @@
                 </ul>
             </div>
         @endif
+
+
 
                 <form action="{{url('/add-post')}}" method="POST" enctype="multipart/form-data">
 
@@ -69,8 +71,6 @@
                         type="text"
                         name="tags"
                         placeholder="Example: IT, Business, Law"/>
-
-
                     </div>
 
                     <h5>SEO Tags</h5>
@@ -85,45 +85,24 @@
                     <textarea name="meta_description" rows="3" class="form-control"></textarea>
                 </div>
 
-
                 <div class="mb-3">
                     <label for="">Meta Keywords</label>
                     <textarea name="meta_keywords" rows="3" class="form-control"> </textarea>
                 </div>
 
-
                 <div class="row">
-                    {{-- <div class="col-md-3 mb-3">
-                        <label for="">Navbar Status</label>
-                        <input type="checkbox" name="navbar_status">
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label for="">Status</label>
-                        <input type="checkbox" name="status">
-                    </div> --}}
-
                     <div class="col-md-3 mb-3">
                         <input type="checkbox" name="terms">
                         <label for="">Agree with <a href="/terms"> terms and conditions</a></label>
                     </div>
 
-
                     <div class="col-md-6">
                         <button  type="submit" name="post-button" class="btn-btn-primary">Submit</button>
                     </div>
 
-
-
-
-
                 </form>
             </div>
         </div>
-
-
-
-
     </div>
 
 @endsection

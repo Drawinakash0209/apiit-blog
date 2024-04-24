@@ -16,18 +16,10 @@
                 </ul>
             </div>
         @endif
-{{--
-        @if (session('message'))
-
-        <div class="alert alert-success">{{ session('message')}}</div>
-
-        @endif --}}
 
 
             <div class="card-header ">
                 <h4>Edit Survey
-{{--
-                    <a href="{{url('/add-survey')}}" class="btn btn-primary float-end">Add Survey</a> --}}
                 </h4>
             </div>
 
@@ -51,12 +43,6 @@
                         <label for="Post name" class="form-label">Survey name</label>
                         <input type="text" name="name" value="{{$survey->name}}" class="form-control">
                     </div>
-
-                    {{-- <div class="mb-3">
-                        <label for="slug" class="form-label">Slug</label>
-                        <input type="text" name="slug" class="form-control">
-                    </div> --}}
-
                     <div class="mb-3">
                         <label for="Description" class="form-label">Form Link (iframe)</label>
                         <input type="text"  name="form_link" class="form-control"

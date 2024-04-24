@@ -56,6 +56,7 @@ class User extends Authenticatable
         'is_approved' => 'boolean',
     ];
 
+    //Relationshps
     public function posts(){
         return $this->hasMany(Post::class, 'created_by');
     }
@@ -77,8 +78,5 @@ class User extends Authenticatable
     public function survey(){
         return $this->hasMany(Survey::class, 'crated_by');
     }
-
-
-
 }
 

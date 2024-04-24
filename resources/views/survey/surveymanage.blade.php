@@ -36,8 +36,6 @@
                 <tr>
                     <td>{{ $survey->id }}</td>
                     <td>{{$survey->name}}</td>
-                    {{-- <td>{{$survey->image}}</td> --}}
-                    {{-- <td>{{$post->status == '1' ? 'Hidden' : 'Approved'}}</td> --}}
                 </tr>
                     
                 @endforeach

@@ -40,7 +40,6 @@
 
                             <td>
                                 <form action="{{ route('user.destroy', $student->id) }}" method="POST">
-                                {{-- <form action="{{ route('user.destroy', [$student->id, $student->user_type]) }}" method="POST"> --}}
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -181,7 +180,6 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
-                        {{-- <th>School</th> --}}
                         <th>Status</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -192,7 +190,6 @@
                         <tr>
                             <td>{{ $sport->name }}</td>
                             <td>{{ $sport->email }}</td>
-                            {{-- <td>{{ $sport->school }}</td> --}}
                             <td>{{$sport->is_approved ? 'Activated' : 'Diactivated'}}</td>
 
                             <td>
@@ -220,7 +217,6 @@
                     <tr>
                         <th>Role</th>
                         <th>Email</th>
-                        {{-- <th>School</th> --}}
                         <th>Status</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -231,7 +227,6 @@
                         <tr>
                             <td>{{ $staff->name }}</td>
                             <td>{{ $staff->email }}</td>
-                            {{-- <td>{{ $staff->school }}</td> --}}
                             <td>{{$staff->is_approved ? 'Activated' : 'Diactivated'}}</td>
 
                             <td>
@@ -256,6 +251,5 @@
             <div class="alert alert-info">No users found for the selected type.</div>
         @endif
     </div>
-    {{-- {{ $students->links() }} --}}
 
 @endsection

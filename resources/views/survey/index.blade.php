@@ -35,7 +35,6 @@
                             <td>{{ $item->id }}</td>
                             <td>{{$item->name}}</td>
                             <td><a href="{{$item->form_link}}">Form Link</a></td>
-                            {{-- <td><a hre{{$item->form_link}}</td> --}}
 
                             <td>
                                 <a href="{{'survey-edit/'.$item->id}}" class="btn btn-success">Edit</a>

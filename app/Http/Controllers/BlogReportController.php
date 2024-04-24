@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Validator;
 
 class BlogReportController extends Controller
 {
+    //Function to display all reports
     public function index(){
         $reports = BlogReport::all();
         return view('report.index', compact('reports'));
     }
 
+    //Function to display form to create report
     public function store(Request $request)
     {
 
@@ -45,7 +47,15 @@ class BlogReportController extends Controller
 
         $report->save();
 
-        return redirect()->back()->with('message', 'Report submitted successfully!');
+        return redirect('/report')->back()->with('message', 'Report submitted successfully!');
+    }
+
+    //Function to delete report
+    public function destroy($report_id)
+    {
+        $report = BlogReport::find($report_id);
+        $report->delete();
+        return redirect()->back()->with('message', 'Report deleted successfully!');
     }
 
 }

@@ -11,9 +11,8 @@
 
         </div>
 
+        {{-- Display error messages if any --}}
         <div class="card-body">
-
-
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -25,7 +24,7 @@
         @endif
 
 
-
+            {{-- Form to edit admin details --}}
             <form action="{{ route('admin.update', $admin->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')

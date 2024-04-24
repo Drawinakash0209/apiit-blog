@@ -11,9 +11,8 @@
 
         </div>
 
+        {{-- display error messages if any --}}
         <div class="card-body">
-
-           
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -82,11 +81,7 @@
 
                     <div class="col-md-6">
                         <button  type="submit" class="btn-btn-primary">Submit</button>
-                    </div>
-                        
-
-               
-            
+                    </div>         
     </div>
 </div>
 @endsection
