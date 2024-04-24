@@ -43,7 +43,7 @@
                     <td>{{$item->description}}</td>
 
                     <td>
-                        <a href="{{'post-edit/'.$item->id}}" class="btn btn-success">Edit</a>
+                        <a href="{{'home/'.$item->id}}" class="btn btn-success">View</a>
                     </td>
 
                     <td>
