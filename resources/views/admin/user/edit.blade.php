@@ -66,11 +66,11 @@
                     <label for="{{ $field }}" class="form-label">{{ $details }}</label>
                     <input type="text" name="{{ $field }}" value="{{ old($field, $user->$field) }}" class="form-control">
                 </div>
-              @elseif ($field === 'school')
-                  <div class="mb-3">
-                      <label for="{{ $field }}" class="form-label">{{ $details }}</label>
-                      <input type="text" name="{{ $field }}" value="{{ old($field, $user->$field) }}" class="form-control">
-                  </div>
+{{--              @elseif ($field === 'school')--}}
+{{--                  <div class="mb-3">--}}
+{{--                      <label for="{{ $field }}" class="form-label">{{ $details }}</label>--}}
+{{--                      <input type="text" name="{{ $field }}" value="{{ old($field, $user->$field) }}" class="form-control">--}}
+{{--                  </div>--}}
             @elseif ($field === 'school' || $field === 'level')
                 <div class="mb-3">
                     <label for="{{ $field }}" class="form-label">{{ $details['label'] }}</label>
