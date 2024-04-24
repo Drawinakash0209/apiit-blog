@@ -47,7 +47,7 @@ class BlogReportController extends Controller
 
         $report->save();
 
-        return redirect('/report')->back()->with('message', 'Report submitted successfully!');
+        return redirect('/report')->with('message', 'Report submitted successfully!');
     }
 
     //Function to delete report
