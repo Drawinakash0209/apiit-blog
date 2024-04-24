@@ -262,7 +262,7 @@ class UserController extends Controller
         } else if ($userType === 'alumni') {
             $rules = array_merge($rules, [
             'name' => 'required|string|max:255',
-            'nic' => 'required|string|unique:users,nic',
+            'nic' => "required|string|unique:users,nic,{$user->id},id",
             'graduated_year' => 'required|string',
             'degree' => 'required|string',
             'school' => 'required|string',
@@ -276,6 +276,16 @@ class UserController extends Controller
         }else if ($userType === 'staff') {
             $rules = array_merge($rules, [
             'role' => 'required|string|max:255',
+            ]);
+
+        }else if ($userType === 'sport') {
+            $rules = array_merge($rules, [
+//                'role' => 'required|string|max:255',
+            ]);
+
+        }else if ($userType === 'club') {
+            $rules = array_merge($rules, [
+//                'role' => 'required|string|max:255',
             ]);
 
         }

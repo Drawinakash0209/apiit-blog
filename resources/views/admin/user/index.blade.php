@@ -32,7 +32,7 @@
                             <td>{{ $student->level }}</td>
                             <td>{{ $student->school }}</td>
                             <td>{{ $student->degree }}</td>
-                            <td>{{$student->is_approved ? 'Activated' : 'Diactivated'}}</td>
+                            <td>{{$student->is_approved ? 'Activated' : 'Deactivated'}}</td>
 
                             <td>
                                 <a href="{{ route('user.edit', $student->id) }}" class="btn btn-primary">Edit</a>
@@ -75,7 +75,7 @@
                             <td>{{ $alumnus->school }}</td>
                             <td>{{ $alumnus->degree }}</td>
                             <td>{{ $alumnus->graduated_year }}</td>
-                            <td>{{$alumnus->is_approved ? 'Activated' : 'Diactivated'}}</td>
+                            <td>{{$alumnus->is_approved ? 'Activated' : 'Deactivated'}}</td>
 
                             <td>
                                 <a href="{{ route('user.edit', $alumnus->id) }}" class="btn btn-primary">Edit</a>
@@ -114,7 +114,7 @@
                             <td>{{ $lecturer->name }}</td>
                             <td>{{ $lecturer->email }}</td>
                             <td>{{ $lecturer->school }}</td>
-                            <td>{{$lecturer->is_approved ? 'Activated' : 'Diactivated'}}</td>
+                            <td>{{$lecturer->is_approved ? 'Activated' : 'Deactivated'}}</td>
 
                             <td>
                                 <a href="{{ route('user.edit', $lecturer->id) }}" class="btn btn-primary">Edit</a>
@@ -153,7 +153,7 @@
                             <td>{{ $club->name }}</td>
                             <td>{{ $club->email }}</td>
                             {{-- <td>{{ $club->school }}</td> --}}
-                            <td>{{$club->is_approved ? 'Activated' : 'Diactivated'}}</td>
+                            <td>{{$club->is_approved ? 'Activated' : 'Deactivated'}}</td>
 
                             <td>
                                 <a href="{{ route('user.edit', $club->id) }}" class="btn btn-primary">Edit</a>
@@ -190,7 +190,7 @@
                         <tr>
                             <td>{{ $sport->name }}</td>
                             <td>{{ $sport->email }}</td>
-                            <td>{{$sport->is_approved ? 'Activated' : 'Diactivated'}}</td>
+                            <td>{{$sport->is_approved ? 'Activated' : 'Deactivated'}}</td>
 
                             <td>
                                 <a href="{{ route('user.edit', $sport->id) }}" class="btn btn-primary">Edit</a>
@@ -227,7 +227,7 @@
                         <tr>
                             <td>{{ $staff->name }}</td>
                             <td>{{ $staff->email }}</td>
-                            <td>{{$staff->is_approved ? 'Activated' : 'Diactivated'}}</td>
+                            <td>{{$staff->is_approved ? 'Activated' : 'Deactivated'}}</td>
 
                             <td>
                                 <a href="{{ route('user.edit', $staff->id) }}" class="btn btn-primary">Edit</a>
