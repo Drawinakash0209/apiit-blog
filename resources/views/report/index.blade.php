@@ -43,7 +43,7 @@
                     <td>{{$item->description}}</td>
 
                     <td>
-                        <a href="/home/{{$item['id']}}" class="btn btn-success">View</a>
+                        <a href="{{ url('/home/' . $item->post_id) }}" class="btn btn-success">View</a>
                     </td>
 
                     <td>
