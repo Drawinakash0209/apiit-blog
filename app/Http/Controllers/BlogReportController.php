@@ -47,7 +47,7 @@ class BlogReportController extends Controller
 
         $report->save();
 
-        return redirect('/report')->with('message', 'Report submitted successfully!');
+        return redirect()->back()->with('message', 'Report submitted successfully!');
     }
 
     //Function to delete report
@@ -55,7 +55,7 @@ class BlogReportController extends Controller
     {
         $report = BlogReport::find($report_id);
         $report->delete();
-        return redirect()->back()->with('message', 'Report deleted successfully!');
+        return redirect('reports')->with('message', 'Report deleted successfully!');
     }
 
 }
