@@ -278,6 +278,16 @@ class UserController extends Controller
             'role' => 'required|string|max:255',
             ]);
 
+        }else if ($userType === 'sport') {
+            $rules = array_merge($rules, [
+//                'role' => 'required|string|max:255',
+            ]);
+
+        }else if ($userType === 'club') {
+            $rules = array_merge($rules, [
+//                'role' => 'required|string|max:255',
+            ]);
+
         }
         else {
             // Handle invalid user type
