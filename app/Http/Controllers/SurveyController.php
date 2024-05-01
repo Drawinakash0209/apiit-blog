@@ -54,7 +54,6 @@ class SurveyController extends Controller
     public function editupdate(SurveyFormRequest $request, $survey_id)
     {
 
-
         $data = $request->validated();
 
         $post = Survey::find($survey_id);
