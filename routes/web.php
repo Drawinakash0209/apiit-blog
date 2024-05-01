@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -64,26 +65,18 @@ Route::prefix('admin')->group(function () {
 
     //Admin Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index']);
-
     Route::get('/categories', [CategoryController::class, 'index']);
-
     Route::get('/add-category', [CategoryController::class, 'Create']);
-
     Route::post('/add-category', [CategoryController::class, 'store']);
-
     Route::get('/edit-category/{category_id}', [CategoryController::class, 'edit']);
-
     Route::put('/update-category/{category_id}', [CategoryController::class, 'update']);
-
     Route::get('/delete-category/{category_id}', [CategoryController::class, 'destroy']);
 
 });
 
 //Route for blog CRUD
 Route::get('/post',[PostController::class, 'index']);
-
 Route::get('/add-post',[PostController::class, 'create']);
-
 Route::post('/add-post',[PostController::class, 'store']);
 
 //Route for the user resource controller
@@ -91,15 +84,10 @@ Route::resource('admin', AdminController::class);
 
 //create a route for student-blog so that student can view the blog they posted
 Route::get('/student-blog', [PostController::class, 'studentBlog']);
-
 Route::post('/add-post',[PostController::class, 'store']);
-
 Route::get('/post-edit/{post_id}', [PostController::class, 'edit']);
-
 Route::put('update-post/{post_id}', [PostController::class, 'update']);
-
 Route::get('/post-delete/{post_id}', [PostController::class, 'destroy']);
-
 Route::get('/search', [PostController::class, 'search']);
 
 
@@ -203,3 +191,9 @@ Route::get('/status', function () {
 
 //Route for the show pending method in student controller
 Route::get('/pending', [FeedbackController::class, 'showpending'])->name('feedback.pending');
+
+
+//Route for Career Path (Job) CRUD
+Route::get('/jobs', [JobController::class, 'index'])->name('job.index');
+Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
+Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
