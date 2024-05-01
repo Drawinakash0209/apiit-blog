@@ -90,6 +90,21 @@
                             </nav>
                         </div>
 
+
+                    @if(auth()->user()->user_type == 'club')
+    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsEvents" aria-expanded="false" aria-controls="collapseLayoutsEvents">
+        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+        Events
+        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+    </a>
+    <div class="collapse" id="collapseLayoutsEvents" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+            <a class="nav-link" href="{{ url('add-events') }}">Add Event</a>
+            <a class="nav-link" href="{{ url('/manage-events') }}">View the Events you posted</a>
+        </nav>
+    </div>
+@endif
+
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">

@@ -10,6 +10,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BlogReportController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -166,3 +167,13 @@ Route::get('/terms', function () {
 Route::post('/report/blog/issue', [BlogReportController::class, 'store'])->name('report.blog.issue');
 Route::get('/reports', [BlogReportController::class, 'index'])->name('reports');
 Route::get('/report-delete/{report_id}', [BlogReportController::class, 'destroy']);
+
+
+//Routes for events 
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/add-events',[EventController::class, 'create']);
+Route::post('/add-events', [EventController::class, 'store']);
+Route::get('/manage-events', [EventController::class, 'manage']);
+Route::get('/event-edit/{event_id}', [EventController::class, 'edit']);
+Route::put('update-events/{event_id}', [EventController::class, 'update']);
+Route::get('event-delete/{event_id}', [EventController::class, 'destroy']);
