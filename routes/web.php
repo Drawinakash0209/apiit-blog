@@ -11,7 +11,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BlogReportController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -191,6 +191,11 @@ Route::put('/job/update/{job_id}', [JobController::class, 'update'])->name('job.
 Route::delete('/job/delete/{job_id}', [JobController::class, 'destroy'])->name('job.delete');
 
 
-
-
-
+//Routes for events 
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/add-events',[EventController::class, 'create']);
+Route::post('/add-events', [EventController::class, 'store']);
+Route::get('/manage-events', [EventController::class, 'manage']);
+Route::get('/event-edit/{event_id}', [EventController::class, 'edit']);
+Route::put('update-events/{event_id}', [EventController::class, 'update']);
+Route::get('event-delete/{event_id}', [EventController::class, 'destroy']);
