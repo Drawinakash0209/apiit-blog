@@ -125,7 +125,6 @@
 
 <div class="dmtop">Scroll to Top</div>
 
-</div><!-- end wrapper -->
 
 <!-- Core JavaScript
 ================================================== -->

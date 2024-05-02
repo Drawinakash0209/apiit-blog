@@ -189,6 +189,9 @@ Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
 Route::get('/job/edit/{job_id}', [JobController::class, 'edit'])->name('job.edit');
 Route::put('/job/update/{job_id}', [JobController::class, 'update'])->name('job.update');
 Route::delete('/job/delete/{job_id}', [JobController::class, 'destroy'])->name('job.delete');
+Route::get('/jobs/show', [JobController::class, 'show'])->name('job.show');
+
+
 
 
 
