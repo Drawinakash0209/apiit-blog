@@ -11,7 +11,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BlogReportController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -157,43 +157,11 @@ Route::get('/reports', [BlogReportController::class, 'index'])->name('reports');
 Route::get('/report-delete/{report_id}', [BlogReportController::class, 'destroy']);
 
 
-// //Routes for feedback management
-// Route::get('/feedback/index', [App\Http\Controllers\FeedbackController::class, 'index']);
-// Route::get('/feedback/edit', [App\Http\Controllers\FeedbackController::class, 'edit']);
-// Route::put('/feedback/update/{id}', [App\Http\Controllers\FeedbackController::class, 'update']);
-// Route::get('/feedback/delete/{id}', [App\Http\Controllers\FeedbackController::class, 'destroy']);
-// //pending feedback
-// Route::get('/feedback/pending', [App\Http\Controllers\FeedbackController::class, 'pending']);
-// //Feedback show
-// Route::get('/feedback/show', [App\Http\Controllers\FeedbackController::class, 'show']);
-// //Feedback store
-//  Route::post('/feedback/store', [App\Http\Controllers\FeedbackController::class, 'store']);
-
-
-//Route for the student resource controller
-Route::resource('feedback', FeedbackController::class);
-
-//Route for the feedback status
-Route::get('/status', function () {
-    return view('feedback.status');
-} )-> name('feedback.status');
-
-//Route for the show pending method in student controller
-Route::get('/pending', [FeedbackController::class, 'showpending'])->name('feedback.pending');
-
-
-//Route for Career Path (Job) CRUD
-Route::get('/jobs', [JobController::class, 'index'])->name('job.index');
-Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
-Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
-Route::get('/job/edit/{job_id}', [JobController::class, 'edit'])->name('job.edit');
-Route::put('/job/update/{job_id}', [JobController::class, 'update'])->name('job.update');
-Route::delete('/job/delete/{job_id}', [JobController::class, 'destroy'])->name('job.delete');
-Route::get('/jobs/show', [JobController::class, 'show'])->name('job.show');
-
-
-
-
-
-
-
+//Routes for events 
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/add-events',[EventController::class, 'create']);
+Route::post('/add-events', [EventController::class, 'store']);
+Route::get('/manage-events', [EventController::class, 'manage']);
+Route::get('/event-edit/{event_id}', [EventController::class, 'edit']);
+Route::put('update-events/{event_id}', [EventController::class, 'update']);
+Route::get('event-delete/{event_id}', [EventController::class, 'destroy']);
