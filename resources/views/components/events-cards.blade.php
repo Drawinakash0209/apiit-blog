@@ -18,7 +18,7 @@
         </a>
         <br>
         <a href="#"
-           class="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">{{$event['location']}} 
+           class="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">{{$event['location']}} check 
         </a>
     </main>
 
