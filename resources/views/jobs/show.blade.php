@@ -69,10 +69,6 @@
 
 
 
-
-
-
-
 <div class="dmtop">Scroll to Top</div>
 
 <!-- Core JavaScript
