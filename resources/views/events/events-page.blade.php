@@ -60,7 +60,7 @@
 
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
     <div class="text-center">
-        <h1 class="mb-2 text-center font-Bebas Neue text-5xl font-bold wrappermain"> Upcoming </h1>
+        <h1 class="mb-2 text-center font-Bebas Neue text-5xl font-bold wrappermain"> Upcoming Event</h1>
     </div>
 
     <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
