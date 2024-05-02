@@ -2,7 +2,7 @@
 <div class="relative w-full flex items-end justify-start text-left bg-cover bg-center" style="height: 450px; background-image:url({{$event->image ? asset('/uploads/event/' . $event->image): asset('/images/CR7.png')}});">
     <div class="absolute top-0  right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
     </div>
-     
+     Check
     <div class="absolute top-0 right-0 left-0 mx-3 mt-2 flex justify-between items-center">
         <a href="#" class="text-xs bg-indigo-600 text-white px-5 py-2 uppercase hover:bg-white hover:text-indigo-600 transition ease-in-out duration-500">{{$event['type_of_event']}}</a>
         <span class="ml-2"></span>
