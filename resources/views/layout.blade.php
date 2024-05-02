@@ -61,12 +61,12 @@
 
                         <!-- Admins Dropdown -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            data-bs-target="#collapseLayoutsAdmin" aria-expanded="false" aria-controls="collapseLayoutsAdmin">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Admins
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                        <div class="collapse" id="collapseLayoutsAdmin" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('admin.create') }}">Create Admin</a>
@@ -112,12 +112,12 @@
 
                         <!-- Categories Dropdown -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            data-bs-target="#collapseLayoutsCategory" aria-expanded="false" aria-controls="collapseLayoutsCategory">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Category
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                        <div class="collapse" id="collapseLayoutsCategory" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ url('admin/add-category') }}">Add Category</a>
@@ -155,6 +155,40 @@
                                 <a class="nav-link" href="{{ url('survey') }}">View Survey</a>
                             </nav>
                         </div>
+
+                        <!-- Feedback Dropdown -->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayoutsFeedback" aria-expanded="false"
+                            aria-controls="collapseLayoutsFeedback">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Feedback
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayoutsFeedback" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ route('feedback.index') }}">View Feedback</a>
+
+                                {{-- <a class="nav-link" href="{{ url('feedback.pending') }}">Pending Feedback</a> --}}
+                            </nav>
+                        </div>
+
+
+                            <!-- Jobs Dropdown -->
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                               data-bs-target="#collapseLayoutsJobs" aria-expanded="false"
+                               aria-controls="collapseLayoutsJobs">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Jobs
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayoutsJobs" aria-labelledby="headingOne"
+                                 data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('job.create') }}">Add Job</a>
+                                    <a class="nav-link" href="{{ route('job.index') }}">View Jobs</a>
+                                </nav>
+                            </div>
 
 
                         <!-- Reports Dropdown -->

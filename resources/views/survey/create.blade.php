@@ -18,10 +18,7 @@
         @endif
 
             <div class="card-header ">
-                <h4>Add Survey
-
-                    <a href="{{url('/add-survey')}}" class="btn btn-primary float-end">Add Survey</a>
-                </h4>
+                <h4>Add Survey</h4>
             </div>
 
             <div class="card-body" >
@@ -29,13 +26,11 @@
                                 <div class="alert alert-success" role="alert">
                                     <strong>Well done!</strong> product add successfully.
                                 </div>
-@endif
+                @endif
+
                 <form action="{{url('/update-survey')}}" method="POST" enctype="multipart/form-data">
 
                     @csrf
-
-
-
 
                     <div class="mb-3">
                         <label for="Post name" class="form-label">Survey name</label>

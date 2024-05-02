@@ -62,16 +62,6 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<style>
-    .hide-scroll-bar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .hide-scroll-bar::-webkit-scrollbar {
-      display: none;
-    }
-    </style>
-
 </head>
 <body>
 
@@ -200,6 +190,7 @@
         </div><!-- end row -->
     </div><!-- end container -->
 </section>
+
 
 
 
