@@ -99,4 +99,10 @@ class JobController extends Controller
             return redirect('/jobs')->with('message', 'No Job found');
         }
     }
+
+    public function show()
+    {
+        $jobs = Job::latest()->get();
+        return view('jobs.show', compact('jobs'));
+    }
 }

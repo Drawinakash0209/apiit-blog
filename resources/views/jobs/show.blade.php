@@ -71,6 +71,10 @@
 
 
 
+
+
+<div class="dmtop">Scroll to Top</div>
+
 <!-- Core JavaScript
 ================================================== -->
 <script src="user/js/jquery.min.js"></script>
