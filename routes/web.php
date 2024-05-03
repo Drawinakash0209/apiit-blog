@@ -11,6 +11,7 @@ use App\Http\Controllers\BlogReportController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -167,6 +168,31 @@ Route::get('/terms', function () {
 Route::post('/report/blog/issue', [BlogReportController::class, 'store'])->name('report.blog.issue');
 Route::get('/reports', [BlogReportController::class, 'index'])->name('reports');
 Route::get('/report-delete/{report_id}', [BlogReportController::class, 'destroy']);
+
+
+// //Routes for feedback management
+// Route::get('/feedback/index', [App\Http\Controllers\FeedbackController::class, 'index']);
+// Route::get('/feedback/edit', [App\Http\Controllers\FeedbackController::class, 'edit']);
+// Route::put('/feedback/update/{id}', [App\Http\Controllers\FeedbackController::class, 'update']);
+// Route::get('/feedback/delete/{id}', [App\Http\Controllers\FeedbackController::class, 'destroy']);
+// //pending feedback
+// Route::get('/feedback/pending', [App\Http\Controllers\FeedbackController::class, 'pending']);
+// //Feedback show
+// Route::get('/feedback/show', [App\Http\Controllers\FeedbackController::class, 'show']);
+// //Feedback store
+//  Route::post('/feedback/store', [App\Http\Controllers\FeedbackController::class, 'store']);
+
+
+//Route for the student resource controller
+Route::resource('feedback', FeedbackController::class);
+
+//Route for the feedback status
+Route::get('/status', function () {
+    return view('feedback.status');
+} )-> name('feedback.status');
+
+//Route for the show pending method in student controller
+Route::get('/pending', [FeedbackController::class, 'showpending'])->name('feedback.pending');
 
 
 //Routes for events 
