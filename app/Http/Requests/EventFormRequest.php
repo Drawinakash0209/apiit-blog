@@ -32,7 +32,7 @@ class EventFormRequest extends FormRequest
             ],
 
             'image' => [
-                'nullable', 
+                'nullable',
                 'mimes:jpeg,jpg,png'
             ],
 
@@ -57,7 +57,7 @@ class EventFormRequest extends FormRequest
                 'required'
             ],
 
-           
+
 
             'terms'=> [
                 'required',

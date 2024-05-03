@@ -17,8 +17,8 @@ class Event extends Model
         'description',
         'start_date',
         'end_date',
-        'type_of_event', 
-        'location', 
+        'type_of_event',
+        'location',
         'start_time',
         'status',
         'created_by',
@@ -28,5 +28,5 @@ class Event extends Model
     public function user(){
         return $this->belongsTo(User::class, 'created_by');
     }
-    
+
 }

@@ -28,16 +28,13 @@
                                 <div class="alert alert-success" role="alert">
                                     <strong>Well done!</strong> product add successfully.
                                 </div>
-@endif
+                @endif
+
+
                 <form action="{{url('/edit-update-survey/'.$survey->id)}}" method="POST" enctype="multipart/form-data">
-
-
-
                     @method('PUT')
 
                     @csrf
-
-
 
                     <div class="mb-3">
                         <label for="Post name" class="form-label">Survey name</label>

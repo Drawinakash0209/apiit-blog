@@ -1,9 +1,8 @@
-
 @extends('layout')
 
 @section('content')
     <div class="container-fluid px-4 mt-5">
-       
+
         <div class="card">
             <div class="card-header ">
                 <h4>View posts
@@ -14,25 +13,25 @@
         {{-- Display error messages if any --}}
         @if (session('message'))
 
-        <div class="alert alert-success">{{ session('message')}}</div>
-            
+            <div class="alert alert-success">{{ session('message')}}</div>
+
         @endif
 
         <table class="table table-bordered">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Post Name</th>
-                    <th>Image</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
+            <tr>
+                <th>ID</th>
+                <th>Post Name</th>
+                <th>Image</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
 
 
             </thead>
             <tbody>
-                @foreach ($events as $item)
+            @foreach ($events as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{$item->name}}</td>
@@ -47,10 +46,10 @@
                         <a href="{{'event-delete/'.$item->id}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
-                    
-                @endforeach
+
+            @endforeach
 
             </tbody>
     </div>
-    
+
 @endsection
