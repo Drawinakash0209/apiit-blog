@@ -66,6 +66,7 @@
     </div>
     <div class="w-1/2 px-6 py-4">
       <form method="POST" action="{{ route('feedback.store') }}" class="max-w-sm mx-auto shadow-md px-6 py-4 rounded-lg bg-gray-100">
+        @csrf
         {{-- Drop down menu to select the feedback type --}}
         <div>
           <x-input-label for="type" :value="__('Type Of the Feedback')" />

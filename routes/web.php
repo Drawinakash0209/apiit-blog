@@ -177,9 +177,9 @@ Route::get('/report-delete/{report_id}', [BlogReportController::class, 'destroy'
 // //pending feedback
 // Route::get('/feedback/pending', [App\Http\Controllers\FeedbackController::class, 'pending']);
 // //Feedback show
-// Route::get('/feedback/show', [App\Http\Controllers\FeedbackController::class, 'show']);
+Route::get('/feedback/show', [App\Http\Controllers\FeedbackController::class, 'show']);
 // //Feedback store
-//  Route::post('/feedback/store', [App\Http\Controllers\FeedbackController::class, 'store']);
+ Route::post('/feedback/store', [App\Http\Controllers\FeedbackController::class, 'store']);
 
 
 //Route for the student resource controller
