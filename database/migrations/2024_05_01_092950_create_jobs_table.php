@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('events', function (Blueprint $table) {
-            //add image 
-            $table->string('image')->nullable();
+        Schema::create('jobs', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('form_link');
+            $table->text('description');
+            $table->string('job_type')->nullable(); // Adding the 'job_type' column
+            $table->timestamps();
         });
     }
 
@@ -22,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('events', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('jobs');
     }
 };
