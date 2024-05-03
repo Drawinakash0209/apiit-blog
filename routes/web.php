@@ -11,6 +11,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BlogReportController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\FeedbackController;
 
 /*
@@ -192,8 +193,11 @@ Route::delete('/job/delete/{job_id}', [JobController::class, 'destroy'])->name('
 Route::get('/jobs/show', [JobController::class, 'show'])->name('job.show');
 
 
-
-
-
-
-
+//Routes for events 
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/add-events',[EventController::class, 'create']);
+Route::post('/add-events', [EventController::class, 'store']);
+Route::get('/manage-events', [EventController::class, 'manage']);
+Route::get('/event-edit/{event_id}', [EventController::class, 'edit']);
+Route::put('update-events/{event_id}', [EventController::class, 'update']);
+Route::get('event-delete/{event_id}', [EventController::class, 'destroy']);
