@@ -79,7 +79,7 @@
                             data-bs-target="#collapseLayoutsSurvey" aria-expanded="false"
                             aria-controls="collapseLayoutsSurvey">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Survey
+                            Surveys
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayoutsSurvey" aria-labelledby="headingOne"
@@ -91,37 +91,56 @@
                         </div>
 
 
-                    @if(auth()->user()->user_type == 'club')
-    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsEvents" aria-expanded="false" aria-controls="collapseLayoutsEvents">
-        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-        Events
-        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-    </a>
-    <div class="collapse" id="collapseLayoutsEvents" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-            <a class="nav-link" href="{{ url('add-events') }}">Add Event</a>
-            <a class="nav-link" href="{{ url('/manage-events') }}">View the Events you posted</a>
-        </nav>
-    </div>
-@endif
-                        @if (Auth::user()->user_type === 'staff' && Auth::user()->name === 'Head of Student Support and Wellbeing Services')
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayoutsFeedback" aria-expanded="false"
-                            aria-controls="collapseLayoutsFeedback">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Feedback
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayoutsFeedback" aria-labelledby="headingOne"
-                            data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('feedback.index') }}">View Feedback</a>
+                            <!-- Events Dropdown -->
+                            @if(auth()->user()->user_type == 'club')
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsEvents" aria-expanded="false" aria-controls="collapseLayoutsEvents">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                    Events
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="collapseLayoutsEvents" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="{{ url('add-events') }}">Add Event</a>
+                                        <a class="nav-link" href="{{ url('/manage-events') }}">View the Events you posted</a>
+                                    </nav>
+                                </div>
+                            @endif
 
-                                {{-- <a class="nav-link" href="{{ url('feedback.pending') }}">Pending Feedback</a> --}}
-                            </nav>
-                        </div>
-                        @endif
-                        <!-- Feedback Dropdown -->
+
+                            <!-- Feedback Dropdown -->
+                            @if (Auth::user()->user_type === 'staff' && Auth::user()->name === 'Head of Student Support and Wellbeing Services')
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                   data-bs-target="#collapseLayoutsFeedback" aria-expanded="false"
+                                   aria-controls="collapseLayoutsFeedback">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                    Feedback
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="collapseLayoutsFeedback" aria-labelledby="headingOne"
+                                     data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="{{ route('feedback.index') }}">View Feedback</a>
+
+                                        {{-- <a class="nav-link" href="{{ url('feedback.pending') }}">Pending Feedback</a> --}}
+                                    </nav>
+                                </div>
+                            @endif
+
+
+                            <!-- Jobs Dropdown -->
+                            @if (Auth::user()->user_type === 'staff' && Auth::user()->name === 'Head of Industry Liaisons and Alumni Relations')
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsJob" aria-expanded="false" aria-controls="collapseLayoutsJob">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                    Jobs
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="collapseLayoutsJob" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="{{ route('job.create') }}">Add Job</a>
+                                        <a class="nav-link" href="{{ route('job.index') }}">View Jobs</a>
+                                    </nav>
+                                </div>
+                            @endif
 
 
 
