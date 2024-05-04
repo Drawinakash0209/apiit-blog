@@ -82,7 +82,7 @@
   <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.60)] bg-fixed">
     <div class="flex h-full items-center justify-center">
       <div class="px-6 text-center text-red-500 md:px-12"> <h1 class="mt-2 mb-16 text-white text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
-          Unlocking Knowledge, Inspiring Excellence <br /><span>API</span>
+          Unlocking Knowledge, Inspiring Excellence <br /><span>APIIIIIT</span>
         </h1>
       </div>
     </div>

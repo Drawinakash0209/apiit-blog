@@ -48,7 +48,7 @@ class EventController extends Controller
         $event->type_of_event = $data['type_of_event'];
         $event->location = $data['location'];
         $event->start_time = $data['start_time'];
-        
+
         if ($request->hasFile('image')){
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -60,9 +60,9 @@ class EventController extends Controller
 
         $event->update();
         return redirect('/manage')->with('message', 'Event updated successfully');}
-        
 
-    //Display event creation page 
+
+    //Display event creation page
     public function create()
     {
         return view('events.create');
@@ -80,7 +80,7 @@ class EventController extends Controller
         $event->type_of_event = $data['type_of_event'];
         $event->location = $data['location'];
         $event->start_time = $data['start_time'];
-        
+
         if ($request->hasFile('image')){
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -99,9 +99,6 @@ class EventController extends Controller
     }
 
     //Edit function (show form to edit event)
-    
 
 
-
-    
 }
