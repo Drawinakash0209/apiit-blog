@@ -66,7 +66,7 @@
             <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
                 <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16 md:space-y-5">
                     <div class="bg-blue-200 text-center items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3 uppercase inline-block">
-                        <p class="inline"> For Students above L5 </p>
+                        <p class="inline"> For Students L5 and Above </p>
                     </div>
                     <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Student Opportunities: Build Your Career Together</a>
                 </div>
