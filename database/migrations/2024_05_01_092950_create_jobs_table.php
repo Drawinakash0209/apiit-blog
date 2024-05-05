@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('form_link');
             $table->text('description');
-            $table->string('job_type')->nullable(); // Adding the 'job_type' column
+            $table->string('job_type')->nullable();
+            $table->string('category')->nullable();
             $table->timestamps();
         });
     }

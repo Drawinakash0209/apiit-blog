@@ -24,6 +24,7 @@
                         <th>Job Description</th>
                         <th>Job Type</th>
                         <th>Job Link</th>
+                        <th>Category</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -37,6 +38,7 @@
                             <td>{{ $job->description }}</td>
                             <td>{{ $job->job_type }}</td>
                             <td><a href="{{ $job->form_link }}">Link to Job</a></td>
+                            <td>{{ $job->category }}</td>
 
                             <td>
                                 <form action="{{ route('job.edit', ['job_id' => $job->id]) }}" method="POST">

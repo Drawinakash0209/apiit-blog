@@ -103,6 +103,8 @@
                         <div class="flex items-center">
                             <div class="text-sm">
                                 <p class="text-gray-900 leading-none">Job Type: <strong>{{$job->job_type}}</strong></p>
+                                <br>
+                                <p class="text-gray-900 leading-none">School: <strong>{{$job->category}}</strong></p>
                             </div>
                         </div>
                     </div>

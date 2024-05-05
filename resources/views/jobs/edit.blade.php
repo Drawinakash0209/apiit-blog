@@ -57,6 +57,15 @@
                                 <textarea name="description" rows="4" class="form-control">{{ $job->description }}</textarea>
                             </div>
 
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Category</label>
+                                <select name="category" class="form-select">
+                                    <option value="computing" {{ $job->category === 'computing' ? 'selected' : '' }}>Computing</option>
+                                    <option value="business" {{ $job->category === 'business' ? 'selected' : '' }}>Business</option>
+                                    <option value="law" {{ $job->category === 'law' ? 'selected' : '' }}>Law</option>
+                                </select>
+                            </div>
+
                             <div class="col-md-6">
                                 <button type="submit" class="btn btn-primary">Update Job</button>
                             </div>

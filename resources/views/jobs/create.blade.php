@@ -60,6 +60,15 @@
                                 <textarea name="description" rows="4" class="form-control"></textarea>
                             </div>
 
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Category</label>
+                                <select name="category" class="form-select">
+                                    <option value="computing">Computing</option>
+                                    <option value="business">Business</option>
+                                    <option value="law">Law</option>
+                                </select>
+                            </div>
+
                             <div class="col-md-6">
                                 <button type="submit" class="btn btn-primary float">Submit</button>
                             </div>

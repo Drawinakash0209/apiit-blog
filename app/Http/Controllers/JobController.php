@@ -46,6 +46,7 @@ class JobController extends Controller
         $job->form_link = $request->form_link;
         $job->description = $request->description;
         $job->job_type = $request->job_type;
+        $job->category = $request->category;
 
 
         $job->save();
@@ -73,12 +74,14 @@ class JobController extends Controller
             'form_link' => 'required|url',
             'description' => 'required|string',
             'job_type' => 'required|in:internship,part-time,full-time,freelance,contract,',
+            'category' => 'required|in:computing,business,law,',
         ]);
 
         $job->name = $request->name;
         $job->form_link = $request->form_link;
         $job->description = $request->description;
         $job->job_type = $request->job_type;
+        $job->category = $request->category;
 
         $job->save();
 
@@ -102,7 +105,16 @@ class JobController extends Controller
 
     public function show()
     {
-        $jobs = Job::latest()->get();
+        $user = auth()->user();
+
+        if ($user->user_type === 'student' && $user->school) {
+            $jobs = Job::where('category', $user->school)->latest()->get();
+        }
+        else
+        {
+            $jobs = Job::latest()->get();
+        }
+
         return view('jobs.show', compact('jobs'));
     }
 }
