@@ -3,9 +3,10 @@
 namespace App\Livewire;
 
 use App\Models\Post;
-use Livewire\Attributes\Computed;
-use Livewire\Attributes\Rule;
+use App\Models\Comment;
 use Livewire\Component;
+use Livewire\Attributes\Rule;
+use Livewire\Attributes\Computed;
 use Illuminate\Support\Facades\Auth;
 
 class PostComments extends Component
@@ -39,4 +40,10 @@ class PostComments extends Component
     {
         return view('livewire.post-comments');
     }
+
+    public function deleteComment($id){
+        $comment = Comment::find($id);
+        $comment->delete();
+    }
+    
 }

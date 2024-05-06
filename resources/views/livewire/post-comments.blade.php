@@ -14,17 +14,18 @@
         </div>
     @endauth
 
-    <!-- Display comments -->
-    <div>
-        @forelse ($this->comments as $comment)
-            <div class="py-2"> <!-- Reduced margin-bottom to mb-2 -->
-                <div class="bg-white border px-5 py-3 shadow-lg overflow-hidden rounded-lg flex flex-col justify-between">
-                    <div class="text-base leading-6 text-gray-500">
-                        <p>
-                            {{$comment->comment}}
-                        </p>
-                    </div>
-                    <div class="mt-3 flex items-center">
+<!-- Display comments -->
+<div>
+    @forelse ($this->comments as $comment)
+        <div class="py-2 relative"> <!-- Added relative positioning -->
+            <div class="bg-white border px-5 py-3 shadow-lg overflow-hidden rounded-lg flex flex-col justify-between">
+                <div class="text-base leading-6 text-gray-500">
+                    <p>
+                        {{$comment->comment}}
+                    </p>
+                </div>
+                <div class="mt-3 flex items-center justify-between"> <!-- Adjusted flex properties -->
+                    <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"  class="h-12 w-12 rounded-full">
                         </div>
@@ -35,13 +36,28 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Delete button -->
+
+
+                    @if(auth()->user()->id == $blog->created_by || auth()->user()->id == $comment->student_id)
+      
+                    <form wire:submit.prevent="deleteComment({{ $comment->id }})">
+                        <button type="submit" class="absolute mt-2 mr-2 top-0 right-0 text-red-500 hover:text-red-600 font-small focus:outline-none">Delete</button>
+                    </form>
+                    
+
+                    @endif
+
+
+
                 </div>
             </div>
-        @empty
-            <div>
-                <p class="text-gray-800 text-lg mt-10">No comments yet</p>
-            </div>
-        @endforelse
-    </div>
+        </div>
+    @empty
+        <div>
+            <p class="text-gray-800 text-lg mt-10">No comments yet</p>
+        </div>
+    @endforelse
+</div>
 
 </div>
