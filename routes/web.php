@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\Meetingcontroller;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -193,13 +194,15 @@ Route::delete('/job/delete/{job_id}', [JobController::class, 'destroy'])->name('
 Route::get('/jobs/show', [JobController::class, 'show'])->name('job.show');
 
 
-//Routes for events 
+//Routes for events
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/add-events',[EventController::class, 'create']);
 Route::post('/add-events', [EventController::class, 'store']);
 Route::get('/manage-events', [EventController::class, 'manage']);
 Route::get('/event-edit/{event_id}', [EventController::class, 'edit']);
 Route::put('update-events/{event_id}', [EventController::class, 'update']);
-Route::get('event-delete/{event_id}', [EventController::class, 'destroy']); 
+Route::get('event-delete/{event_id}', [EventController::class, 'destroy']);
 
 
+//Routes for meetings
+Route::get('/meetings', [MeetingController::class, 'show'])->name('meetings.show');
