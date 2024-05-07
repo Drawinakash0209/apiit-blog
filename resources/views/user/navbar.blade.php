@@ -27,8 +27,9 @@
                 <a @click="setActiveLink('jobs')" :class="{ 'bg-gray-200': activeLink === 'jobs' }" class="px-4 py-2 mt-2 text-sm rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/jobs/show">Career Portal</a>
             @endif
             <a @click="setActiveLink('events')" :class="{ 'bg-gray-200': activeLink === 'events' }" class="px-4 py-2 mt-2 text-sm rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/events">Events</a>
-            <a @click="setActiveLink('about')" :class="{ 'bg-gray-200': activeLink === 'about' }" class="px-4 py-2 mt-2 text-sm  rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
-            <a @click="setActiveLink('contact')" :class="{ 'bg-gray-200': activeLink === 'contact' }" class="px-4 py-2 mt-2 text-sm  rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/meetings">Contact</a>
+            @if(auth()->check() && auth()->user()->user_type === 'student')
+                <a @click="setActiveLink('contact')" :class="{ 'bg-gray-200': activeLink === 'contact' }" class="px-4 py-2 mt-2 text-sm rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/meetings">Support</a>
+            @endif
 
 
 

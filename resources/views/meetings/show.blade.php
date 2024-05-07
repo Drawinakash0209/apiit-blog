@@ -58,15 +58,42 @@
 @include('user.navbar')
 
 
+<div class="text-gray-900 bg-white">
+    <div class="w-full mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16
+        max-w-7xl">
+        <div class="flex flex-col items-center sm:px-5 md:flex-row">
+            <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
+                <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
+          md:space-y-5">
+                    <div class="bg-orange-100 flex items-center leading-none rounded-full pt-1.5 pr-4 pb-1.5 pl-4 inline-block">
+                        <p class="inline">Students Only</p>
+                    </div>
+                    <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Student Support: Craft your journey together.</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="block">
+                    <img
+                        src="https://www.creativefabrica.com/wp-content/uploads/2018/08/Social-Teamwork-Logo-by-Mansel-Brist.jpg"/>
+                </div>
+            </div>
+        </div>
 
-<div class="">
-<!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/sheedh-mashood/30min" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
+    </div>
 </div>
 
 
+<section class="section wb">
+    <div class="container">
+        <div class="">
+            <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/sheedh-mashood/30min" style="min-width:320px;height:700px;">
+                </div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+        </div>
+    </div>
+</section>
 
 @include('user.footer')
 

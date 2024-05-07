@@ -7,12 +7,13 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/view-survey">Surveys</a></li>
                 <li><a href="/feedback/show">Feedback</a></li>
-            @if(Auth::check() && (Auth::user()->user_type === 'student' && (Auth::user()->level === 'L5' || Auth::user()->level === 'L6') || Auth::user()->user_type === 'staff'))
+                    @if(Auth::check() && (Auth::user()->user_type === 'student' && (Auth::user()->level === 'L5' || Auth::user()->level === 'L6') || Auth::user()->user_type === 'staff'))
                 <li><a href="/jobs/show">Career Portal</a></li>
-                @endif
+                   @endif
                 <li><a href="/events">Events</a>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                    @if(auth()->check() && auth()->user()->user_type === 'student')
+                <li><a href="/meetings">Support</a></li>
+                   @endif
             </ul>
         </div>
         <div class="footer-col">
