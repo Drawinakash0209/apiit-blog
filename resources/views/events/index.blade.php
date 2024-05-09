@@ -1,4 +1,5 @@
-@extends('layout')
+
+@extends('student.dashboard')
 
 @section('content')
     <div class="container-fluid px-4 mt-5">

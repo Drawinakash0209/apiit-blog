@@ -1,4 +1,5 @@
-@extends('layout')
+
+@extends('student.dashboard')
 
 @section('content')
 
