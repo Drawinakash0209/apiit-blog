@@ -29,7 +29,7 @@ class EventController extends Controller
     public function destroy($event_id){
         $event = Event::find($event_id);
         $event->delete();
-        return redirect('/manage')->with('message', 'Event deleted successfully');
+        return redirect('/events')->with('message', 'Event deleted successfully');
     }
     //Display edit form
     public function edit($event_id){
