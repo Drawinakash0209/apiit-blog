@@ -78,5 +78,14 @@ class User extends Authenticatable
     public function survey(){
         return $this->hasMany(Survey::class, 'crated_by');
     }
+
+    public function events(){
+        return $this->hasMany(Event::class, 'created_by');
+    }
+
+    
+    // public function events(){
+    //     return $this->belongsToMany(Event::class);
+    // }
 }
 

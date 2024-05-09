@@ -13,9 +13,10 @@
         {{-- Display error messages if any --}}
         @if (session('message'))
 
-            <div class="alert alert-success">{{ session('message')}}</div>
-
+        <div class="alert alert-success">{{ session('message')}}</div>
+            
         @endif
+
 
         <table class="table table-bordered">
             <thead>
