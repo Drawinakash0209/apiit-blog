@@ -17,6 +17,12 @@ class EventController extends Controller
         ]);
     }
 
+    //display single event
+    public function show($event_id){
+        $event = Event::find($event_id);
+        return view('events.show', compact('event'));
+    }
+
     //Display all user posted events
     public function manage(){
         return view('events.index', [

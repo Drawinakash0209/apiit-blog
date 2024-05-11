@@ -202,6 +202,7 @@ Route::get('/manage-events', [EventController::class, 'manage']);
 Route::get('/event-edit/{event_id}', [EventController::class, 'edit']);
 Route::put('update-events/{event_id}', [EventController::class, 'update']);
 Route::get('event-delete/{event_id}', [EventController::class, 'destroy']);
+Route::get('/events/{event_id}', [EventController::class, 'show']);
 
 
 //Routes for meetings
