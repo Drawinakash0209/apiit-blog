@@ -12,6 +12,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BlogReportController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FeedbackController;
 
@@ -207,3 +208,10 @@ Route::get('/events/{event_id}', [EventController::class, 'show']);
 
 //Routes for meetings
 Route::get('/meetings', [MeetingController::class, 'show'])->name('meetings.show');
+
+
+//routes for gallery
+Route::get('/add-gallery',[AlbumController::class, 'create']);
+Route::post('/add-album',[AlbumController::class, 'store']);
+Route::get('/manage-albums',[AlbumController::class, 'manage']);
+Route::get('/album', [AlbumController::class, 'index']);

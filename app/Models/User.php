@@ -83,6 +83,10 @@ class User extends Authenticatable
         return $this->hasMany(Event::class, 'created_by');
     }
 
+    public function album(){
+        return $this->hasMany(Album::class, 'created_by');
+    }
+
     
     // public function events(){
     //     return $this->belongsToMany(Event::class);

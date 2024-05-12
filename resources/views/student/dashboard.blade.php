@@ -106,6 +106,24 @@
                             @endif
 
 
+                                <!-- gallery Dropdown -->
+                                @if(auth()->user()->user_type == 'club')
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsgallery" aria-expanded="false" aria-controls="collapseLayoutsgallery">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                    Gallery
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="collapseLayoutsgallery" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="{{ url('add-gallery') }}">Add Gallery</a>
+                                        <a class="nav-link" href="{{ url('/manage-albums') }}">View the Albums you posted</a>
+                                    </nav>
+                                </div>
+                            @endif
+
+                           
+
+
                             <!-- Feedback Dropdown -->
                             @if (Auth::user()->user_type === 'staff' && Auth::user()->name === 'Head of Student Support and Wellbeing Services')
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
