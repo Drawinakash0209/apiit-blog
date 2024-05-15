@@ -70,6 +70,11 @@
 
 
 @foreach($gallery as $album)
+<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl p-6">
+  <span class="block">
+    {{ $album->name }}
+  </span>
+</h1>
 <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
   <div class="grid grid-cols-6 gap-2">
   
