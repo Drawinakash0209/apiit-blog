@@ -64,22 +64,29 @@
 
 
 
-<div class="p-5 sm:p-8">
-  @foreach($gallery as $album)
-    <h2>{{ $album->name }}</h2>
-    <p>{{ $album->description }}</p>
-  <div class="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-    
-      @foreach(explode('|', $album->gallery) as $image)
-        <img src="{{ $image }}" alt="Album Image" />
-      @endforeach
 
-    </div>
-    @endforeach
+
+
+
+
+@foreach($gallery as $album)
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <div class="grid grid-cols-6 gap-2">
+  
+  @foreach(explode('|', $album->gallery) as $image)
+  <div>
+    <img class="object-cover object-center h-40 max-w-full rounded-lg md:h-60"
+      src="{{ $image }}"
+      alt="gallery-photo" />
+      
   </div>
+  @endforeach
+
+
+
 </div>
-
-
+</div>
+@endforeach
 
 
 
