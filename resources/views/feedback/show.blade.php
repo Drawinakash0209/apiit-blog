@@ -57,7 +57,7 @@
 
 
 
-<div class="flex flex-row mt-10">
+<div class="flex flex-row mt-10 mb-12">
     <div class="w-1/3 bg-gray-100 px-6 py-4 ml-40 rounded-lg shadow-md">
       <h1 class="text-xl font-bold mb-2">Voice of the Campus: Anonymous Feedbacks !</h1>
       <p class="text-gray-700">
