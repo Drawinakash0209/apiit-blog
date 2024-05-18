@@ -217,7 +217,7 @@
                  <div class="collapse" id="collapseLayoutsAlbums" aria-labelledby="headingOne"
                      data-bs-parent="#sidenavAccordion">
                      <nav class="sb-sidenav-menu-nested nav">
-                         <a class="nav-link" href="{{ url('albums.manage') }}">View Albums</a>
+                         <a class="nav-link" href="/album/manage">View Albums</a>
                      </nav>
                  </div>
 
