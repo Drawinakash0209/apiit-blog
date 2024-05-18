@@ -105,7 +105,7 @@ class JobController extends Controller
         }
         else
         {
-            return rredirect()->back()->with('message', 'No Job found');
+            return redirect()->back()->with('message', 'No Job found');
         }
     }
 
