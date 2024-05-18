@@ -101,11 +101,11 @@ class JobController extends Controller
         if($job)
         {
             $job->delete();
-            return redirect('/jobs')->with('success', 'Job Details deleted successfully');
+            return redirect()->back()->with('success', 'Job Details deleted successfully');
         }
         else
         {
-            return redirect('/jobs')->with('message', 'No Job found');
+            return rredirect()->back()->with('message', 'No Job found');
         }
     }
 
