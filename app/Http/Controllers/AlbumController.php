@@ -16,7 +16,7 @@ class AlbumController extends Controller
     }
 
     public function adminmanage(){
-        return view('album.index', [
+        return view('album.manage', [
             'albums' =>  Album::all()->album
         ]);
     }
