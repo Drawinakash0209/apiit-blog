@@ -16,6 +16,12 @@ class JobController extends Controller
         return view('jobs.index', compact('jobs'));
     }
 
+    public function manage()
+    {
+        $jobs = Job::all();
+        return view('jobs.manage', compact('jobs'));
+    }
+
     //Function to display form to create jobs
     public function create()
     {

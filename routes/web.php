@@ -185,8 +185,11 @@ Route::get('/status', function () {
 Route::get('/pending', [FeedbackController::class, 'showpending'])->name('feedback.pending');
 
 
+
+
 //Route for Career Path (Job) CRUD
 Route::get('/jobs', [JobController::class, 'index'])->name('job.index');
+Route::get('/jobs/manage', [JobController::class, 'manage'])->name('job.manage');
 Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
 Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
 Route::get('/job/edit/{job_id}', [JobController::class, 'edit'])->name('job.edit');
