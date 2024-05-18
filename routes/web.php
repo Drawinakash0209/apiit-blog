@@ -217,4 +217,4 @@ Route::get('/add-gallery',[AlbumController::class, 'create']);
 Route::post('/add-album',[AlbumController::class, 'store']);
 Route::get('/manage-albums',[AlbumController::class, 'manage']);
 Route::get('/album', [AlbumController::class, 'index']);
-Route::get('/album/manage', [AlbumController::class, 'adminmanage'])->name('albums.manage');
+Route::get('/album/manage', [AlbumController::class, 'adminmanage']);
