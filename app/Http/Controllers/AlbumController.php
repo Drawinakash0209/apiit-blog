@@ -15,6 +15,12 @@ class AlbumController extends Controller
         ]);
     }
 
+    public function adminmanage(){
+        return view('album.index', [
+            'albums' =>  Album::all()->album
+        ]);
+    }
+
     public function index(){
         $gallery = Album::all();
         return view('album.home', [

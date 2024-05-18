@@ -212,9 +212,9 @@ Route::get('/events/{event_id}', [EventController::class, 'show']);
 //Routes for meetings
 Route::get('/meetings', [MeetingController::class, 'show'])->name('meetings.show');
 
-
 //routes for gallery
 Route::get('/add-gallery',[AlbumController::class, 'create']);
 Route::post('/add-album',[AlbumController::class, 'store']);
 Route::get('/manage-albums',[AlbumController::class, 'manage']);
 Route::get('/album', [AlbumController::class, 'index']);
+Route::get('/album/manage', [AlbumController::class, 'adminmanage'])->name('albums.manage');
