@@ -17,30 +17,30 @@
 <meta name="author" content="">
 
 <!-- Site Icons -->
-<link rel="shortcut icon" href="user/images/apiit-favicon.png" type="image/x-icon" />
+<link rel="shortcut icon" href="/user/images/apiit-favicon.png" type="image/x-icon" />
 <!-- Design fonts -->
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 
 <!-- Bootstrap core CSS -->
-<link href="user/css/bootstrap.css" rel="stylesheet">
+<link href="/user/css/bootstrap.css" rel="stylesheet">
 
 <!-- FontAwesome Icons core CSS -->
-<link href="user/css/font-awesome.min.css" rel="stylesheet">
+<link href="/user/css/font-awesome.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="user/style.css" rel="stylesheet">
+<link href="/user/style.css" rel="stylesheet">
 
-<link href="user/nav-bar.css" rel="stylesheet">
+<link href="/user/nav-bar.css" rel="stylesheet">
 
 
 <!-- Responsive styles for this template -->
-<link href="user/css/responsive.css" rel="stylesheet">
+<link href="/user/css/responsive.css" rel="stylesheet">
 
 <!-- Colors for this template -->
-<link href="user/css/colors.css" rel="stylesheet">
+<link href="/user/css/colors.css" rel="stylesheet">
 
 <!-- Version Garden CSS for this template -->
-<link href="user/css/version/garden.css" rel="stylesheet">
+<link href="/user/css/version/garden.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Animated footer script -->
@@ -67,23 +67,23 @@
     <div class="max-w-2xl mx-auto">
         <div
             class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-          
+
             <div class="">
 
                 <a href="#"
                     class="text-xs text-indigo-600 uppercase font-medium hover:text-gray-900 transition duration-500 ease-in-out">
                   {{$event['type_of_event']}}
                 </a>
-             
+
                 <h1 href="#" class="text-gray-900 font-bold text-3xl mb-2">{{$event['name']}}</h1>
-              
+
 
                 <p class="text-base leading-8 my-5">
                     {!! $event->description !!}
                 </p>
 
 
-   
+
 
             </div>
 
@@ -114,10 +114,10 @@
 
 <!-- Core JavaScript
 ================================================== -->
-<script src="user/js/jquery.min.js"></script>
-<script src="user/js/tether.min.js"></script>
-<script src="user/js/bootstrap.min.js"></script>
-<script src="user/js/custom.js"></script>
+<script src="/user/js/jquery.min.js"></script>
+<script src="/user/js/tether.min.js"></script>
+<script src="/user/js/bootstrap.min.js"></script>
+<script src="/user/js/custom.js"></script>
 
 </body>
 </html>
