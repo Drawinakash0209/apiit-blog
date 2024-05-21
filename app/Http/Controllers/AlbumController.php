@@ -42,6 +42,13 @@ class AlbumController extends Controller
         ]);
     }
 
+    //function to delete
+    public function destroy($id)
+    {
+        Album::destroy($id);
+        return redirect('/album');
+    }
+
     //function to update
     public function update(Request $request, $id)
     {
