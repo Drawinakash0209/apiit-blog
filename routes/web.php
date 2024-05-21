@@ -218,3 +218,6 @@ Route::post('/add-album',[AlbumController::class, 'store']);
 Route::get('/manage-albums',[AlbumController::class, 'manage']);
 Route::get('/album', [AlbumController::class, 'index']);
 Route::get('/album/manage', [AlbumController::class, 'adminmanage']);
+Route::get('/album-edit/{album_id}', [AlbumController::class, 'edit']);
+Route::put('/album/update/{album_id}', [AlbumController::class, 'update']);
+Route::get('album-delete/{album_id}', [AlbumController::class, 'destroy']);

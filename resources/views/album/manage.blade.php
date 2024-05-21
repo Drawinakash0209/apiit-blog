@@ -37,11 +37,11 @@
                     <td>{{$item->name}}</td>
 
                     <td>
-                        <a href="{{'event-edit/'.$item->id}}" class="btn btn-success">Edit</a>
+                        <a href="{{'album-edit/'.$item->id}}" class="btn btn-success">Edit</a>
                     </td>
 
                     <td>
-                        <a href="{{'event-delete/'.$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="{{'album-delete/'.$item->id}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
 

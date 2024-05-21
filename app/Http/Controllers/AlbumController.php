@@ -34,6 +34,14 @@ class AlbumController extends Controller
         return view('album.create');
     }
 
+    public function edit($id)
+    {
+        $album = Album::find($id);
+        return view('album.edit', [
+            'album' => $album
+        ]);
+    }
+
     public function store(Request $request)
     {
         $formFields = $request->validate([
