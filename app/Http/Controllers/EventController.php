@@ -65,7 +65,7 @@ class EventController extends Controller
 
 
         $event->update();
-        return redirect('/manage')->with('message', 'Event updated successfully');}
+        return redirect('/manage-events')->with('message', 'Event updated successfully');}
 
 
     //Display event creation page
@@ -99,7 +99,7 @@ class EventController extends Controller
         $event->created_by = Auth::user()->id;
 
         $event->save();
-        return redirect('/manage')->with('message', 'Post added successfully');
+        return redirect('/manage-events')->with('message', 'Post added successfully');
 
 
     }
