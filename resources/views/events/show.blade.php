@@ -89,7 +89,7 @@
 
         </div>
 
-        <div class="flex h-screen">
+        <div class="flex">
             <div class="m-auto">
               <button class="p-2 pl-5 pr-5 mt-2 bg-transparent border-2 border-blue-500 text-blue-500 text-lg rounded-lg hover:bg-blue-500 hover:text-gray-100 focus:border-4 focus:border-blue-300"><i class="fa-regular fa-calendar-days"></i> <?php echo date('M', strtotime($event['start_date'])); ?> <?php echo date('d', strtotime($event['start_date'])); ?></button>
               <button class="p-2 pl-5 pr-5 mt-2 bg-transparent border-2 border-gray-500 text-gray-500 text-lg rounded-lg hover:bg-gray-500 hover:text-gray-100 focus:border-4 focus:border-gray-300"><i class="fa-solid fa-clock"></i> {{$event['start_time']}}</button>
