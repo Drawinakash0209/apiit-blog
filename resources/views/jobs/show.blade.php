@@ -50,6 +50,20 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<script>
+    function openApplyModal(jobId) {
+        const form = document.getElementById('applyForm');
+        form.action = form.action.replace('JOB_ID_PLACEHOLDER', jobId);
+        document.getElementById('applyModal').classList.remove('hidden');
+    }
+
+    function closeApplyModal() {
+        const form = document.getElementById('applyForm');
+        form.action = form.action.replace(/\/jobs\/\d+\/apply/, '/jobs/JOB_ID_PLACEHOLDER/apply');
+        document.getElementById('applyModal').classList.add('hidden');
+    }
+</script>
+
 </head>
 <body>
 
@@ -97,18 +111,79 @@
                             </p>
                             <div class="text-gray-900 font-bold text-xl mb-2">{{$job->name}}</div>
                             <p class="text-gray-700 text-base">{{$job->description}}</p> <br>
-                            <a href="{{$job->form_link}}" class="text-blue-500">Click here for more details</a>
                         </div>
                         <div class="flex items-center">
                             <div class="text-sm">
                                 <p class="text-gray-900 leading-none">Job Type: <strong>{{$job->job_type}}</strong></p>
                                 <br>
                                 <p class="text-gray-900 leading-none">School: <strong>{{$job->category}}</strong></p>
+                                <br>
+                                <button
+                                    class="bg-blue-500 text-white px-4 py-2 rounded"
+                                    onclick="openApplyModal({{ $job->id }})">
+                                    Apply Now
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             @endforeach
+
+
+                <!-- Job Form -->
+                <div id="applyModal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+                    <div class="flex items-center justify-center min-h-screen px-4">
+                        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                        </div>
+
+                        <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+                            <div class="bg-white pb-4 sm:p-6 sm:pb-4">
+                                <div class="sm:flex sm:items-start">
+                                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                            Apply for Job
+                                        </h3>
+                                        <div class="mt-2">
+                                            <form id="applyForm" action="{{ route('job.apply', $job->id) }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+
+                                                <div class="form-group">
+                                                    <label for="name">Full Name</label>
+                                                    <input type="text" name="name" id="name" class="form-control" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    <input type="text" name="phone" id="phone" class="form-control" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" name="email" id="email" class="form-control" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="address">Address</label>
+                                                    <input type="text" name="address" id="address" class="form-control" required>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="image" class="form-label">Upload CV (PDF)</label>
+                                                    <input type="file" name="image" id="image" class="form-control" required>
+                                                </div>
+
+                                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit Application</button>
+                                                <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded" onclick="closeApplyModal()">Cancel</button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
         </div><!-- end row -->
     </div><!-- end container -->

@@ -38,11 +38,6 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="joblink" class="form-label">Job Link</label>
-                                <input type="text"  name="form_link" value="{{ $job->form_link }}" class="form-control">
-                            </div>
-
-                            <div class="mb-3">
                                 <label for="jobtype" class="form-label">Job Type</label>
                                 <select name="job_type" class="form-select">
                                     <option value="internship" {{ $job->job_type === 'internship' ? 'selected' : '' }}>Internship</option>

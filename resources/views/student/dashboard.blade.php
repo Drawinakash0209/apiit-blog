@@ -121,7 +121,7 @@
                                 </div>
                             @endif
 
-                           
+
 
 
                             <!-- Feedback Dropdown -->
@@ -155,6 +155,7 @@
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="{{ route('job.create') }}">Add Job</a>
                                         <a class="nav-link" href="{{ route('job.index') }}">View Jobs</a>
+                                        <a class="nav-link" href="{{ route('job.applications') }}">View Applications</a>
                                     </nav>
                                 </div>
                             @endif

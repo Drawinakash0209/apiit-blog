@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Job;
 
+
 class JobController extends Controller
 {
     //Function to display all jobs
@@ -123,4 +124,5 @@ class JobController extends Controller
 
         return view('jobs.show', compact('jobs'));
     }
+
 }

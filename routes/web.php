@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\Meetingcontroller;
 use App\Models\Post;
@@ -196,6 +197,12 @@ Route::get('/job/edit/{job_id}', [JobController::class, 'edit'])->name('job.edit
 Route::put('/job/update/{job_id}', [JobController::class, 'update'])->name('job.update');
 Route::delete('/job/delete/{job_id}', [JobController::class, 'destroy'])->name('job.delete');
 Route::get('/jobs/show', [JobController::class, 'show'])->name('job.show');
+
+//Route for Applications
+Route::post('/jobs/{job_id}/apply', [ApplicationController::class, 'apply'])->name('job.apply');
+Route::get('/jobs/{job_id}/applications', [ApplicationController::class, 'viewApplications'])->name('job.viewApplications');
+Route::get('/applications', [ApplicationController::class, 'applications'])->name('job.applications');
+Route::delete('/applications/{application_id}', [ApplicationController::class, 'deleteApplication'])->name('application.delete');
 
 
 //Routes for events

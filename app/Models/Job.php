@@ -11,7 +11,6 @@ class Job extends Model
 
     protected $fillable = [
         'name',
-        'form_link',
         'description',
     ];
 }
