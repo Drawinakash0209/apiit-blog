@@ -42,23 +42,20 @@
                     @auth()
 
                     @if(auth()->user()->id == $blog->created_by || auth()->user()->id == $comment->student_id)
-      
+
                     <form wire:submit.prevent="deleteComment({{ $comment->id }})">
                         <button type="submit" class="absolute mt-2 mr-2 top-0 right-0 text-red-500 hover:text-red-600 font-small focus:outline-none">Delete</button>
                     </form>
-                    
+
 
                     @endif
 
                     @endauth
-
-
-
                 </div>
             </div>
         </div>
 
-        
+
     @empty
         <div>
             <p class="text-gray-800 text-lg mt-10">No comments yet</p>
