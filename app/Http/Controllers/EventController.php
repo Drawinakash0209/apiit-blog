@@ -13,7 +13,10 @@ class EventController extends Controller
     //Display all events
     public function index(){
         return view('events.events-page', [
-            'events' => Event::all()
+            
+            'events' => Event::all(),
+            'special_events' => Auth::check() ? Event::where('type_of_event', Auth::user()->school)->get() : null,
+
         ]);
     }
 

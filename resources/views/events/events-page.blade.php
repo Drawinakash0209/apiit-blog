@@ -81,6 +81,55 @@
 </section>
 
 
+
+@auth
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+    <div class="text-center">
+        <h1 class="mb-2 text-center font-Bebas Neue text-5xl font-bold wrappermain">Events Tailored specifically for you</h1>
+    </div>
+
+    <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-5">
+            @foreach($special_events as $specevent)
+
+            <div class="relative w-full flex items-end justify-start text-left bg-cover bg-center" style="height: 450px; background-image:url({{$specevent->image ? asset('/uploads/event/' . $specevent->image): asset('/images/CR7.png')}});">
+                <div class="absolute top-0  right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                </div>
+            
+                <div class="absolute top-0 right-0 left-0 mx-3 mt-2 flex justify-between items-center">
+                    <a href="#" class="text-xs bg-indigo-600 text-white px-5 py-2 uppercase hover:bg-white hover:text-indigo-600 transition ease-in-out duration-500">{{$specevent['type_of_event']}}</a>
+                    <span class="ml-2"></span>
+                    <div class="text-white font-regular flex flex-col justify-start">
+                        <span class="text-3xl leading-0 font-semibold"><?php echo date('d', strtotime($specevent['start_date'])); ?></span>
+                        <span class="-mt-3"><?php echo date('M', strtotime($specevent['start_date'])); ?></span>
+                    </div>
+                </div>
+            
+                <main class="p-5 z-10">
+                    <a href="/events/{{$specevent['id']}}"
+                       class="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">{{$specevent['name']}}
+                    </a>
+                    <br>
+                    <a href="#"
+                       class="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">{{$specevent['location']}}
+                    </a>
+                </main>
+            
+            </div>
+
+
+            @endforeach
+        </div>
+    </div>
+
+</section>
+@endauth
+
+
+
+
+
 @include('user.footer')
 
 

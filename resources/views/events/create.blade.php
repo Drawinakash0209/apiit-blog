@@ -31,11 +31,12 @@
                     @csrf
 
                     <div class="mb-3">
-                        <label for="type_of_event" class="form-label">Type of Event</label>
+                        <label for="type_of_event" class="form-label">Target Audience</label>
                         <select name="type_of_event" class="form-control">
-                            <option value="fund-raising"> Fund-raising </option>
-                            <option value="charity"> Charity </option>
-                            <option value="fun"> Fun </option>
+                            <option value="All"> All </option>
+                            <option value="Computing"> Computing School </option>
+                            <option value="Business"> Business School </option>
+                            <option value="Law"> Law School </option>
                         </select>
                     </div>
 
