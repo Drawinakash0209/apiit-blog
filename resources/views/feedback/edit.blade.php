@@ -32,12 +32,25 @@
 
                 <div class="mb-3">
                     <label for="id" class="form-label">Feedback ID</label>
-                    <input type="text" name="id" value="{{ old('id', $feedback->id) }}" class="form-control">
+                    <input type="text" name="id" value="{{ old('id', $feedback->id) }}" class="form-control" readonly>
                 </div>
 
+                {{-- If the feadback is not anonymous display an email field --}}
+                @if (!$feedback->anonymous)
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" value="{{ old('email', $feedback->user->email) }}" class="form-control" readonly>
+                    </div>
+                @endif
+
+
                 <div class="mb-3">
-                    <label for="type" class="form-label">Feedback Type</label>
-                    <input type="text" name="type" value="{{ old('type', $feedback->type) }}" class="form-control">
+                    <label for="type" class="form-label">Category</label>
+                    <select name="type" class="form-control">
+                        <option value="Compliment" {{ $feedback->type == 'Compliment' ? 'selected' : '' }}>Compliment</option>
+                        <option value="Suggestion" {{ $feedback->type == 'Suggestion' ? 'selected' : '' }}>Suggestion</option>
+                        <option value="Complaint" {{ $feedback->type == 'Complaint' ? 'selected' : '' }}>Complaint</option>
+                    </select>
                 </div>
 
                 @error('type')

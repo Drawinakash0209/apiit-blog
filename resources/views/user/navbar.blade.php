@@ -22,7 +22,11 @@
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
             <a @click="setActiveLink('home')" :class="{ 'bg-gray-200': activeLink === 'home' }" class="px-4 py-2 mt-2 text-sm  text-gray-900 rounded-lg dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/">Home</a>
             <a @click="setActiveLink('surveys')" :class="{ 'bg-gray-200': activeLink === 'surveys' }" class="px-4 py-2 mt-2 text-sm  rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/view-survey">Surveys</a>
-            <a @click="setActiveLink('feedback')" :class="{ 'bg-gray-200': activeLink === 'feedback' }" class="px-4 py-2 mt-2 text-sm  rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/feedback/show">Feedback</a>
+            {{-- Making the feedback nav item only for the logged in users with am if condition --}}
+            @if(Auth::check())
+                <a @click="setActiveLink('feedback')" :class="{ 'bg-gray-200': activeLink === 'feedback' }" class="px-4 py-2 mt-2 text-sm  rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/feedback/show">Feedback</a>
+            @endif
+            {{-- <a @click="setActiveLink('feedback')" :class="{ 'bg-gray-200': activeLink === 'feedback' }" class="px-4 py-2 mt-2 text-sm  rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/feedback/show">Feedback</a> --}}
             @if(Auth::check() && (Auth::user()->user_type === 'student' && (Auth::user()->level === 'L5' || Auth::user()->level === 'L6') || Auth::user()->user_type === 'staff'))
                 <a @click="setActiveLink('jobs')" :class="{ 'bg-gray-200': activeLink === 'jobs' }" class="px-4 py-2 mt-2 text-sm rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/jobs/show">Career Portal</a>
             @endif

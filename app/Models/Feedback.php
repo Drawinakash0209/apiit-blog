@@ -10,11 +10,19 @@ class Feedback extends Model
     use HasFactory;
 
     protected $fillable = [
-        'type', // 'bug', 'feature', 'comment', 'question', 'other'
+        'type',
+        'anonymous', // Add 'anonymous' field
+        'user_id',
+        // 'email',
         'content',
         'is_reviewed',
-        
+
 
 
     ];
+    //feedback belongs to user
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

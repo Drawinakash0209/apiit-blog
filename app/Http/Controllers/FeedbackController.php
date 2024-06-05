@@ -22,9 +22,7 @@ class FeedbackController extends Controller
      */
     public function create()
     {
-        // return view('feedback.show', [
-        //     'feedback' => (new Feedback()),
-        // ]);
+
     }
 
     /**
@@ -37,14 +35,18 @@ class FeedbackController extends Controller
             'type' => 'required',
             //content required
             'content' => 'required',
-            //is_reviewed required
-            // 'is_reviewed' => 'required',
+            //anonymous required
+            'anonymous' => 'required',
+            //user id is required and also can be null
+            'user_id' => 'nullable',
+
+
         ]);
 
         Feedback::create($validated);
 
         return redirect()->route('feedback.status')->with('message', 'Feedback successfully created!');
-        // return redirect()->route('user.status')->with('success', 'Registration successful. Please wait for the admin approval');
+
     }
 
     /**
