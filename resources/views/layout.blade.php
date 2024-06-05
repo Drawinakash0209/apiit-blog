@@ -156,7 +156,7 @@
                             </nav>
                         </div>
 
-                        <!-- Feedback Dropdown -->
+                        {{-- <!-- Feedback Dropdown -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayoutsFeedback" aria-expanded="false"
                             aria-controls="collapseLayoutsFeedback">
@@ -170,12 +170,12 @@
                                 <a class="nav-link" href="{{ route('feedback.index') }}">View Feedback</a>
 
                                 {{-- <a class="nav-link" href="{{ url('feedback.pending') }}">Pending Feedback</a> --}}
-                            </nav>
-                        </div>
+                            {{-- </nav>
+                        </div> --}} 
 
 
                             <!-- Jobs Dropdown -->
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                                data-bs-target="#collapseLayoutsJobs" aria-expanded="false"
                                aria-controls="collapseLayoutsJobs">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -187,7 +187,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('job.manage') }}">View Jobs</a>
                                 </nav>
-                            </div>
+                            </div> --}}
 
 
                         <!-- Reports Dropdown -->
@@ -207,7 +207,7 @@
 
 
                      <!-- Reports Dropdown -->
-                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                     {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                      data-bs-target="#collapseLayoutsAlbums" aria-expanded="false"
                      aria-controls="collapseLayoutsAlbums">
                      <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -219,7 +219,7 @@
                      <nav class="sb-sidenav-menu-nested nav">
                          <a class="nav-link" href="/album/manage">View Albums</a>
                      </nav>
-                 </div>
+                 </div> --}}
 
 
 
