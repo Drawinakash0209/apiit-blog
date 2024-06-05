@@ -29,7 +29,7 @@
             <a @click="setActiveLink('events')" :class="{ 'bg-gray-200': activeLink === 'events' }" class="px-4 py-2 mt-2 text-sm rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/events">Events</a>
             <a @click="setActiveLink('gallery')" :class="{ 'bg-gray-200': activeLink === 'gallery' }" class="px-4 py-2 mt-2 text-sm  rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/album">Event Gallery</a>
 
-        @if(auth()->check() && auth()->user()->user_type === 'student')
+            @if(Auth::check() && (Auth::user()->user_type === 'student' || Auth::user()->user_type === 'staff'))
                 <a @click="setActiveLink('contact')" :class="{ 'bg-gray-200': activeLink === 'contact' }" class="px-4 py-2 mt-2 text-sm rounded-lg dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/meetings">Support</a>
             @endif
 
