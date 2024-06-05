@@ -118,7 +118,7 @@
 
 
 
-            <!-- Sidebar Section -->
+            {{-- <!-- Sidebar Section -->
             <div class="w-full lg:w-1/4 lg:ml-auto mt-12 max-w-screen-sm">
 
                 <div class="p-4 border-t border-b md:border md:rounded mb-10">
@@ -138,7 +138,7 @@
                     Follow
                     <i class='bx bx-user-plus ml-2' ></i>
                 </button>
-            </div>
+            </div> --}}
 
             {{-- Share Post --}}
             <div class="mt-4 mb-10">
