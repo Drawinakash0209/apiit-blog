@@ -34,7 +34,7 @@ class JobController extends Controller
     {
         $rules = [
             'name' => 'required|string|max:255',
-            'form_link' => 'required|url',
+            // 'form_link' => 'required|url',
             'description' => 'required|string',
             'job_type' => 'required|in:internship,part-time,full-time,freelance,contract,',
         ];
@@ -50,7 +50,7 @@ class JobController extends Controller
         $job = new Job();
 
         $job->name = $request->name;
-        $job->form_link = $request->form_link;
+        // $job->form_link = $request->form_link;
         $job->description = $request->description;
         $job->job_type = $request->job_type;
         $job->category = $request->category;
@@ -78,14 +78,14 @@ class JobController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'form_link' => 'required|url',
+            // 'form_link' => 'required|url',
             'description' => 'required|string',
             'job_type' => 'required|in:internship,part-time,full-time,freelance,contract,',
             'category' => 'required|in:computing,business,law,',
         ]);
 
         $job->name = $request->name;
-        $job->form_link = $request->form_link;
+        // $job->form_link = $request->form_link;
         $job->description = $request->description;
         $job->job_type = $request->job_type;
         $job->category = $request->category;
