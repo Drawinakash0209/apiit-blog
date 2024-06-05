@@ -16,7 +16,9 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Category</th>
                     <th>Type</th>
+
                     <th>Content</th>
                     <th>Status</th>
                     <th>Edit</th>
@@ -29,7 +31,9 @@
                 @foreach ($feedbacks as $feedback)
                 <tr>
                     <td>{{ $feedback->id }}</td>
+
                     <td>{{$feedback->type}}</td>
+                    <td>{{$feedback->anonymous ? 'Anonymous' : 'Identified'}}</td>
                     <td>{{$feedback->content}}</td>
                     <td>{{$feedback->is_reviewed ? 'Reviewed' : 'Pending'}}</td>
                     <td>

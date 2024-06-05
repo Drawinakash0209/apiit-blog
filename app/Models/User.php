@@ -67,7 +67,7 @@ class User extends Authenticatable
 
     public function hasLiked(Post $blog)
     {
-       
+
         return $this-> likes()->where('post_id', $blog->id)->exists();
     }
 
@@ -87,7 +87,11 @@ class User extends Authenticatable
         return $this->hasMany(Album::class, 'created_by');
     }
 
-    
+    //feedback relationship
+    public function feedbacks()
+    {
+        return $this->hasMany(Feedback::class);
+    }
     // public function events(){
     //     return $this->belongsToMany(Event::class);
     // }
