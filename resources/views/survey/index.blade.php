@@ -36,7 +36,7 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             {{-- status --}}
-                            <td>{{$item->status}}</td>
+                            <td>{{$item->status == '1' ? 'Hidden' : 'Show'}}</td>
                             <td>{{$item->name}}</td>
                             <td><a href="{{$item->form_link}}">Form Link</a></td>
 
