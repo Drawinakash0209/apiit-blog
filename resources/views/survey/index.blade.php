@@ -22,6 +22,8 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            {{-- status --}}
+                            <th>Status</th>
                             <th>Survey Name</th>
                             <th>Link</th>
                             <th>Edit</th>
@@ -33,6 +35,8 @@
                         @foreach ($surveys as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
+                            {{-- status --}}
+                            <td>{{$item->status}}</td>
                             <td>{{$item->name}}</td>
                             <td><a href="{{$item->form_link}}">Form Link</a></td>
 
