@@ -110,7 +110,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Drawin Akash
 - Sheed Mashaud
 
-## 5. Screenshots
+## Screenshots
 ![Home Page](public/screeenshots/home.jpeg)
 ![Register Page](public/screeenshots/register.jpeg)
 ![Login Page](public/screeenshots/login.jpeg)
