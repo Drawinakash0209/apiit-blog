@@ -1,66 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# APIIT Students Blog
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Project Description
 
-## About Laravel
+APIIT Students Blog is a comprehensive platform designed for students to engage with their campus community. This blog site provides various features such as event tracking, job postings, support services, and social media integration. The project aims to create a centralized hub where students can stay informed, share opinions, and access essential resources, enhancing their campus experience.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **User Authentication**: Secure login and registration system for users.
+- **Event Calendar**: View upcoming events and add them to your personal calendar.
+- **Event Gallery**: Browse through images and videos from past events.
+- **Job Vacancies**: Stay updated on job openings and apply directly through the platform.
+- **Blog Posting**: Create and manage blog posts on various topics.
+- **Post Category**: Categorize blog posts for easy navigation.
+- **Tag Filtering for Blog Posts**: Filter blog posts based on tags for quick access.
+- **Commenting**: Engage with blog posts through comments.
+- **Like**: Express support by liking blog posts.
+- **Search Feature**: Search for posts, events, and job vacancies with ease.
+- **Instagram Feed Display**: View the latest Instagram posts directly on the site.
+- **Surveys**: Participate in surveys to share feedback and opinions.
+- **Anonymous Feedback**: Provide feedback anonymously to ensure privacy.
+- **Contact Student Support Services**: Reach out to support services for assistance.
+- **Terms and Conditions Agreement**: Users must agree to the terms and conditions before accessing certain features.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installation Instructions
 
-## Learning Laravel
+Follow these steps to set up and run the APIIT Students Blog locally:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Prerequisites
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP version 8.0 or higher
+- Composer
+- Laravel 9.x
+- MySQL or any other supported database
+- Git
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Steps
 
-## Laravel Sponsors
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/your-username/apiit-students-blog.git
+    cd apiit-students-blog
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Install Dependencies**:
+    ```bash
+    composer install
+    npm install
+    npm run dev
+    ```
 
-### Premium Partners
+3. **Set Up Environment Variables**:
+    - Copy the `.env.example` file to `.env` and update the necessary configurations (database, mail, etc.).
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+4. **Run Migrations**:
+    ```bash
+    php artisan migrate
+    ```
 
-## Contributing
+5. **Seed the Database (Optional)**:
+    ```bash
+    php artisan db:seed
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Serve the Application**:
+    ```bash
+    php artisan serve
+    ```
 
-## Code of Conduct
+## Usage Instructions
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **User Authentication**:
+    - Register a new account or log in with existing credentials.
+  
+2. **Event Calendar**:
+    - Navigate to the calendar section to view upcoming events. Click on an event to see more details.
 
-## Security Vulnerabilities
+3. **Event Gallery**:
+    - Access the gallery to browse images and videos from past events.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Job Vacancies**:
+    - Go to the job vacancies section to explore available job opportunities. Apply directly through the platform.
+
+5. **Blog Posting**:
+    - Users with the appropriate permissions can create new blog posts from the dashboard. 
+
+6. **Tag Filtering**:
+    - Use the filter option to sort blog posts by tags for easier navigation.
+
+7. **Instagram Feed**:
+    - The latest posts from the official Instagram account are displayed in the sidebar.
+
+8. **Surveys and Anonymous Feedback**:
+    - Participate in surveys and provide anonymous feedback through the relevant sections.
+
+9. **Support Services**:
+    - Contact student support through the dedicated section on the website for any assistance.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Authors
+
+- Gihan Tharuka 
+- Drawin Akash
+- Sheed Mashaud 
