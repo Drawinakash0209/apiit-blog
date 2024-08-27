@@ -108,4 +108,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Gihan Tharuka 
 - Drawin Akash
-- Sheed Mashaud 
+- Sheed Mashaud
+
+## 5. Screenshots
+![Home Page](public/screenshots/home.jpeg)
+![Register Page](public/screenshots/register.jpeg)
+![Login Page](public/screenshots/login.jpeg)
+![About Page](public/screenshots/events.jpeg)
+![Services Page](public/screenshots/event.jpeg)
+![Pricing Page](public/screenshots/servey.jpeg)
+![Pharmacy Page](public/screenshots/job.jpeg)
+![Product Page](public/screenshots/feedback.jpeg)
+![Category Page](public/screenshots/userd.jpeg)
+![Booking Page](public/screenshots/admind.jpeg)
+![Check out Page](public/screenshots/adminedit.jpeg)
+
