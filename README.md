@@ -17,7 +17,7 @@ APIIT Students Blog is a comprehensive platform designed for students to engage 
 - **Like**: Express support by liking blog posts.
 - **Search Feature**: Search for posts, events, and job vacancies with ease.
 - **Instagram Feed Display**: View the latest Instagram posts directly on the site.
-- **Surveys**: Participate in surveys to share feedback and opinions.
+- **Surveys**: Participate in surveys to help serveys related to campus assignments.
 - **Anonymous Feedback**: Provide feedback anonymously to ensure privacy.
 - **Contact Student Support Services**: Reach out to support services for assistance.
 - **Terms and Conditions Agreement**: Users must agree to the terms and conditions before accessing certain features.
