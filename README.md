@@ -111,15 +111,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Sheed Mashaud
 
 ## 5. Screenshots
-![Home Page](public/screenshots/home.jpeg)
-![Register Page](public/screenshots/register.jpeg)
-![Login Page](public/screenshots/login.jpeg)
-![About Page](public/screenshots/events.jpeg)
-![Services Page](public/screenshots/event.jpeg)
-![Pricing Page](public/screenshots/servey.jpeg)
-![Pharmacy Page](public/screenshots/job.jpeg)
-![Product Page](public/screenshots/feedback.jpeg)
-![Category Page](public/screenshots/userd.jpeg)
-![Booking Page](public/screenshots/admind.jpeg)
-![Check out Page](public/screenshots/adminedit.jpeg)
+![Home Page](public/screeenshots/home.jpeg)
+![Register Page](public/screeenshots/register.jpeg)
+![Login Page](public/screeenshots/login.jpeg)
+![About Page](public/screeenshots/events.jpeg)
+![Services Page](public/screeenshots/event.jpeg)
+![Pricing Page](public/screeenshots/servey.jpeg)
+![Pharmacy Page](public/screeenshots/job.jpeg)
+![Product Page](public/screeenshots/feedback.jpeg)
+![Category Page](public/screeenshots/userd.jpeg)
+![Booking Page](public/screeenshots/admind.jpeg)
+![Check out Page](public/screeenshots/adminedit.jpeg)
 
